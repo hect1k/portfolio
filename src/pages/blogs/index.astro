@@ -1,0 +1,24 @@
+---
+import BaseLayout from "@layouts/Base.astro";
+import { formatDate, formatBlogPosts } from "@utils";
+let blogs = await Astro.glob("../blogs/*.md");
+blogs = formatBlogPosts(blogs);
+---
+
+<BaseLayout title="Nnisarg Gada | Student Developer">
+  <div class="w-screen max-w-5xl flex flex-col gap-6 mx-auto my-12 p-4">
+    <h1 class="text-5xl font-bold mb-6">Blogs</h1>
+    {blogs.map((blog) => 
+      <a class="flex flex-col md:flex-row bg-white bg-opacity-20 hover:bg-opacity-30 rounded cursor-pointer transition-all ease-in-out duration-300" href={blog.url}>
+        {(blog.frontmatter.image) && (
+          <img class="h-40 aspect-square object-cover rounded-l" src={blog.frontmatter.image} alt="" />
+        )}
+        <div class="flex flex-col justify-evenly gap-4 p-4">
+        <h2 class="text-3xl font-bold">{blog.frontmatter.title}</h2>
+        <p class="text-xl">{formatDate(blog.frontmatter.date)}</p>
+        </div>
+      </a>
+    )}
+    <p class="text-xl italic mt-12">More blogs to come :)</p>
+  </div>
+</BaseLayout>
