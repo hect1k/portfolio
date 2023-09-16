@@ -2,7 +2,7 @@
 import BaseLayout from "@layouts/Base.astro";
 import { formatDate, formatBlogPosts } from "@utils";
 
-let blogs = await Astro.glob("../blogs/*.md");
+let blogs = await Astro.glob("./blogs/*.md");
 blogs = formatBlogPosts(blogs);
 
 ---
@@ -12,7 +12,7 @@ blogs = formatBlogPosts(blogs);
     <h1 class="text-5xl font-bold">Blogs</h1>
     <div class="flex flex-col gap-6">
     {blogs.map((blog: any) => 
-      <a class="flex flex-col md:flex-row bg-white bg-opacity-20 hover:bg-opacity-30 rounded cursor-pointer transition-all ease-in-out duration-300" href={blog.url}>
+      <a class="flex flex-col md:flex-row bg-white bg-opacity-20 hover:bg-opacity-30 shadow-lg hover:shadow-black hover:-translate-y-1 hover:scale-105 rounded cursor-pointer transition-all ease-in-out duration-300" href={blog.url}>
         {(blog.frontmatter.image) && (
           <img class="h-40 aspect-square object-cover rounded-l" src={blog.frontmatter.image} alt="" />
         )}

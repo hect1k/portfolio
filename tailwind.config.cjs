@@ -25,8 +25,13 @@ module.exports = {
             h2: {
               color: "#ffffff",
             },
+            em: {
+              color: "#ffffff",
+            },
             code: {
               color: "#ffffff",
+              backgroundColor: "#2f2f2f",
+              padding: "2px",
             },
             img: {
               maxWidth: "100%",

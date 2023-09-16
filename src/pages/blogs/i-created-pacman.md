@@ -33,6 +33,6 @@ PACMAN is an ever-evolving project, and I have exciting plans for its future. So
 
 So, while I may not be talking about the famous video game character, I am thrilled to introduce you to **PACMAN** — the contact manager that’s all about your privacy and control. With NextJS and TailwindCSS at its core, PACMAN empowers you to take charge of your contact data, network confidently, and enjoy the peace of mind that comes with knowing your information is safe and secure. Say hello to the future of contact management and networking with **PACMAN**.
 
-_Note: I have created a separate blog post for detailed instructions on how to self-host PACMAN. You can read it [here](https://dev.to/nnisarggada/self-hosting-pacman-your-step-by-step-guide-388l) to learn how to take your data privacy to the next level by hosting PACMAN on your own servers._
+> _Note: I have created a separate blog post for detailed instructions on how to self-host PACMAN. You can read it [here](/blogs/self-hosting-pacman) to learn how to take your data privacy to the next level by hosting PACMAN on your own servers._
 
 Don’t miss out on the opportunity to reclaim your data privacy and revolutionize the way you manage your contacts. **PACMAN** is not just a contact manager; it’s a symbol of empowerment and control in a digital age. Say hello to the future of contact management and networking with [**PACMAN**](https://github.com/nnisarggada/pacman)!
