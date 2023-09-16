@@ -6,6 +6,7 @@ interface Props {
 const { title } = Astro.props;
 
 import Nav from "@components/Nav.astro";
+import { ViewTransitions } from "astro:transitions";
 
 ---
 <html lang="en">
@@ -17,8 +18,9 @@ import Nav from "@components/Nav.astro";
     <script src="https://kit.fontawesome.com/0b92670209.js" crossorigin="anonymous"></script>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <ViewTransitions />
   </head>
-  <body class="bg-neutral-900 text-white overflow-x-hidden">
+  <body class="w-screen h-screen bg-neutral-900 text-white overflow-x-hidden">
     <Nav />
     <slot />
   </body>
