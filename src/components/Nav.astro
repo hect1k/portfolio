@@ -28,7 +28,7 @@
     }
   }
 ---
-<div id="menu" class="hidden fixed top-20 z-20 w-screen flex flex-col items-center justify-start text-2xl gap-4 bg-black shadow-md shadow-black p-6">
+<div id="menu" class="hidden fixed top-20 z-20 w-screen flex flex-col items-center justify-start text-2xl gap-4 bg-neutral-950 bg-opacity-80 backdrop-blur-md shadow-md shadow-black p-6">
   {pages.map((page) => (
 <a
         class="w-full text-center bg-white bg-opacity-20 rounded p-2 py-1 transition-all ease-in-out duration-300"
@@ -69,18 +69,23 @@
   const menu = document.getElementById("menu");
   const open_button = document.getElementById("menu-open");
   const close_button = document.getElementById("menu-close");
+  const nav = document.querySelector("nav");
 
   function toggleMenu() {
-    if (!menu || !open_button || !close_button) return;
+    if (!menu || !open_button || !close_button || !nav) return;
     if (menu.classList.contains("hidden")) {
       menu.classList.remove("hidden");
       open_button.classList.add("hidden");
       close_button.classList.remove("hidden");
+      nav.classList.remove("shadow-md");
+      nav.classList.remove("shadow-black");
     }
     else {
       menu.classList.add("hidden");
       open_button.classList.remove("hidden");
       close_button.classList.add("hidden");
+      nav.classList.add("shadow-md");
+      nav.classList.add("shadow-black");
     }
   }
 
