@@ -16,22 +16,17 @@
       name: "Contact",
       link: "/contact",
     },
+    {
+      name: "Résumé",
+      link: "/Résumé - Nnisarg Gada.pdf",
+    }
   ];
-  function toggleMenu() {
-    const menu = document.getElementById("menu");
-    if (!menu) return;
-    if (menu.classList.contains("hidden")) {
-      menu.classList.remove("hidden");
-    }
-    else {
-      menu.classList.add("hidden");
-    }
-  }
+
 ---
-<div id="menu" class="hidden fixed top-20 z-20 w-screen flex flex-col items-center justify-start text-2xl gap-4 bg-neutral-950 bg-opacity-80 backdrop-blur-md shadow-md shadow-black p-6">
+<div id="menu" class="hidden fixed top-20 z-20 w-screen h-screen flex flex-col items-center justify-start text-2xl gap-4 bg-neutral-950 bg-opacity-80 backdrop-blur-md shadow-md shadow-black p-6">
   {pages.map((page) => (
 <a
-        class="w-full text-center bg-white bg-opacity-20 rounded p-2 py-1 transition-all ease-in-out duration-300"
+        class="w-full h-20 flex items-center justify-center font-bold uppercase bg-white bg-opacity-20 rounded p-2 py-1 transition-all ease-in-out duration-300"
         href={page.link}
       >
         {page.name}
@@ -56,7 +51,7 @@
   <div class="hidden md:flex gap-6">
     {pages.map((page) => (
       <a
-        class="bg-opacity-0 hover:bg-opacity-20 rounded p-2 py-1 transition-all ease-in-out duration-300"
+        class="hover:bg-white hover:bg-opacity-20 rounded p-2 py-1 transition-all ease-in-out duration-300"
         href={page.link}
       >
         {page.name}
@@ -79,6 +74,7 @@
       close_button.classList.remove("hidden");
       nav.classList.remove("shadow-md");
       nav.classList.remove("shadow-black");
+      document.body.classList.add("overflow-y-hidden");
     }
     else {
       menu.classList.add("hidden");
@@ -86,6 +82,7 @@
       close_button.classList.add("hidden");
       nav.classList.add("shadow-md");
       nav.classList.add("shadow-black");
+      document.body.classList.remove("overflow-y-hidden");
     }
   }
 
