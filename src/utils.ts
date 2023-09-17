@@ -43,3 +43,40 @@ export function formatBlogPosts(
   if (typeof limit === "number") return filteredPosts.slice(0, limit);
   return filteredPosts;
 }
+
+export const projects = [
+  {
+    title: "SWFT",
+    description: "A simple temporary file sharing solution",
+    categories: ["web", "open-source", "self-host", "nextjs", "tailwindcss"],
+    url: "https://share.nnisarg.in",
+    repo: "https://github.com/nnisarggada/swft",
+  },
+  {
+    title: "PACMAN",
+    description: "An open-source contact management system",
+    categories: ["web", "open-source", "self-host", "nextjs", "tailwindcss"],
+    url: "https://pacman.nnisarg.in",
+    repo: "https://github.com/nnisarggada/pacman",
+  },
+  {
+    title: "Cyno5ure",
+    description: "An e-commerce website built for a clothing store",
+    categories: ["web", "client-work", "shopify", "nextjs", "tailwindcss"],
+    url: "https://cyno5ure.nnisarg.in",
+  },
+  {
+    title: "NyChess",
+    description: "A simple chess game and AI coded in Python",
+    categories: ["python", "ai-ml"],
+    image: "NyChess.png",
+    repo: "https://github.com/nnisarggada/nychess",
+  },
+  {
+    title: "TwoDu",
+    description: "A simple cross-platform To-Do Manager",
+    categories: ["web", "flutter", "firebase"],
+    url: "https://twodu.nnisarg.in",
+    repo: "https://github.com/nnisarggada/twodu",
+  },
+];
