@@ -1,20 +1,13 @@
 ---
 import BaseLayout from "@layouts/Base.astro";
-
+import { formatDate, calculateReadingTime } from "@utils";
 const { title, date } = Astro.props.frontmatter;
 
-const formatDate = (date: string): string => {
-  return new Date(date).toLocaleDateString("en-US", {
-    year: "numeric",
-    month: "long",
-    day: "numeric",
-  })
-}
 ---
 <BaseLayout title={`${title} | Blog by Nnisarg Gada`}>
-  <article class="w-screen max-w-5xl mx-auto my-12 p-4 prose lg:prose-lg">
+  <article class="w-screen max-w-5xl mx-auto my-12 mt-28 p-4 prose lg:prose-lg">
     <h1 class="text-5xl font-bold">{title}</h1>
-    <p class="font-bold">Written on {formatDate(date)}</p>
+    <p><span class="font-bold">{formatDate(date)}</span> • <span class="italic">{calculateReadingTime(Astro.props.rawContent())} min read</span></p>
     <slot />
   </article>
 </BaseLayout>

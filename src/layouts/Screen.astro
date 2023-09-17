@@ -1,0 +1,10 @@
+---
+import BaseLayout from "@layouts/Base.astro";
+const { title } = Astro.props;
+---
+
+<BaseLayout title={title}>
+  <div class="w-full max-w-5xl mx-auto h-[100dvh] pt-28 p-4">
+    <slot />
+  </div>
+</BaseLayout>

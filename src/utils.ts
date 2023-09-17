@@ -6,8 +6,16 @@ export const formatDate = (date: string): string => {
   });
 };
 
+export function calculateReadingTime(content: string) {
+  const wordsPerMinute = 200;
+  const words = content.split(/\s+/).length;
+  const readingTimeMinutes = Math.ceil(words / wordsPerMinute);
+
+  return readingTimeMinutes;
+}
+
 export function formatBlogPosts(
-  posts,
+  posts: any[],
   {
     filterDrafts = true,
     filterFuture = true,
@@ -28,7 +36,8 @@ export function formatBlogPosts(
 
   if (sortByDate)
     filteredPosts.sort(
-      (a, b) => new Date(b.frontmatter.date) - new Date(a.frontmatter.date),
+      (a: any, b: any) =>
+        new Date(b.frontmatter.date) - new Date(a.frontmatter.date),
     );
 
   if (typeof limit === "number") return filteredPosts.slice(0, limit);
