@@ -1,43 +1,33 @@
 ---
 import ScreenLayout from "@layouts/Screen.astro";
-import { projects } from "@utils";
+import { projects, uniqueCategories } from "@utils";
 
 export function getStaticPaths() {
 
-  const uniqueCategories: string[] = [];
-
-  projects.forEach((project: any) => {
-    project.categories.forEach((category: string) => {
-      if (!uniqueCategories.includes(category)) {
-        uniqueCategories.push(category);
-      }
-    });
-  });
-  
   return [
-    ...uniqueCategories.map((category) => ({
+    ...uniqueCategories.map((category: string) => ({
       params: {
         category
       },
       props: {
-        projects, category
+        allProjects: projects, category
       }
     }))
   ];
 }
 
-const { projects, category } = Astro.props;
+const { allProjects, category } = Astro.props;
 
-const title = `${category.charAt(0).toUpperCase() + category.slice(1)} Projects by Nnisarg Gada`;
+const title = `#${category} | Projects by Nnisarg Gada`;
 
-const filteredProjects = projects.filter((project: any) => project.categories.includes(category));
+const filteredProjects = allProjects.filter((project: any) => project.categories.includes(category));
 
 ---
 
 <ScreenLayout title={title}>
   <div class="w-full flex flex-col gap-6 p-6 md:py-24">
     <h1 class="text-5xl font-bold">Projects</h1>
-      <p class="text-xl"><a class="text-accent italic underline" href={`/projects/${category}`}>#{category}</a> projects</p>
+    <a class="w-fit bg-accent font-bold px-4 py-2 rounded" href={`/projects/${category}`}>#{category}</a>
     <div class="flex items-center justify-between">
       <p class="text-lg">{filteredProjects.length} projects</p>
       <a class="text-accent" href="/projects">All Projects</a>
@@ -54,7 +44,7 @@ const filteredProjects = projects.filter((project: any) => project.categories.in
               <p class="text-2xl font-semibold p-4 py-0">{project.description}</p>
             </div>
             <div class="flex flex-wrap gap-2 p-4 py-2 text-accent font-medium italic ">
-              {project.categories.map((category) => (
+              {project.categories.map((category: string) => (
                 <a class="hover:underline" href={`/projects/${category}`}>
                 #{category}
                 </a>
