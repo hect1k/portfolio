@@ -28,7 +28,7 @@
 <div id="menu" class="hidden fixed top-20 z-20 w-screen h-screen flex flex-col items-center justify-start text-2xl gap-4 bg-neutral-950 bg-opacity-80 backdrop-blur-md shadow-md shadow-black p-6">
   {pages.map((page) => (
     <a
-      class={`h-20 flex items-center justify-center font-bold uppercase rounded p-2 py-1 transition-all ease-in-out duration-300 ${page.link == currentPath ? "text-accent font-bold underline hover:scale-110 hover:font-bold" : "w-full bg-white bg-opacity-20"} ${page.name === "Résumé" ? "bg-accent bg-opacity-80" : ""}`}
+      class={`h-20 flex items-center justify-center font-bold uppercase rounded p-2 py-1 transition-all ease-in-out duration-300 ${page.link == currentPath || page.link + "/" == currentPath ? "text-accent font-bold underline hover:scale-110 hover:font-bold bg-opacity-0" : "w-full bg-opacity-20"} ${page.name === "Résumé" ? "bg-accent bg-opacity-80" : "bg-white"}`}
       href={page.link}
     >
       {page.name}
