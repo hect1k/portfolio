@@ -37,7 +37,7 @@ const filteredProjects = projects.filter((project: any) => project.categories.in
 <ScreenLayout title={title}>
   <div class="w-full flex flex-col gap-6 p-6 md:py-24">
     <h1 class="text-5xl font-bold">Projects</h1>
-      <p class="text-xl"><a class="text-accent italic underline" href={`/projects/${category}`}>#{category.charAt(0).toUpperCase() + category.slice(1)}</a> projects</p>
+      <p class="text-xl"><a class="text-accent italic underline" href={`/projects/${category}`}>#{category}</a> projects</p>
     <div class="flex items-center justify-between">
       <p class="text-lg">{filteredProjects.length} projects</p>
       <a class="text-accent" href="/projects">All Projects</a>
