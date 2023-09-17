@@ -1,13 +1,13 @@
 ---
-import BaseLayout from "@layouts/Base.astro";
+import ScreenLayout from "@layouts/Screen.astro";
 import { formatDate, calculateReadingTime } from "@utils";
 const { title, date } = Astro.props.frontmatter;
 
 ---
-<BaseLayout title={`${title} | Blog by Nnisarg Gada`}>
-  <article class="w-screen max-w-5xl mx-auto my-12 mt-28 p-4 prose lg:prose-lg">
+<ScreenLayout title={`${title} | Blog by Nnisarg Gada`}>
+  <div class="w-full flex flex-col p-6 md:py-24 mx-auto prose md:prose-lg">
     <h1 class="text-5xl font-bold">{title}</h1>
     <p><span class="font-bold">{formatDate(date)}</span> • <span class="italic">{calculateReadingTime(Astro.props.rawContent())} min read</span></p>
     <slot />
-  </article>
-</BaseLayout>
+  </div>
+</ScreenLayout>

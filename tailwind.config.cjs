@@ -6,6 +6,9 @@ module.exports = {
       fontFamily: {
         sans: ["Inter", "sans-serif"],
       },
+      colors: {
+        accent: "#818cf8",
+      },
       typography: {
         DEFAULT: {
           css: {

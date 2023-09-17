@@ -1,5 +1,6 @@
 ---
-import BaseLayout from "@layouts/Base.astro";
+
+import ScreenLayout from "@layouts/Screen.astro";
 import { formatDate, calculateReadingTime, formatBlogPosts } from "@utils";
 
 let blogs = await Astro.glob("./blogs/*.md");
@@ -7,8 +8,8 @@ blogs = formatBlogPosts(blogs);
 
 ---
 
-<BaseLayout title="Blogs by Nnisarg Gada">
-  <div class="w-screen max-w-5xl flex flex-col gap-12 mx-auto my-12 mt-28 p-4">
+<ScreenLayout title="Blogs by Nnisarg Gada">
+  <div class="w-full flex flex-col gap-6 p-6 md:py-24">
     <h1 class="text-5xl font-bold">Blogs</h1>
     <div class="flex flex-col gap-6">
     {blogs.map((blog: any) => 
@@ -24,4 +25,4 @@ blogs = formatBlogPosts(blogs);
     )}
     </div>
   </div>
-</BaseLayout>
+</ScreenLayout>
