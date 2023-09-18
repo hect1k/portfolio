@@ -1,16 +1,24 @@
-import rss, { pagesGlobToRssItems } from "@astrojs/rss";
+import rss from "@astrojs/rss";
+import { getCollection } from "astro:content";
+import sanitizeHtml from "sanitize-html";
+import MarkdownIt from "markdown-it";
+const parser = new MarkdownIt();
 
-let blogs = await pagesGlobToRssItems(import.meta.glob("./blogs/*.md"));
+export async function GET(context) {
+  const blog = await getCollection("blogs");
 
-export const get = () =>
-  rss({
-    title: "Nnisarg's Blogs",
-    description: "The adventures of a self-taught student developer",
-    site: "https://nnisarg.in",
-    items: blogs.map((blog) => ({
-      link: blog.link,
-      title: blog.title,
-      pubDate: blog.pubDate,
+  return rss({
+    title: "Buzz’s Blog",
+    description: "A humble Astronaut’s guide to the stars",
+    site: context.site,
+    items: blog.map((post) => ({
+      link: `/blogs/${post.slug}/`,
+      content: sanitizeHtml(parser.render(post.body)),
+      ...post.data,
+      customData: post.data.image
+        ? `<image src="https://nnisarg.in${post.data.image}"}/>`
+        : undefined,
     })),
     stylesheet: "/rss/styles.xsl",
   });
+}
