@@ -27,7 +27,7 @@ export function formatBlogPosts(
     const { pubDate, draft } = post.frontmatter;
 
     if (filterDrafts && draft) return acc;
-    if (filterFuture && new Date(date) > new Date()) return acc;
+    if (filterFuture && new Date(pubDate) > new Date()) return acc;
 
     acc.push(post);
 
