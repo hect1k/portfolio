@@ -1,7 +1,7 @@
 ---
 layout: "../../layouts/Blog.astro"
 title: "I created PACMAN - not what you think 👀👀"
-date: 2023-09-04
+pubDate: 2023-09-04
 image: "/images/blogs/pacman-ui.png"
 draft: false
 ---

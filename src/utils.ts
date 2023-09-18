@@ -24,7 +24,7 @@ export function formatBlogPosts(
   } = {},
 ) {
   const filteredPosts = posts.reduce((acc, post) => {
-    const { date, draft } = post.frontmatter;
+    const { pubDate, draft } = post.frontmatter;
 
     if (filterDrafts && draft) return acc;
     if (filterFuture && new Date(date) > new Date()) return acc;
@@ -37,7 +37,7 @@ export function formatBlogPosts(
   if (sortByDate)
     filteredPosts.sort(
       (a: any, b: any) =>
-        new Date(b.frontmatter.date) - new Date(a.frontmatter.date),
+        new Date(b.frontmatter.pubDate) - new Date(a.frontmatter.pubDate),
     );
 
   if (typeof limit === "number") return filteredPosts.slice(0, limit);

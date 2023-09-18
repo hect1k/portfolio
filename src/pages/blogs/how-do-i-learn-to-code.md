@@ -1,7 +1,7 @@
 ---
 layout: "../../layouts/Blog.astro"
 title: '"How do I learn to code?" Here''s how:'
-date: 2023-09-10
+pubDate: 2023-09-10
 draft: false
 ---
 
