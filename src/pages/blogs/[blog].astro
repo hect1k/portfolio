@@ -1,0 +1,32 @@
+---
+import ScreenLayout from "@layouts/Screen.astro";
+import { calculateReadingTime, formatDate } from "@utils";
+import { getCollection } from "astro:content";
+import sanitizeHtml from "sanitize-html";
+import MarkdownIt from "markdown-it";
+
+const parser = new MarkdownIt();
+
+export async function getStaticPaths() {
+  const blogs = await getCollection("blogs");
+  return [
+    ...blogs.map((blog: any) => ({
+      params: {
+        blog: blog.data.draft ? "/not-found" : blog.slug,
+      },
+      props: {
+        blog: blog
+      }
+    }))
+  ]
+}
+
+const { blog } = Astro.props;
+---
+<ScreenLayout title={`${blog.data.title} | Blog by Nnisarg Gada`}>
+  <div class="w-full p-6 md:py-24 mx-auto prose md:prose-lg">
+    <h1 class="text-5xl font-bold">{blog.data.title}</h1>
+    <p><span class="font-bold">{formatDate(blog.data.pubDate)}</span> • <span class="italic">{calculateReadingTime(blog.body)} min read</span></p>
+    <Fragment set:html={sanitizeHtml(parser.render(blog.body))} />
+  </div>
+</ScreenLayout>

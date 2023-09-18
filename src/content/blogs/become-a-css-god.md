@@ -1,5 +1,4 @@
 ---
-layout: "../../layouts/Blog.astro"
 title: "Become a CSS God: Simple tips to get better at CSS 🌟✨"
 pubDate: 2023-09-18
 draft: false

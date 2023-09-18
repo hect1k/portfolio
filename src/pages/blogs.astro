@@ -2,9 +2,9 @@
 
 import ScreenLayout from "@layouts/Screen.astro";
 import { formatDate, calculateReadingTime, formatBlogPosts } from "@utils";
+import { getCollection } from "astro:content";
 
-let blogs = await Astro.glob("./blogs/*.md");
-blogs = formatBlogPosts(blogs);
+let blogs  = await getCollection("blogs");
 
 ---
 
@@ -13,15 +13,17 @@ blogs = formatBlogPosts(blogs);
     <h1 class="text-5xl font-bold">Blogs</h1>
     <div class="flex flex-col gap-6">
     {blogs.map((blog: any) => 
-      <a class="md:max-h-40 flex flex-col md:flex-row bg-white bg-opacity-20 hover:bg-opacity-30 shadow-lg hover:shadow-black hover:-translate-y-1 hover:scale-105 rounded cursor-pointer transition-all ease-in-out duration-300" href={blog.url}>
-        {(blog.frontmatter.image) && (
-          <img loading="lazy" class="h-40 aspect-square object-cover rounded-t md:rounded-none md:rounded-l" src={blog.frontmatter.image} alt={blog.frontmatter.title} />
+      (!blog.data.draft && (blog.data.pubDate < new Date())) && (
+      <a class="md:max-h-40 flex flex-col md:flex-row bg-white bg-opacity-20 hover:bg-opacity-30 shadow-lg hover:shadow-black hover:-translate-y-1 hover:scale-105 rounded cursor-pointer transition-all ease-in-out duration-300" href={`/blogs/${blog.slug}`}>
+        {(blog.data.image) && (
+          <img loading="lazy" class="h-40 aspect-square object-cover rounded-t md:rounded-none md:rounded-l" src={blog.data.image} alt={blog.data.title} />
         )}
         <div class="flex flex-col justify-evenly gap-4 p-4">
-          <h2 class="text-3xl font-bold">{blog.frontmatter.title}</h2>
-          <p class="text-xl">{formatDate(blog.frontmatter.pubDate)} • <span class="italic">{calculateReadingTime(blog.rawContent())} mins</span></p>
+          <h2 class="text-3xl font-bold">{blog.data.title}</h2>
+          <p class="text-xl">{formatDate(blog.data.pubDate)} • <span class="italic">{calculateReadingTime(blog.body)} mins</span></p>
         </div>
       </a>
+      )
     )}
     </div>
   </div>

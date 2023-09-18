@@ -12,6 +12,7 @@ export async function GET(context) {
     description: "A humble Astronaut’s guide to the stars",
     site: context.site,
     items: blog.map((post) => ({
+      title: post.data.title,
       link: `/blogs/${post.slug}/`,
       content: sanitizeHtml(parser.render(post.body)),
       ...post.data,

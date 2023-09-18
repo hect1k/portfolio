@@ -1,5 +1,4 @@
 ---
-layout: "../../layouts/Blog.astro"
 title: "Self-Hosting PACMAN: Your Step-by-Step Guide"
 pubDate: 2023-09-04
 draft: false

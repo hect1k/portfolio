@@ -1,5 +1,4 @@
 ---
-layout: "../../layouts/Blog.astro"
 title: "Introducing SWFT - Simple Web-based File Transfer! 📁✨"
 pubDate: 2023-09-08
 image: "/images/blogs/swft-ui.png"
