@@ -2,13 +2,13 @@
 layout: "../../layouts/Blog.astro"
 title: "I created PACMAN - not what you think 👀👀"
 date: 2023-09-04
-image: "/images/blogs/pacman-ui.jpg"
+image: "/images/blogs/pacman-ui.png"
 draft: false
 ---
 
 When I say "PACMAN" you might think of the classic video game where a yellow, voracious circle gobbles up dots while evading colorful ghosts. But today, I want to introduce you to a different kind of PACMAN — one that’s all about contact management and privacy. [**PACMAN**](https://github.com/nnisarggada/pacman), short for **_"Private Alternative for Contact Management And Networking"_** is not your typical contact manager. It’s a privacy-centric solution that I’ve developed to empower users like you to regain control over your contact data. Let’s dive into this innovative platform, built with [NextJS](https://nextjs.org) and [TailwindCSS](https://tailwindcss.com), and explore how it can revolutionize the way you manage your contacts and network with others.
 
-![PACMAN](/images/blogs/pacman-ui.jpg)
+![PACMAN](/images/blogs/pacman-ui.png)
 
 ## Regaining Control Over Your Contacts
 

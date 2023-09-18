@@ -52,6 +52,7 @@ export const projects = [
     image: "SWFT.png",
     url: "https://share.nnisarg.in",
     repo: "https://github.com/nnisarggada/swft",
+    blog: "introducing-swft",
   },
   {
     title: "PACMAN",
@@ -60,6 +61,7 @@ export const projects = [
     image: "PACMAN.png",
     url: "https://pacman.nnisarg.in",
     repo: "https://github.com/nnisarggada/pacman",
+    blog: "i-created-pacman",
   },
   {
     title: "Cyno5ure",
@@ -106,30 +108,6 @@ export const projects = [
     image: "ArtisticHumans.png",
     repo: "https://github.com/nnisarggada/artistichumans",
     url: "https://artistichumans.nnisarg.in",
-  },
-  {
-    title: "missionICU",
-    description: "Website for a NGO improving rural healthcare in India",
-    categories: ["webdev", "client-work", "react", "tailwindcss"],
-    image: "missionICU.png",
-    repo: "https://github.com/nnisarggada/missionicu",
-    url: "https://missionicu.nnisarg.in",
-  },
-  {
-    title: "Bhoomika",
-    description: "Website for a play about mental health",
-    categories: ["webdev", "client-work", "react", "tailwindcss"],
-    image: "Bhoomika.png",
-    repo: "https://github.com/nnisarggada/bhoomika",
-    url: "https://bhoomika.nnisarg.in",
-  },
-  {
-    title: "Wait A Millet!",
-    description: "Website for a play about Millets",
-    categories: ["webdev", "client-work", "html", "tailwindcss"],
-    image: "Millet.png",
-    repo: "https://github.com/nnisarggada/millets",
-    url: "https://millet.nnisarg.in",
   },
 ];
 

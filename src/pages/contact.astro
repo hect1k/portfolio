@@ -1,5 +1,8 @@
 ---
 import ScreenLayout from "@layouts/Screen.astro";
+import Location from "@components/svgs/Location.astro";
+import Email from "@components/svgs/Email.astro";
+import Phone from "@components/svgs/Phone.astro";
 ---
 
 <ScreenLayout title="Contact | Nnisarg Gada">
@@ -7,15 +10,15 @@ import ScreenLayout from "@layouts/Screen.astro";
     <h1 class="text-5xl font-bold">Let's connect</h1>
     <div class="w-full h-48 flex flex-col justify-evenly p-6 text-xl bg-white bg-opacity-20 rounded-md">
       <div class="flex items-center gap-4">
-        <i class="fas fa-location-dot"></i>
+        <Location />
         <h2>Mumbai, India</h2>
       </div>
       <div class="flex items-center gap-4">
-        <i class="fas fa-envelope"></i>
+        <Email />
         <h2><a class="underline" href="mailto:contact@nnisarg.in">contact@nnisarg.in</a></h2>
       </div>
       <div class="flex items-center gap-4">
-        <i class="fas fa-phone"></i>
+        <Phone />
         <h2><a class="underline" href="tel:+919137977812">+91 9137977812</a></h2>
       </div>
     </div>

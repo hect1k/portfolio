@@ -1,29 +1,29 @@
 ---
-  const currentPath = Astro.url.pathname;
-
-  const pages = [
-    {
-      name: "Home",
-      link: "/",
-    },
-    {
-      name: "Projects",
-      link: "/projects",
-    },
-    {
-      name: "Blogs",
-      link: "/blogs",
-    },
-    {
-      name: "Contact",
-      link: "/contact",
-    },
-    {
-      name: "Résumé",
-      link: "/Resume.pdf",
-    }
-  ];
-
+import Bars from "@components/svgs/Bars.astro";
+import Close from "@components/svgs/Close.astro";
+const currentPath = Astro.url.pathname;
+const pages = [
+  {
+    name: "Home",
+    link: "/",
+  },
+  {
+    name: "Projects",
+    link: "/projects",
+  },
+  {
+    name: "Blogs",
+    link: "/blogs",
+  },
+  {
+    name: "Contact",
+    link: "/contact",
+  },
+  {
+    name: "Résumé",
+    link: "/Resume.pdf",
+  }
+];
 ---
 <div id="menu" class="hidden fixed top-20 z-20 w-screen h-screen flex flex-col items-center justify-start text-2xl gap-4 bg-neutral-950 bg-opacity-80 backdrop-blur-md shadow-md shadow-black p-6">
   {pages.map((page) => (
@@ -36,23 +36,15 @@
   ))}
 </div>
 <nav class="fixed top-0 z-10 w-screen h-20 flex gap-4 justify-between items-center bg-neutral-950 bg-opacity-80 backdrop-blur-md shadow-md shadow-black text-white text-md md:text-xl p-6 md:py-4 md:px-6 lg:px-36">
-  <h1 class="text-2xl md:text-3xl font-bold transition-all ease-in-out duration-300 hover:underline hover:text-accent">
+  <h1 class="text-2xl lg:text-3xl font-bold transition-all ease-in-out duration-300 hover:underline hover:text-accent">
     <a href="/">Nnisarg Gada.</a>
   </h1>
-  <div id="menu-open">
-  <i
-    class="fas fa-bars text-2xl cursor-pointer rounded md:hidden"
-  ></i>
-    </div>
-  <div id="menu-close" class="hidden">
-  <i
-    class="fas fa-close text-2xl cursor-pointer rounded md:hidden"
-  ></i>
-    </div>
-  <div class="hidden md:flex items-center gap-6">
+  <div id="menu-open" class="cursor-pointer md:hidden"><Bars /></div>
+  <div id="menu-close" class="hidden cursor-pointer md:hidden"><Close /></div>
+  <div class="hidden md:flex items-center gap-2 lg:gap-6">
     {pages.map((page) => (
       <a
-        class={`rounded h-fit p-2 py-1 transition-all ease-in-out duration-300 ${page.link == currentPath || page.link + "/" == currentPath ? "text-accent font-bold underline hover:scale-110 hover:font-bold" : ""} ${page.name == 'Résumé' ? "bg-white bg-opacity-20 text-2xl uppercase tracking-widest font-bold hover:shadow-lg hover:shadow-black hover:-translate-y-1 p-4 py-2" : "hover:underline"}`}
+        class={`rounded h-fit p-2 py-1 transition-all ease-in-out duration-300 ${page.link == currentPath || page.link + "/" == currentPath ? "text-accent font-bold underline hover:scale-110 hover:font-bold" : ""} ${page.name == 'Résumé' ? "bg-white bg-opacity-20 text-xl uppercase tracking-widest font-bold hover:shadow-lg hover:shadow-black hover:-translate-y-1 p-4 py-2" : "hover:underline"}`}
         href={page.link}
       >
         {page.name}
