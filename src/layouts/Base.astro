@@ -11,13 +11,28 @@ import Nav from "@components/Nav.astro";
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content={Astro.generator} />
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧑‍💻</text></svg>">
     <title>{title}</title>
     <meta name="description" content="Nnisarg's portfolio website showcasing coding projects and tech adventures as a 19-year-old student developer.">
     <link rel="canonical" href="https://nnisarg.in" />
-    <link rel="stylesheet" href="fonts.css" />
+    <style>
+    @font-face {
+      font-family: "Inter";
+      font-weight: 400;
+      font-style: normal;
+      font-display: swap;
+      src: url("/fonts/Inter/Inter-Regular.ttf") format("truetype");
+    }
+    @font-face {
+      font-family: "Inter";
+      font-weight: 700;
+      font-style: bold;
+      font-display: swap;
+      src: url("/fonts/Inter/Inter-Bold.ttf") format("truetype");
+    }
+    </style>
   </head>
   <body class="w-screen bg-neutral-900 text-white overflow-x-hidden">
     <Nav />
