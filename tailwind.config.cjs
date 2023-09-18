@@ -28,6 +28,9 @@ module.exports = {
             h2: {
               color: "#ffffff",
             },
+            h3: {
+              color: "#ffffff",
+            },
             em: {
               color: "#ffffff",
             },
