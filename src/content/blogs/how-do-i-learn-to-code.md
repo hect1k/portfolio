@@ -10,15 +10,15 @@ So, you've decided to dive into the world of coding, but you're not sure where t
 
 The first step in your coding journey is to decide which programming path interests you the most. There are numerous fields in coding, each with its unique charm. Here are some popular ones to consider:
 
-1. **Web Development**: If you want to create interactive websites and web applications, web development might be your calling. You'll learn languages like HTML, CSS, JavaScript, and various frameworks like React or Angular.
+- **Web Development**: If you want to create interactive websites and web applications, web development might be your calling. You'll learn languages like HTML, CSS, JavaScript, and various frameworks like React or Angular.
 
-2. **App Development**: If building mobile apps is your dream, then app development is the way to go. You'll need to choose between iOS (Swift) or Android (Java/Kotlin) development.
+- **App Development**: If building mobile apps is your dream, then app development is the way to go. You'll need to choose between iOS (Swift) or Android (Java/Kotlin) development.
 
-3. **Internet of Things (IoT)**: If you're fascinated by smart devices and the idea of making everyday objects smarter, IoT is a great choice. You'll work with hardware and software to create connected devices.
+- **Internet of Things (IoT)**: If you're fascinated by smart devices and the idea of making everyday objects smarter, IoT is a great choice. You'll work with hardware and software to create connected devices.
 
-4. **Game Development**: Gamers might find game development intriguing. You can create your own video games using engines like Unity or Unreal Engine and learn languages like C# or C++.
+- **Game Development**: Gamers might find game development intriguing. You can create your own video games using engines like Unity or Unreal Engine and learn languages like C# or C++.
 
-5. **Data Science**: If you love data and want to extract insights from it, data science could be your path. You'll work with languages like Python and tools like TensorFlow or PyTorch.
+- **Data Science**: If you love data and want to extract insights from it, data science could be your path. You'll work with languages like Python and tools like TensorFlow or PyTorch.
 
 ## My Personal Journey
 

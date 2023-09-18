@@ -5,20 +5,34 @@
     <html>
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>RSS Feed</title>
+        <title>📣 RSS Feed for Nnisarg's Blogs | Nnisarg Gada</title>
         <style>
-          /* Global Styles */
           body {
-            font-family: Arial, sans-serif;
+            font-family: Inter, sans-serif;
             margin: 0;
             padding: 0;
+            background-color: #171717;
+            box-sizing: border-box;
+            overflow-x: hidden;
           }
 
           header {
-            background-color: #0077cc;
+            background-color: #00000050;
             color: white;
             text-align: center;
-            padding: 20px;
+            padding: 24px;
+          }
+
+          header div {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 16px;
+          }
+
+          header p {
+            margin: 0;
           }
 
           h1 {
@@ -36,14 +50,21 @@
           }
 
           li {
-            border: 1px solid #ddd;
-            padding: 20px;
+            border: 1px solid #3d3d3d;
+            background-color: #ffffff20;
+            background-opacity: 0.2;
+            border-radius: 5px;
             margin: 10px;
-            background-color: #fff;
+            display: flex;
+            flex-direction: column;
+          }
+
+          .deets {
+            padding: 24px;
           }
 
           h2 a {
-            color: #0077cc;
+            color: #818cf8;
             text-decoration: none;
           }
 
@@ -54,33 +75,81 @@
           img {
             max-width: 100%;
             height: auto;
+            border-radius: 5px 5px 0 0;
           }
 
           p {
-            color: #888;
+            color: #fff;
+            font-weight: bold;
           }
 
           /* Responsive Styles */
-          @media screen and (max-width: 768px) {
+          @media screen and (min-width: 768px) {
+            body {
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+              align-items: center;
+            }
+
+            header {
+              width: 100dvw;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+            }
+
+            header div {
+              flex-direction: row;
+              justify-content: space-between;
+              width: 800px;
+            }
+
+            ul {
+              max-width: 800px;
+            }
+
             li {
-              padding: 10px;
+              flex-direction: row;
+              height: fit-content;
+            }
+
+            img {
+              width: 25%;
+              height: auto;
+              aspect-ratio: 1/1;
+              object-fit: cover;
+              border-radius: 5px 0 0 5px;
+            }
+
+            .deets {
+              width: 75%;
+              height: 100%;
             }
           }
         </style>
       </head>
       <body>
         <header>
-          <h1><xsl:value-of select="/rss/channel/title" /></h1>
-          <p><xsl:value-of select="/rss/channel/description" /></p>
+          <div>
+            <h1><xsl:value-of select="/rss/channel/title" /></h1>
+            <p><xsl:value-of select="/rss/channel/description" /></p>
+          </div>
         </header>
         <ul>
           <xsl:for-each select="/rss/channel/item">
             <li>
-              <h2><a href="{link}" target="_blank"><xsl:value-of select="title" /></a></h2>
               <xsl:if test="image">
                 <img src="{image/@src}" alt="Item Image" />
               </xsl:if>
-              <p>Published: <xsl:value-of select="pubDate" /></p>
+              <div class="deets">
+                <h2><a href="{link}" target="_blank"><xsl:value-of select="title" /></a></h2>
+                <p>
+                  Published:
+                  <xsl:variable name="pubDate" select="pubDate" />
+                  <xsl:value-of select="substring($pubDate, 6, 12)" />
+                </p>
+              </div>
             </li>
           </xsl:for-each>
         </ul>
