@@ -1,5 +1,7 @@
 ---
 title: "Introducing SWFT - Simple Web-based File Transfer! 📁✨"
+description: "SWFT is a lightweight and intuitive web-based file sharing service that simplifies the process of sharing files with others."
+tags: python, tailwindcss, open-source, productivity
 pubDate: 2023-09-08
 image: "/images/blogs/swft-ui.png"
 draft: false
@@ -7,7 +9,7 @@ draft: false
 
 In today's digital age, file sharing has become an integral part of our daily routines. Whether it's sharing documents for work, sending photos to friends and family, or collaborating on projects, having a reliable and user-friendly file sharing solution is crucial. That's where SWFT - Simple Web-based File Transfer - shines, and the best part? It's open source!
 
-![SWFT](/images/blogs/swft-ui.png)
+![SWFT](https://nnisarg.in/images/blogs/swft-ui.png)
 
 ## The SWFT Advantage
 

@@ -61,15 +61,16 @@
 
           .deets {
             padding: 24px;
+            color: white;
           }
 
           h2 a {
-            color: #818cf8;
+            color: white;
             text-decoration: none;
           }
 
-          h2 a:hover {
-            text-decoration: underline;
+          h3 {
+            font-weight: normal;
           }
 
           img {
@@ -78,8 +79,18 @@
             border-radius: 5px 5px 0 0;
           }
 
-          p {
-            color: #fff;
+          .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            width: 100%;
+          }
+
+          .tag {
+            background-color: #818cf8;
+            color: white;
+            padding: 4px 8px;
+            border-radius: 5px;
             font-weight: bold;
           }
 
@@ -123,8 +134,8 @@
             }
 
             .deets {
-              width: 75%;
               height: 100%;
+              flex: 1;
             }
           }
         </style>
@@ -144,8 +155,16 @@
               </xsl:if>
               <div class="deets">
                 <h2><a href="{link}" target="_blank"><xsl:value-of select="title" /></a></h2>
+                <h3><xsl:value-of select="description" /></h3>
+                <div class="tags">
+                  <xsl:for-each select="category">
+                    <div class="tag">
+                      <xsl:text>#</xsl:text>
+                      <xsl:value-of select="." />
+                    </div>
+                  </xsl:for-each>
+                </div>
                 <p>
-                  Published:
                   <xsl:variable name="pubDate" select="pubDate" />
                   <xsl:value-of select="substring($pubDate, 6, 12)" />
                 </p>

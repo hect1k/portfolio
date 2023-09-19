@@ -2,7 +2,6 @@
 import ScreenLayout from "@layouts/Screen.astro";
 import { calculateReadingTime, formatDate } from "@utils";
 import { getCollection } from "astro:content";
-import sanitizeHtml from "sanitize-html";
 import MarkdownIt from "markdown-it";
 
 const parser = new MarkdownIt();
@@ -22,11 +21,18 @@ export async function getStaticPaths() {
 }
 
 const { blog } = Astro.props;
+console.log(parser.render(blog.body));
 ---
 <ScreenLayout title={`${blog.data.title} | Blog by Nnisarg Gada`}>
   <div class="w-full p-6 md:py-24 mx-auto prose md:prose-lg">
     <h1 class="text-5xl font-bold">{blog.data.title}</h1>
+    <h3 class="text-xl">{blog.data.description}</h3>
+    <div class="flex flex-wrap gap-2">
+      {blog.data.tags.split(", ").map((tag: string) => (
+        <div class="font-bold text-sm bg-accent px-2 py-1 rounded">#{tag}</div>
+      ))}
+    </div>
     <p><span class="font-bold">{formatDate(blog.data.pubDate)}</span> • <span class="italic">{calculateReadingTime(blog.body)} min read</span></p>
-    <Fragment set:html={sanitizeHtml(parser.render(blog.body))} />
+    <Fragment set:html={parser.render(blog.body)} />
   </div>
 </ScreenLayout>

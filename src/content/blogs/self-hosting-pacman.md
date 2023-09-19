@@ -1,5 +1,7 @@
 ---
 title: "Self-Hosting PACMAN: Your Step-by-Step Guide"
+description: "A step-by-step guide on how to self-host PACMAN on your own servers."
+tags: nextjs, tailwindcss, open-source, privacy
 pubDate: 2023-09-04
 draft: false
 ---
