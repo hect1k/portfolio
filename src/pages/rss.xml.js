@@ -6,13 +6,8 @@ const parser = new MarkdownIt();
 export async function GET(context) {
   const blog = await getCollection("blogs");
 
-  const currentDate = new Date();
-
   const validPosts = blog.filter((post) => {
-    const isDraft = post.data.draft === true;
-    const pubDate = new Date(post.data.pubDate);
-
-    return !isDraft && pubDate <= currentDate;
+    return post.data.draft !== true;
   });
 
   const rssFeed = rss({

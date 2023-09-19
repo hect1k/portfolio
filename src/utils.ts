@@ -14,36 +14,6 @@ export function calculateReadingTime(content: string) {
   return readingTimeMinutes;
 }
 
-export function formatBlogPosts(
-  posts: any[],
-  {
-    filterDrafts = true,
-    filterFuture = true,
-    sortByDate = true,
-    limit = undefined,
-  } = {},
-) {
-  const filteredPosts = posts.reduce((acc, post) => {
-    const { pubDate, draft } = post.frontmatter;
-
-    if (filterDrafts && draft) return acc;
-    if (filterFuture && new Date(pubDate) > new Date()) return acc;
-
-    acc.push(post);
-
-    return acc;
-  }, []);
-
-  if (sortByDate)
-    filteredPosts.sort(
-      (a: any, b: any) =>
-        new Date(b.frontmatter.pubDate) - new Date(a.frontmatter.pubDate),
-    );
-
-  if (typeof limit === "number") return filteredPosts.slice(0, limit);
-  return filteredPosts;
-}
-
 export const projects = [
   {
     title: "SWFT",

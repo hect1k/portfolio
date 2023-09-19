@@ -2,7 +2,7 @@
 title: "Become a CSS God: Simple tips to get better at CSS 🌟✨"
 description: "A guide on how to write better CSS."
 tags: guide, css, webdev, webdesign
-pubDate: 2023-09-19T12:25:00+05:30
+pubDate: 2023-09-18T00:00:00+05:30
 draft: false
 ---
 

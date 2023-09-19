@@ -2,7 +2,7 @@
 title: '"How do I learn to code?" Here''s how:'
 description: "A beginner's guide on how to start learning to code."
 tags: coding, guide, webdev, programming
-pubDate: 2023-09-10
+pubDate: 2023-09-10T00:00:00+05:30
 draft: false
 ---
 

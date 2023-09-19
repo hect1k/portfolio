@@ -21,7 +21,6 @@ export async function getStaticPaths() {
 }
 
 const { blog } = Astro.props;
-console.log(parser.render(blog.body));
 ---
 <ScreenLayout title={`${blog.data.title} | Blog by Nnisarg Gada`}>
   <div class="w-full p-6 md:py-24 mx-auto prose md:prose-lg">
