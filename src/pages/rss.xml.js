@@ -10,6 +10,13 @@ export async function GET(context) {
     return post.data.draft !== true;
   });
 
+  validPosts.sort((a, b) => {
+    const pubDateA = new Date(a.data.pubDate);
+    const pubDateB = new Date(b.data.pubDate);
+
+    return pubDateB - pubDateA;
+  });
+
   const rssFeed = rss({
     title: "Nnisarg’s Blogs",
     description: "The adventures of a self-taught student developer :P",

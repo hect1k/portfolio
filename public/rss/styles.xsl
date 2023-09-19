@@ -46,7 +46,7 @@
 
           ul {
             list-style-type: none;
-            padding: 0;
+            padding: 24px;
           }
 
           li {
@@ -60,8 +60,11 @@
           }
 
           .deets {
-            padding: 24px;
+            padding: 12px 24px;
             color: white;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
           }
 
           h2 a {
@@ -113,11 +116,11 @@
             header div {
               flex-direction: row;
               justify-content: space-between;
-              width: 800px;
+              width: 1200px;
             }
 
             ul {
-              max-width: 800px;
+              max-width: 1000px;
             }
 
             li {
@@ -126,7 +129,7 @@
             }
 
             img {
-              width: 25%;
+              width: 33.33%;
               height: auto;
               aspect-ratio: 1/1;
               object-fit: cover;
@@ -134,8 +137,7 @@
             }
 
             .deets {
-              height: 100%;
-              flex: 1;
+              width: 100%;
             }
           }
         </style>
@@ -154,8 +156,10 @@
                 <img src="{image/@src}" alt="Item Image" />
               </xsl:if>
               <div class="deets">
+                <div>
                 <h2><a href="{link}" target="_blank"><xsl:value-of select="title" /></a></h2>
                 <h3><xsl:value-of select="description" /></h3>
+                  </div>
                 <div class="tags">
                   <xsl:for-each select="category">
                     <div class="tag">
@@ -165,6 +169,7 @@
                   </xsl:for-each>
                 </div>
                 <p>
+                  Written on
                   <xsl:variable name="pubDate" select="pubDate" />
                   <xsl:value-of select="substring($pubDate, 6, 12)" />
                 </p>

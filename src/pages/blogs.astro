@@ -5,7 +5,12 @@ import { formatDate, calculateReadingTime } from "@utils";
 import { getCollection } from "astro:content";
 
 let blogs  = await getCollection("blogs");
-console.log(typeof blogs[0].data.tags);
+blogs.sort((a, b) => {
+  const pubDateA = new Date(a.data.pubDate);
+  const pubDateB = new Date(b.data.pubDate);
+  
+  return pubDateB - pubDateA;
+});
 ---
 
 <ScreenLayout title="Blogs by Nnisarg Gada">
