@@ -7,7 +7,7 @@ import MarkdownIt from "markdown-it";
 const parser = new MarkdownIt();
 
 export async function getStaticPaths() {
-  const blogs = await getCollection("blogs");
+  const blogs = await getCollection("blog");
   return [
     ...blogs.map((blog: any) => ({
       params: {

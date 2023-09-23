@@ -4,7 +4,7 @@ import ScreenLayout from "@layouts/Screen.astro";
 import { formatDate, calculateReadingTime } from "@utils";
 import { getCollection } from "astro:content";
 
-let blogs  = await getCollection("blogs");
+let blogs  = await getCollection("blog");
 blogs.sort((a, b) => {
   const pubDateA = new Date(a.data.pubDate);
   const pubDateB = new Date(b.data.pubDate);
@@ -15,11 +15,11 @@ blogs.sort((a, b) => {
 
 <ScreenLayout title="Blogs by Nnisarg Gada">
   <div class="w-full flex flex-col gap-6 p-6 md:py-24">
-    <h1 class="text-5xl font-bold">Blogs</h1>
+    <h1 class="text-5xl font-bold">Blog Posts</h1>
     <div class="flex flex-col gap-6">
     {blogs.map((blog: any) => 
       !blog.data.draft && (
-      <a class="h-fit flex flex-col md:flex-row bg-white bg-opacity-20 hover:bg-opacity-30 shadow-lg hover:shadow-black hover:-translate-y-1 hover:scale-105 rounded cursor-pointer transition-all ease-in-out duration-300" href={`/blogs/${blog.slug}`}>
+      <a class="h-fit flex flex-col md:flex-row bg-white bg-opacity-20 hover:bg-opacity-30 shadow-lg hover:shadow-black hover:-translate-y-1 hover:scale-105 rounded cursor-pointer transition-all ease-in-out duration-300" href={`/blog/${blog.slug}`}>
         {(blog.data.image) && (
           <img loading="lazy" class=" md:w-1/3 object-cover rounded-t md:rounded-none md:rounded-l" src={blog.data.image} alt={blog.data.title} />
         )}

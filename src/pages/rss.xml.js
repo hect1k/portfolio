@@ -4,7 +4,7 @@ import MarkdownIt from "markdown-it";
 const parser = new MarkdownIt();
 
 export async function GET(context) {
-  const blog = await getCollection("blogs");
+  const blog = await getCollection("blog");
 
   const validPosts = blog.filter((post) => {
     return post.data.draft !== true;
@@ -18,13 +18,13 @@ export async function GET(context) {
   });
 
   const rssFeed = rss({
-    title: "Nnisarg’s Blogs",
+    title: "Nnisarg’s Blog",
     description: "The adventures of a self-taught student developer :P",
     site: context.site,
     items: validPosts.map((post) => ({
       title: post.data.title,
       description: post.data.description,
-      link: `/blogs/${post.slug}/`,
+      link: `/blog/${post.slug}/`,
       customData:
         (post.data.image
           ? `<image src="https://nnisarg.in${post.data.image}"}/>`
