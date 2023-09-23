@@ -54,7 +54,7 @@
             background-color: #ffffff20;
             background-opacity: 0.2;
             border-radius: 5px;
-            margin: 10px;
+            margin: 20px;
             display: flex;
             flex-direction: column;
           }
@@ -67,9 +67,14 @@
             gap: 8px;
           }
 
-          h2 a {
+          ul a {
             color: white;
             text-decoration: none;
+          }
+
+          li:hover {
+            scale: 1.1;
+            transition: all 0.3s ease-in-out;
           }
 
           h3 {
@@ -151,13 +156,15 @@
         </header>
         <ul>
           <xsl:for-each select="/rss/channel/item">
+            <xsl:variable name="link" select="link" />
+            <a href="{link}" target="_blank">
             <li>
               <xsl:if test="image">
                 <img src="{image/@src}" alt="Item Image" />
               </xsl:if>
               <div class="deets">
                 <div>
-                <h2><a href="{link}" target="_blank"><xsl:value-of select="title" /></a></h2>
+                <h2><xsl:value-of select="title" /></h2>
                 <h3><xsl:value-of select="description" /></h3>
                   </div>
                 <div class="tags">
@@ -175,6 +182,7 @@
                 </p>
               </div>
             </li>
+            </a>
           </xsl:for-each>
         </ul>
       </body>
