@@ -16,9 +16,18 @@ export function calculateReadingTime(content: string) {
 
 export const projects = [
   {
+    title: "Zen Link",
+    description: "A simple open-source URL shortener",
+    categories: ["webdev", "open-source", "self-host", "flask", "tailwindcss"],
+    image: "ZenLink.png",
+    url: "https://short.nnisarg.in",
+    repo: "https://github.com/nnisarggada/zen-link",
+    blog: "urls-should-be-simple",
+  },
+  {
     title: "SWFT",
     description: "A simple temporary file sharing solution",
-    categories: ["webdev", "open-source", "self-host", "nextjs", "tailwindcss"],
+    categories: ["webdev", "open-source", "self-host", "flask", "tailwindcss"],
     image: "SWFT.png",
     url: "https://share.nnisarg.in",
     repo: "https://github.com/nnisarggada/swft",
