@@ -7,8 +7,6 @@ image: "/images/blogs/zenlink-ui.png"
 draft: false
 ---
 
-Title: "ZenLink - Your Gateway to URL Simplicity: Open-Source and Self-Hosted"
-
 In a world where the internet is filled with lengthy and cumbersome URLs, there's a rising need for simplicity and convenience. Enter [ZenLink](https://short.nnisarg.in), a powerful yet elegantly simple open-source URL shortener that can be self-hosted to streamline your online experience. In this blog post, we'll explore the wonders of ZenLink, learn how to try it out, and encourage you to join the ZenLink community on GitHub.
 
 ![ZenLink UI](https://nnisarg.in/images/blogs/zenlink-ui.png)
