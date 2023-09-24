@@ -16,12 +16,12 @@ export function calculateReadingTime(content: string) {
 
 export const projects = [
   {
-    title: "Zen Link",
+    title: "ZenLink",
     description: "A simple open-source URL shortener",
     categories: ["webdev", "open-source", "self-host", "flask", "tailwindcss"],
     image: "ZenLink.png",
     url: "https://short.nnisarg.in",
-    repo: "https://github.com/nnisarggada/zen-link",
+    repo: "https://github.com/nnisarggada/zenlink",
     blog: "urls-should-be-simple",
   },
   {
