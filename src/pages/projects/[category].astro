@@ -3,16 +3,16 @@ import ScreenLayout from "@layouts/Screen.astro";
 import { projects, uniqueCategories } from "@utils";
 
 export function getStaticPaths() {
-
   return [
     ...uniqueCategories.map((category: string) => ({
       params: {
-        category
+        category,
       },
       props: {
-        allProjects: projects, category
-      }
-    }))
+        allProjects: projects,
+        category,
+      },
+    })),
   ];
 }
 
@@ -20,73 +20,105 @@ const { allProjects, category } = Astro.props;
 
 const title = `#${category} | Projects by Nnisarg Gada`;
 
-const filteredProjects = allProjects.filter((project: any) => project.categories.includes(category));
-
+const filteredProjects = allProjects.filter((project: any) =>
+  project.categories.includes(category),
+);
 ---
 
 <ScreenLayout title={title}>
   <div class="w-full flex flex-col gap-6 p-6 md:py-24">
     <h1 class="text-5xl font-bold">Projects</h1>
-    <a class="w-fit bg-accent font-bold px-4 py-2 rounded" href={`/projects/${category}`}>#{category}</a>
+    <div class="flex items-center gap-4">
+      <a
+        class="w-fit bg-accent font-bold px-4 py-2 rounded"
+        href={`/projects/${category}`}>#{category}</a
+      >
+      <a class="text-rose-300 font-medium" href="/projects">Clear Filter</a>
+    </div>
     <div class="flex items-center justify-between">
       <p class="text-lg">{filteredProjects.length} projects</p>
-      <a class="text-accent" href="/projects">All Projects</a>
     </div>
     <div class="flex flex-col gap-6">
-      {filteredProjects.map((project: any) => (
-        <div class="h-fit flex flex-col md:flex-row bg-white bg-opacity-20 rounded shadow-lg shadow-black">
-          {project.image && (
-            <img loading="lazy" class="md:w-1/3 object-cover rounded-t md:rounded-none md:rounded-l" src={`/images/projects/${project.image}`} alt={project.title} />
-          )}
-          <div class="w-full md:h-full flex flex-col gap-2">
-            <div class="flex flex-col justify-evenly gap-4">
-              <h2 class="text-3xl bg-black bg-opacity-50 font-bold p-4">{project.title}</h2>
-              <p class="text-2xl font-semibold p-4 py-0">{project.description}</p>
-            </div>
-            <div class="flex flex-wrap gap-2 p-4 py-2 text-accent font-bold italic ">
-              {project.categories.map((category) => (
-                <a class="hover:underline" href={`/projects/${category}`}>
-                #{category}
-                </a>
-              ))}
-            </div>
-            <div class="w-full flex flex-col md:flex-row md:items-center md:justify-between gap-6 p-6 md:pr-12">
-              <div class="flex gap-4">
-                {project.url && (
-                  <a class="bg-accent font-bold px-4 py-2 rounded transition-all ease-in-out duration-300 hover:drop-shadow-xl hover:-translate-y-1 hover:scale-105" href={project.url} target="_blank">Demo</a>
-                )}
-                {project.repo && (
-                  <a class="bg-black bg-opacity-30 font-bold px-4 py-2 rounded transition-all ease-in-out duration-300 hover:drop-shadow-xl hover:-translate-y-1 hover:scale-105" href={project.repo} target="_blank">Github Repo</a>
+      {
+        filteredProjects.map((project: any) => (
+          <div class="h-fit flex flex-col md:flex-row bg-white bg-opacity-20 rounded shadow-lg shadow-black">
+            {project.image && (
+              <img
+                loading="lazy"
+                class="md:w-1/3 object-cover rounded-t md:rounded-none md:rounded-l"
+                src={`/images/projects/${project.image}`}
+                alt={project.title}
+              />
+            )}
+            <div class="w-full md:h-full flex flex-col gap-2">
+              <div class="flex flex-col justify-evenly gap-4">
+                <h2 class="text-3xl bg-black bg-opacity-50 font-bold p-4">
+                  {project.title}
+                </h2>
+                <p class="text-2xl font-semibold p-4 py-0">
+                  {project.description}
+                </p>
+              </div>
+              <div class="flex flex-wrap gap-2 p-4 py-2 text-accent font-bold italic ">
+                {project.categories.map((category) => (
+                  <a class="hover:underline" href={`/projects/${category}`}>
+                    #{category}
+                  </a>
+                ))}
+              </div>
+              <div class="w-full flex flex-col md:flex-row md:items-center md:justify-between gap-6 p-6 md:pr-12">
+                <div class="flex gap-4">
+                  {project.url && (
+                    <a
+                      class="bg-accent font-bold px-4 py-2 rounded transition-all ease-in-out duration-300 hover:drop-shadow-xl hover:-translate-y-1 hover:scale-105"
+                      href={project.url}
+                      target="_blank"
+                    >
+                      Demo
+                    </a>
+                  )}
+                  {project.repo && (
+                    <a
+                      class="bg-black bg-opacity-30 font-bold px-4 py-2 rounded transition-all ease-in-out duration-300 hover:drop-shadow-xl hover:-translate-y-1 hover:scale-105"
+                      href={project.repo}
+                      target="_blank"
+                    >
+                      Github Repo
+                    </a>
+                  )}
+                </div>
+                {project.blog && (
+                  <a
+                    class="font-bold text-accent underline transition-all ease-in-out duration-300 hover:translate-x-2"
+                    href={`/blogs/${project.blog}`}
+                  >
+                    Read Blog
+                  </a>
                 )}
               </div>
-              {project.blog && (
-                <a class="font-bold text-accent underline transition-all ease-in-out duration-300 hover:translate-x-2" href={`/blogs/${project.blog}`}>Read Blog</a>
-              )}
             </div>
           </div>
-        </div>
-      ))}
+        ))
+      }
     </div>
   </div>
 </ScreenLayout>
 
 <script>
-const filterButton = document.getElementById("filter-button");
-const filterMenu = document.getElementById("filter-menu");
-const filterTooltip = document.getElementById("filter-tooltip");
-if (filterMenu && filterButton && filterTooltip) {
-filterButton.addEventListener("click", () => {
-if (filterMenu.classList.contains("hidden")) {
-filterMenu.classList.remove("hidden");
-filterTooltip.classList.add("hidden");
-filterButton.innerText = "Close";
-}
-else {
-filterMenu.classList.add("hidden");
-filterButton.innerText = "Filter by Category";
-filterTooltip.classList.remove("hidden");
-}
-});
-}
+  const filterButton = document.getElementById("filter-button");
+  const filterMenu = document.getElementById("filter-menu");
+  const filterTooltip = document.getElementById("filter-tooltip");
+  if (filterMenu && filterButton && filterTooltip) {
+    filterButton.addEventListener("click", () => {
+      if (filterMenu.classList.contains("hidden")) {
+        filterMenu.classList.remove("hidden");
+        filterTooltip.classList.add("hidden");
+        filterButton.innerText = "Close";
+      } else {
+        filterMenu.classList.add("hidden");
+        filterButton.innerText = "Filter by Category";
+        filterTooltip.classList.remove("hidden");
+      }
+    });
+  }
 </script>
-
