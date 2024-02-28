@@ -3,14 +3,13 @@ title: "Organizing My First Hackathon: A Journey of Discovery and Growth"
 description: "How I organized my first hackathon, and what I learned along the way."
 tags: hackathon, community, event, teamwork
 pubDate: 2023-12-20T00:00:00+05:30
-image: "/images/blogs/debate-a-thon.jpg"
+image: "/images/blog/debate-a-thon.jpg"
 draft: false
 ---
 
 Embarking on the journey of organizing my first hackathon - [Debate-a-thon](https://tark.live) was an exhilarating experience that taught me invaluable lessons. From initial planning to execution and beyond, the process was a profound learning curve. In this blog, I'll share the key takeaways and insights gained during this transformative adventure.
 
-![Hosting a hackathon](https://nnisarg.in/images/blogs/debate-a-thon.jpg)
-
+![Hosting a hackathon](https://nnisarg.in/images/blog/debate-a-thon.jpg)
 
 ## Collaboration is Key
 
@@ -27,7 +26,6 @@ No matter how well you plan, unexpected challenges will arise. Embracing these c
 ## Judges Elevate the Experience
 
 The inclusion of esteemed judges added a layer of expertise and credibility to **Debate-a-thon**. Their insights not only enriched the competition but also provided valuable feedback for participants. Securing knowledgeable and engaged judges is a crucial aspect of hosting a hackathon.
-
 
 ## Personal Growth and Future Prospects
 

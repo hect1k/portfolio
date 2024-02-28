@@ -3,13 +3,13 @@ title: "I created PACMAN - not what you think 👀👀"
 description: "A step-by-step guide on how to self-host PACMAN on your own servers."
 tags: nextjs, tailwindcss, open-source, privacy
 pubDate: 2023-09-04T00:00:00+05:30
-image: "/images/blogs/pacman-ui.png"
+image: "/images/blog/pacman-ui.png"
 draft: false
 ---
 
 When I say "PACMAN" you might think of the classic video game where a yellow, voracious circle gobbles up dots while evading colorful ghosts. But today, I want to introduce you to a different kind of PACMAN — one that’s all about contact management and privacy. [**PACMAN**](https://github.com/nnisarggada/pacman), short for **_"Private Alternative for Contact Management And Networking"_** is not your typical contact manager. It’s a privacy-centric solution that I’ve developed to empower users like you to regain control over your contact data. Let’s dive into this innovative platform, built with [NextJS](https://nextjs.org) and [TailwindCSS](https://tailwindcss.com), and explore how it can revolutionize the way you manage your contacts and network with others.
 
-![PACMAN](https://nnisarg.in/images/blogs/pacman-ui.png)
+![PACMAN](https://nnisarg.in/images/blog/pacman-ui.png)
 
 ## Regaining Control Over Your Contacts
 
