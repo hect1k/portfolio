@@ -16,6 +16,20 @@ export function calculateReadingTime(content: string) {
 
 export const projects = [
   {
+    title: "The Dwij Times",
+    description: "A simple website for an album with 3D perspective effects",
+    categories: ["webdev", "astro", "tailwindcss", "creative", "css"],
+    image: "TheDwijTimes.png",
+    url: "https://dwij.nnisarg.in",
+  },
+  {
+    title: "Debate-a-thon",
+    description: "A website for a hacakathon that I hosted in my college",
+    categories: ["webdev", "flask", "astro", "tailwindcss", "hackathon"],
+    image: "DAT.png",
+    url: "https://dat.nnisarg.in",
+  },
+  {
     title: "ZenLink",
     description: "A simple open-source URL shortener",
     categories: ["webdev", "open-source", "self-host", "flask", "tailwindcss"],
