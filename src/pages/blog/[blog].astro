@@ -14,24 +14,35 @@ export async function getStaticPaths() {
         blog: blog.data.draft ? "/not-found" : blog.slug,
       },
       props: {
-        blog: blog
-      }
-    }))
-  ]
+        blog: blog,
+      },
+    })),
+  ];
 }
 
 const { blog } = Astro.props;
 ---
+
 <ScreenLayout title={`${blog.data.title} | Blog by Nnisarg Gada`}>
-  <div class="w-full p-6 md:py-24 mx-auto prose md:prose-lg">
+  <div class="w-full max-w-none p-6 md:p-8 lg:p-12 mx-auto prose md:prose-lg lg:prose-xl">
     <h1 class="text-5xl font-bold">{blog.data.title}</h1>
     <h3 class="text-xl">{blog.data.description}</h3>
     <div class="flex flex-wrap gap-2">
-      {blog.data.tags.split(", ").map((tag: string) => (
-        <div class="font-bold text-sm bg-accent px-2 py-1 rounded">#{tag}</div>
-      ))}
+      {
+        blog.data.tags
+          .split(", ")
+          .map((tag: string) => (
+            <div class="font-bold text-sm bg-accent px-2 py-1 rounded">
+              #{tag}
+            </div>
+          ))
+      }
     </div>
-    <p><span class="font-bold">{formatDate(blog.data.pubDate)}</span> • <span class="italic">{calculateReadingTime(blog.body)} min read</span></p>
+    <p>
+      <span class="font-bold">{formatDate(blog.data.pubDate)}</span> • <span
+        class="italic">{calculateReadingTime(blog.body)} min read</span
+      >
+    </p>
     <Fragment set:html={parser.render(blog.body)} />
   </div>
 </ScreenLayout>

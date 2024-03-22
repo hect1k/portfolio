@@ -44,8 +44,33 @@ import Footer from "@components/Footer.astro";
     <meta property="og:image" content="/images/profile-pic.png" />
     <link rel="canonical" href="https://nnisarg.in" />
     <!-- SEO -->
+
+    <!-- CSS -->
+    <style>
+      html {
+        overflow-y: scroll;
+        overflow-x: clip;
+        scroll-behavior: smooth;
+      }
+
+      .custom-scrollbar::-webkit-scrollbar {
+        width: 5px;
+      }
+
+      .custom-scrollbar::-webkit-scrollbar-thumb {
+        background-color: #818cf8;
+        border-radius: 5px;
+      }
+
+      .custom-scrollbar::-webkit-scrollbar-track {
+        background-color: rgba(255, 255, 255, 0.1);
+        border-radius: 3px;
+      }
+    </style>
   </head>
-  <body class="w-screen bg-neutral-900 text-white overflow-x-hidden">
+  <body
+    class="w-screen bg-neutral-900 text-white overflow-x-hidden custom-scrollbar"
+  >
     <Nav />
     <slot />
     <Footer />
