@@ -1,12 +1,11 @@
 ---
-interface Props {
-  title: string;
-}
+import "../styles/global.css";
 
-const { title } = Astro.props;
-
+import Loader from "@components/Loader.astro";
 import Nav from "@components/Nav.astro";
 import Footer from "@components/Footer.astro";
+
+const { title } = Astro.props;
 ---
 
 <html lang="en">
@@ -18,7 +17,7 @@ import Footer from "@components/Footer.astro";
       rel="icon"
       href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧑‍💻</text></svg>"
     />
-    <title>{title}</title>
+    <title>{title || "Nnisarg Gada | Student Developer"}</title>
 
     <!-- SEO -->
     <meta
@@ -44,33 +43,12 @@ import Footer from "@components/Footer.astro";
     <meta property="og:image" content="/images/profile-pic.png" />
     <link rel="canonical" href="https://nnisarg.in" />
     <!-- SEO -->
-
-    <!-- CSS -->
-    <style>
-      html {
-        overflow-y: scroll;
-        overflow-x: clip;
-        scroll-behavior: smooth;
-      }
-
-      .custom-scrollbar::-webkit-scrollbar {
-        width: 5px;
-      }
-
-      .custom-scrollbar::-webkit-scrollbar-thumb {
-        background-color: #818cf8;
-        border-radius: 5px;
-      }
-
-      .custom-scrollbar::-webkit-scrollbar-track {
-        background-color: rgba(255, 255, 255, 0.1);
-        border-radius: 3px;
-      }
-    </style>
+    <script src="../scripts/main.js"></script>
   </head>
   <body
-    class="w-screen bg-neutral-900 text-white overflow-x-hidden custom-scrollbar"
+    class="w-screen bg-neutral-900 text-white overflow-x-hidden custom-scrollbar h-screen overflow-y-hidden"
   >
+    <Loader />
     <Nav />
     <slot />
     <Footer />

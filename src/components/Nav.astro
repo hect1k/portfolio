@@ -22,34 +22,46 @@ const pages = [
   {
     name: "Résumé",
     link: "/resume.pdf",
-  }
+  },
 ];
 ---
-<div id="menu" class="hidden fixed top-20 z-20 w-screen h-screen flex flex-col items-center justify-start text-2xl gap-4 bg-neutral-950 bg-opacity-80 backdrop-blur-md shadow-md shadow-black p-6">
-  {pages.map((page) => (
-    <a
-      class={`h-20 flex items-center justify-center font-bold uppercase rounded p-2 py-1 transition-all ease-in-out duration-300 ${page.link == currentPath || page.link + "/" == currentPath ? "text-accent font-bold underline hover:scale-110 hover:font-bold bg-opacity-0" : "w-full bg-opacity-20"} ${page.name === "Résumé" ? "bg-accent bg-opacity-80" : "bg-white"}`}
-      href={page.link}
-    >
-      {page.name}
-    </a>
-  ))}
+
+<div
+  id="menu"
+  class="hidden fixed top-20 z-20 w-screen h-screen flex flex-col items-center justify-start text-2xl gap-4 bg-neutral-950 bg-opacity-80 backdrop-blur-md shadow-md shadow-black p-6"
+>
+  {
+    pages.map((page) => (
+      <a
+        class={`h-20 flex items-center justify-center font-bold uppercase rounded p-2 py-1 transition-all ease-in-out duration-300 ${page.link == currentPath || page.link + "/" == currentPath ? "text-accent font-bold underline hover:scale-110 hover:font-bold bg-opacity-0" : "w-full bg-opacity-20"} ${page.name === "Résumé" ? "bg-accent bg-opacity-80" : "bg-white"}`}
+        href={page.link}
+      >
+        {page.name}
+      </a>
+    ))
+  }
 </div>
-<nav class="fixed top-0 z-10 w-screen h-20 flex gap-4 justify-between items-center bg-neutral-950 bg-opacity-80 backdrop-blur-md shadow-md shadow-black text-white text-md md:text-xl p-6 md:py-4 md:px-6 lg:px-36">
-  <h1 class="text-2xl lg:text-3xl font-bold transition-all ease-in-out duration-300 hover:underline hover:text-accent">
+<nav
+  class="fixed top-0 z-10 w-screen h-20 flex gap-4 justify-between items-center bg-neutral-950 bg-opacity-80 backdrop-blur-md shadow-md shadow-black text-white text-md md:text-xl p-6 md:py-4 md:px-6 lg:px-36"
+>
+  <h1
+    class="text-2xl lg:text-3xl font-bold transition-all ease-in-out duration-300 hover:underline hover:text-accent"
+  >
     <a href="/">Nnisarg Gada.</a>
   </h1>
   <div id="menu-open" class="cursor-pointer md:hidden"><Bars /></div>
   <div id="menu-close" class="hidden cursor-pointer md:hidden"><Close /></div>
   <div class="hidden md:flex items-center gap-2 lg:gap-6">
-    {pages.map((page) => (
-      <a
-        class={`rounded h-fit p-2 py-1 transition-all ease-in-out duration-300 ${page.link == currentPath || page.link + "/" == currentPath ? "text-accent font-bold underline hover:scale-110 hover:font-bold" : ""} ${page.name == 'Résumé' ? "bg-white bg-opacity-20 text-xl uppercase tracking-widest font-bold hover:shadow-lg hover:shadow-black hover:-translate-y-1 p-4 py-2" : "hover:underline"}`}
-        href={page.link}
-      >
-        {page.name}
-      </a>
-    ))}
+    {
+      pages.map((page) => (
+        <a
+          class={`rounded h-fit p-2 py-1 transition-all ease-in-out duration-300 ${page.link == currentPath || page.link + "/" == currentPath ? "text-accent font-bold underline hover:scale-110 hover:font-bold" : ""} ${page.name == "Résumé" ? "bg-white bg-opacity-20 text-xl uppercase tracking-widest font-bold hover:shadow-lg hover:shadow-black hover:-translate-y-1 p-4 py-2" : "hover:underline"}`}
+          href={page.link}
+        >
+          {page.name}
+        </a>
+      ))
+    }
   </div>
 </nav>
 
@@ -68,8 +80,7 @@ const pages = [
       nav.classList.remove("shadow-md");
       nav.classList.remove("shadow-black");
       document.body.classList.add("overflow-y-hidden");
-    }
-    else {
+    } else {
       menu.classList.add("hidden");
       open_button.classList.remove("hidden");
       close_button.classList.add("hidden");
@@ -79,7 +90,7 @@ const pages = [
     }
   }
 
-  if(open_button && close_button) {
+  if (open_button && close_button) {
     open_button.addEventListener("click", toggleMenu);
     close_button.addEventListener("click", toggleMenu);
   }
