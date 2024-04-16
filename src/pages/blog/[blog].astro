@@ -24,7 +24,10 @@ const { blog } = Astro.props;
 ---
 
 <ScreenLayout title={`${blog.data.title} | Blog by Nnisarg Gada`}>
-  <div class="w-full max-w-none p-6 md:p-8 lg:p-12 mx-auto prose md:prose-lg lg:prose-xl">
+  <div class="scroll-watcher fixed z-20 top-20 left-0 w-screen h-1 bg-accent"></div>
+  <div
+    class="w-full max-w-none p-6 md:p-8 lg:p-12 mx-auto prose md:prose-lg lg:prose-xl"
+  >
     <h1 class="text-5xl font-bold">{blog.data.title}</h1>
     <h3 class="text-xl">{blog.data.description}</h3>
     <div class="flex flex-wrap gap-2">
@@ -46,3 +49,18 @@ const { blog } = Astro.props;
     <Fragment set:html={parser.render(blog.body)} />
   </div>
 </ScreenLayout>
+
+<style>
+  .scroll-watcher {
+    scale: 0 1;
+    transform-origin: left;
+    animation: watch-scroll linear;
+    animation-timeline: scroll();
+  }
+
+  @keyframes watch-scroll {
+    to {
+      scale: 1 1;
+    }
+  }
+</style>
