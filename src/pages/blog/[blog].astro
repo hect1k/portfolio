@@ -24,7 +24,8 @@ const { blog } = Astro.props;
 ---
 
 <ScreenLayout title={`${blog.data.title} | Blog by Nnisarg Gada`}>
-  <div class="scroll-watcher fixed z-20 top-20 left-0 w-screen h-1 bg-accent"></div>
+  <div class="scroll-watcher fixed z-20 top-20 left-0 h-1 bg-accent">
+  </div>
   <div
     class="w-full max-w-none p-6 md:p-8 lg:p-12 mx-auto prose md:prose-lg lg:prose-xl"
   >
@@ -52,15 +53,18 @@ const { blog } = Astro.props;
 
 <style>
   .scroll-watcher {
-    scale: 0 1;
-    transform-origin: left;
-    animation: watch-scroll linear;
-    animation-timeline: scroll();
-  }
-
-  @keyframes watch-scroll {
-    to {
-      scale: 1 1;
-    }
+    --width: 0;
+    width: var(--width);
   }
 </style>
+
+<script>
+
+  function updateScrollWatcher() {
+    const { scrollTop, scrollHeight } = document.documentElement;
+    const scrollPercent = `${scrollTop / (scrollHeight - window.innerHeight) * 100}%`;
+    document.querySelector(".scroll-watcher").style.setProperty("--width", scrollPercent);
+  }
+
+  window.addEventListener("scroll", updateScrollWatcher);
+</script>
