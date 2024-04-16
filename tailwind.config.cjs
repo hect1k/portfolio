@@ -5,6 +5,7 @@ module.exports = {
     extend: {
       fontFamily: {
         sans: ["Inter", "sans-serif"],
+        mono: ["JetBrains Mono Nerd Font", "monospace"],
       },
       colors: {
         accent: "#818cf8",

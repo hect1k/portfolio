@@ -1,5 +1,6 @@
 ---
 import ScreenLayout from "@layouts/Screen.astro";
+import Breadcrumbs from "@components/Breadcrumbs.astro";
 import { calculateReadingTime, formatDate } from "@utils";
 import { getCollection } from "astro:content";
 import MarkdownIt from "markdown-it";
@@ -24,11 +25,13 @@ const { blog } = Astro.props;
 ---
 
 <ScreenLayout title={`${blog.data.title} | Blog by Nnisarg Gada`}>
-  <div class="scroll-watcher fixed z-20 top-20 left-0 h-1 bg-accent">
-  </div>
+  <div class="scroll-watcher fixed z-20 top-20 left-0 h-1 bg-accent"></div>
   <div
     class="w-full max-w-none p-6 md:p-8 lg:p-12 mx-auto prose md:prose-lg lg:prose-xl"
   >
+  <div class="my-4 md:my-8 lg:my-12">
+    <Breadcrumbs blog={blog.data.title} />
+  </div>
     <h1 class="text-5xl font-bold">{blog.data.title}</h1>
     <h3 class="text-xl">{blog.data.description}</h3>
     <div class="flex flex-wrap gap-2">
@@ -59,11 +62,12 @@ const { blog } = Astro.props;
 </style>
 
 <script>
-
   function updateScrollWatcher() {
     const { scrollTop, scrollHeight } = document.documentElement;
-    const scrollPercent = `${scrollTop / (scrollHeight - window.innerHeight) * 100}%`;
-    document.querySelector(".scroll-watcher").style.setProperty("--width", scrollPercent);
+    const scrollPercent = `${(scrollTop / (scrollHeight - window.innerHeight)) * 100}%`;
+    const scrollWatcher = document.querySelector(".scroll-watcher") as HTMLDivElement;
+
+    scrollWatcher.style.setProperty("--width", scrollPercent);
   }
 
   window.addEventListener("scroll", updateScrollWatcher);
