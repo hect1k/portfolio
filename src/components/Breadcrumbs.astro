@@ -17,6 +17,8 @@ const pages = Astro.url.pathname.split("/").filter((page) => page != "");
       }
       var text = words.join(" ").trim();
 
+      console.log(text);
+
       return (
         <div>
           {i != pages.length - 1 && (
