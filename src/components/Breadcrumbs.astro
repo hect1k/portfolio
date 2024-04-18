@@ -6,7 +6,7 @@ const pages = Astro.url.pathname.split("/").filter((page) => page != "");
 
 <div class="w-full truncate flex items-center text-lg">
   <div>
-    <a href="/" class="text-accent hover:underline"> Home</a>
+    <a href="/" class="text-accent hover:underline">Home</a>
     <span class="font-mono mx-2"></span>
   </div>
   {
@@ -15,7 +15,7 @@ const pages = Astro.url.pathname.split("/").filter((page) => page != "");
       for (let i = 0; i < words.length; i++) {
         words[i] = words[i].charAt(0).toUpperCase() + words[i].slice(1); // Capitalize first letter of each sentence
       }
-      var text = words.join(" ");
+      var text = words.join(" ").trim();
 
       return (
         <div>

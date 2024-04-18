@@ -72,11 +72,6 @@
             text-decoration: none;
           }
 
-          li:hover {
-            scale: 1.1;
-            transition: all 0.3s ease-in-out;
-          }
-
           h3 {
             font-weight: normal;
           }
