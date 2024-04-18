@@ -11,7 +11,7 @@ const pages = Astro.url.pathname.split("/").filter((page) => page != "");
   </div>
   {
     pages.map((page, i) => {
-      var words = page.toLowerCase().split(" "); // Split text into sentences
+      var words = page.trim().toLowerCase().split(" "); // Split text into sentences
       for (let i = 0; i < words.length; i++) {
         words[i] = words[i].charAt(0).toUpperCase() + words[i].slice(1); // Capitalize first letter of each sentence
       }
@@ -28,8 +28,7 @@ const pages = Astro.url.pathname.split("/").filter((page) => page != "");
             </a>
             <span class="font-mono mx-2"></span>
           )}
-          {i == pages.length - 1 && !blog && <span>{text}</span>}
-          {i == pages.length - 1 && blog && <span>{blog}</span>}
+          {i == pages.length - 1 && <span>{blog || text}</span>}
         </div>
       );
     })
