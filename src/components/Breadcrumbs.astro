@@ -1,22 +1,33 @@
 ---
-const pages = Astro.props.pages;
+const blog = Astro.props.blog;
+const pages = Astro.url.pathname.split("/").filter((page) => page != "");
 ---
 
 <div class="w-full truncate flex items-center text-lg">
+  <div>
+    <a href="/" class="text-accent hover:underline no-underline">Home</a>
+    <span class="font-mono mx-2"></span>
+  </div>
   {
-    pages.map((page: string, i: number) => {
+    pages.map((page, i) => {
+      var words = page.toLowerCase().split(" "); // Split text into sentences
+      for (let i = 0; i < words.length; i++) {
+        words[i] = words[i].charAt(0).toUpperCase() + words[i].slice(1); // Capitalize first letter of each sentence
+      }
+      var text = words.join(" ").trim();
+
       return (
         <div>
           {i != pages.length - 1 && (
             <a
               href={`/${pages.slice(0, i + 1).join("/")}`}
-              class="text-accent hover:underline"
+              class="text-accent hover:underline no-underline"
             >
-              {page}
+              {text}
             </a>
             <span class="font-mono mx-2"></span>
           )}
-          {i == pages.length - 1 && <span>{page}</span>}
+          {i == pages.length - 1 && <span>{blog || text}</span>}
         </div>
       );
     })
