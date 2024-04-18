@@ -30,7 +30,7 @@ const { blog } = Astro.props;
     class="fade w-full max-w-none p-6 md:p-8 lg:p-12 mx-auto prose md:prose-lg lg:prose-xl"
   >
     <div class="my-4 md:my-8 lg:my-12">
-      <Breadcrumbs blog={blog.data.title} />
+      <Breadcrumbs pages={["Home", "Blog", blog.data.title]} />
     </div>
     <div class="blog-content">
       <h1 class="text-5xl font-bold">{blog.data.title}</h1>
