@@ -45,6 +45,9 @@ module.exports = {
               height: "auto",
               margin: "0 auto",
             },
+            pre: {
+              backgroundColor: "#131313",
+            },
           },
         },
       },

@@ -1,3 +1,4 @@
+// Loader
 const loader = document.getElementById("loader");
 
 window.addEventListener("load", () => {
@@ -6,19 +7,36 @@ window.addEventListener("load", () => {
   loader.classList.add("hidden");
 });
 
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach((entry) => {
-    if (entry.isIntersecting) {
-      if (entry.target.classList.contains("move-up")) {
-        entry.target.classList.add("stop-move-up");
-      }
-      if (entry.target.classList.contains("fade")) {
-        entry.target.classList.add("stop-fade");
-      }
-    }
+// GSAP
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
+
+const fadeElements = gsap.utils.toArray(".fade");
+fadeElements.forEach((element) => {
+  gsap.from(element, {
+    opacity: 0,
+    duration: 0.5,
+    ease: "none",
+    scrollTrigger: {
+      trigger: element,
+      start: "top bottom",
+      toggleActions: "play none none reverse",
+    },
   });
 });
-const moveUpElements = document.querySelectorAll(".move-up");
-const fadeElements = document.querySelectorAll(".fade");
-moveUpElements.forEach((el) => observer.observe(el));
-fadeElements.forEach((el) => observer.observe(el));
+
+const moveUpElements = gsap.utils.toArray(".move-up");
+moveUpElements.forEach((element) => {
+  gsap.from(element, {
+    y: 100,
+    duration: 0.3,
+    ease: "sine",
+    scrollTrigger: {
+      trigger: element,
+      start: "top bottom",
+      toggleActions: "play none none reverse",
+    },
+  });
+});

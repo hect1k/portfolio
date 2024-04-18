@@ -9,16 +9,18 @@ import Instagram from "@components/svgs/Instagram.astro";
 ---
 
 <ScreenLayout>
-  <div
+  <section
     class="fade w-full h-full flex flex-col gap-12 md:gap-16 p-6 md:py-24 md:w-2/3 md:mx-auto"
   >
-    <h1 class="text-5xl font-bold">Hi there <span id="wave">👋</span></h1>
     <div class="flex flex-col gap-4 md:gap-6">
-      <h2 class="text-3xl font-bold">
-        I'm <a href="https://github.com/nnisarggada" class="text-accent"
+      <p class="text-3xl font-bold">Hi there <span id="wave">👋</span></p>
+      <h1 class="text-5xl font-bold">
+        I'm <a
+          href="https://github.com/nnisarggada"
+          class="text-rose-400 hover:underline hover:tracking-wide transition-all ease-in-out duration-300"
           >Nnisarg
         </a>
-      </h2>
+      </h1>
       <p class="text-xl">
         I'm a Computer Engineering student, developer, Linux user, open-source
         enthusiast and an existentialist :P
@@ -83,7 +85,7 @@ import Instagram from "@components/svgs/Instagram.astro";
         >
       </div>
     </div>
-  </div>
+  </section>
 </ScreenLayout>
 
 <style>
