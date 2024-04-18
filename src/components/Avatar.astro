@@ -1,6 +1,6 @@
 <div
   id="avatar"
-  class="hidden lg:block pointer-events-none fixed z-20 w-48 aspect-square bg-orange-500 rounded-full shadow-lg shadow-black transition-all"
+  class="hidden lg:block opacity-0 pointer-events-none absolute z-20 w-48 aspect-square bg-orange-500 rounded-full shadow-lg shadow-black transition-all"
 >
   <img
     src="/images/profile-pic.png"
@@ -11,9 +11,9 @@
 
 <script>
   const avatar = document.getElementById("avatar") as HTMLDivElement;
-  const trigger = document.getElementById("name") as HTMLAnchorElement;
-
-  avatar.style.opacity = "0";
+  const trigger = document.getElementById(
+    "avatar-trigger",
+  ) as HTMLAnchorElement;
 
   trigger.addEventListener("mouseover", () => {
     avatar.style.opacity = "1";

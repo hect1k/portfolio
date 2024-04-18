@@ -1,0 +1,42 @@
+---
+import { formatDate, calculateReadingTime } from "@utils";
+
+const blog = Astro.props.blog;
+---
+
+<a
+  class="move-up h-fit flex flex-col md:flex-row bg-white bg-opacity-20 hover:bg-opacity-30 shadow-lg hover:shadow-black hover:-translate-y-1 hover:scale-105 rounded cursor-pointer transition-all ease-in-out duration-300"
+  href={`/blog/${blog.slug}`}
+>
+  {
+    blog.data.image && (
+      <img
+        loading="lazy"
+        class=" md:w-1/3 object-cover rounded-t md:rounded-none md:rounded-l"
+        src={blog.data.image}
+        alt={blog.data.title}
+      />
+    )
+  }
+  <div class="w-full flex flex-col justify-evenly gap-4 p-4">
+    <h2 class="text-3xl font-bold">{blog.data.title}</h2>
+    <h3 class="text-lg">{blog.data.description}</h3>
+    <div class="flex flex-wrap gap-2">
+      {
+        blog.data.tags
+          .split(", ")
+          .map((tag: string) => (
+            <div class="font-bold text-sm bg-accent px-2 py-1 rounded">
+              #{tag}
+            </div>
+          ))
+      }
+    </div>
+    <p class="text-xl">
+      {formatDate(blog.data.pubDate)} •{" "}
+      <span class="italic">
+        {calculateReadingTime(blog.body)} mins
+      </span>
+    </p>
+  </div>
+</a>
