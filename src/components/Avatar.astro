@@ -1,0 +1,39 @@
+<div
+  id="avatar"
+  class="hidden lg:block pointer-events-none fixed z-20 w-48 aspect-square bg-orange-500 rounded-full shadow-lg shadow-black transition-all"
+>
+  <img
+    src="/images/profile-pic.png"
+    alt="Nnisarg Gada"
+    class="w-[150%] aspect-square object-cover rounded-full"
+  />
+</div>
+
+<script>
+  const avatar = document.getElementById("avatar") as HTMLDivElement;
+  const trigger = document.getElementById("name") as HTMLAnchorElement;
+
+  avatar.style.opacity = "0";
+
+  trigger.addEventListener("mouseover", () => {
+    avatar.style.opacity = "1";
+  });
+
+  trigger.addEventListener("mouseout", () => {
+    avatar.style.opacity = "0";
+  });
+
+  window.addEventListener("mousemove", (e) => {
+    const x = e.clientX;
+    const y = e.clientY;
+
+    const keyframes = {
+      transform: `translate(${x}px, ${y}px)`,
+    };
+
+    avatar.animate(keyframes, {
+      duration: 800,
+      fill: "forwards",
+    });
+  });
+</script>

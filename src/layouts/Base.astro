@@ -2,6 +2,7 @@
 import "../styles/global.css";
 
 import Loader from "@components/Loader.astro";
+import Avatar from "@components/Avatar.astro";
 import Nav from "@components/Nav.astro";
 import Footer from "@components/Footer.astro";
 
@@ -52,6 +53,7 @@ const { title } = Astro.props;
     class="w-screen bg-neutral-900 text-white overflow-x-hidden h-screen overflow-y-hidden"
   >
     <Loader />
+    <Avatar />
     <Nav />
     <slot />
     <Footer />
