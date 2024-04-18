@@ -1,9 +1,7 @@
 ---
 const blog = Astro.props.blog;
 
-const url = Astro.url;
-let pages = url.pathname.split("/");
-pages.splice(0, 1);
+const pages = Astro.url.pathname.split("/").filter((page) => page != "");
 ---
 
 <div class="w-full truncate flex items-center text-lg">
