@@ -10,15 +10,15 @@
 </div>
 
 <script>
-  const avatar = document.getElementById("avatar") as HTMLDivElement;
-  const trigger = document.getElementById("avatar-trigger") as HTMLAnchorElement;
+  const avatar = document.getElementById("avatar");
+  const trigger = document.getElementById("avatar-trigger");
 
-  trigger.addEventListener("mouseover", () => {
-    avatar.style.opacity = "1";
+  trigger?.addEventListener("mouseover", () => {
+    (avatar as HTMLDivElement).style.opacity = "1";
   });
 
-  trigger.addEventListener("mouseout", () => {
-    avatar.style.opacity = "0";
+  trigger?.addEventListener("mouseout", () => {
+    (avatar as HTMLDivElement).style.opacity = "0";
   });
 
   window.addEventListener("mousemove", (e) => {
@@ -29,7 +29,7 @@
       transform: `translate(${x}px, ${y}px)`,
     };
 
-    avatar.animate(keyframes, {
+    avatar?.animate(keyframes, {
       duration: 800,
       fill: "forwards",
     });
