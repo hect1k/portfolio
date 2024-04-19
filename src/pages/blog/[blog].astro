@@ -25,7 +25,11 @@ const { blog } = Astro.props;
 ---
 
 <ScreenLayout title={`${blog.data.title} | Blog by Nnisarg Gada`}>
-  <div class="scroll-watcher fixed z-20 top-20 left-0 h-1 bg-accent"></div>
+  <div
+    id="scroll-watcher"
+    class="scroll-watcher fixed z-20 top-20 left-0 h-1 bg-accent"
+  >
+  </div>
   <div
     class="fade w-full max-w-none p-6 md:p-8 lg:p-12 mx-auto prose md:prose-lg lg:prose-xl"
   >
@@ -64,28 +68,7 @@ const { blog } = Astro.props;
 </style>
 
 <script>
-  import { gsap } from "gsap";
-  import { ScrollTrigger } from "gsap/ScrollTrigger";
-
-  gsap.registerPlugin(ScrollTrigger);
-
-  const blogElements = gsap.utils.toArray(".blog-content > *");
-
-  blogElements.forEach((element) => {
-    // @ts-ignore
-    gsap.from(element, {
-      y: 100,
-      duration: 0.3,
-      ease: "sine",
-      scrollTrigger: {
-        trigger: element,
-        start: "top 105%",
-        toggleActions: "play none none reverse",
-      },
-    });
-  });
-
-  function updateScrollWatcher() {
+  window.addEventListener("scroll", () => {
     const { scrollTop, scrollHeight } = document.documentElement;
     const scrollPercent = `${(scrollTop / (scrollHeight - window.innerHeight)) * 100}%`;
     const scrollWatcher = document.querySelector(
@@ -93,8 +76,10 @@ const { blog } = Astro.props;
     ) as HTMLDivElement;
 
     scrollWatcher.style.setProperty("--width", scrollPercent);
-  }
+  });
 
-  window.addEventListener("scroll", updateScrollWatcher);
-  window.addEventListener("scroll", updateScrollWatcher);
+  const blogElements = document.querySelectorAll(".blog-content > *");
+  blogElements.forEach((element) => {
+    element.classList.add("move-up");
+  });
 </script>
