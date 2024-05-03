@@ -15,6 +15,31 @@
             box-sizing: border-box;
             overflow-x: hidden;
           }
+                    
+          *::-webkit-scrollbar {
+            width: 5px;
+            height: 5px;
+            scrollbar-width: thin;
+          }
+
+          *::-webkit-scrollbar-thumb {
+            background-color: #818cf8;
+            border-radius: 5px;
+          }
+
+          *::-webkit-scrollbar-track {
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 3px;
+          }
+
+          * {
+            scrollbar-color: #818cf8 rgba(255, 255, 255, 0.1);
+          }
+
+          *::selection {
+            background-color: #818cf8;
+            color: white;
+          }
 
           header {
             background-color: #00000050;
