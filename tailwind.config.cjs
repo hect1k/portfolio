@@ -24,6 +24,7 @@ module.exports = {
               color: "#818cf8",
             },
             h1: {
+              fontSize: "0rem",
               color: "#ffffff",
             },
             h2: {
