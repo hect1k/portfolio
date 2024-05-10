@@ -14,6 +14,15 @@ export function calculateReadingTime(content: string) {
   return readingTimeMinutes;
 }
 
+export const socialLinks = {
+  GitHub: "https://github.com/nnisarggada",
+  LinkedIn: "https://www.linkedin.com/in/nnisarggada/",
+  Twitter: "https://twitter.com/gadannisarg",
+  Dev: "https://dev.to/nnisarggada",
+  Medium: "https://medium.com/@gadannisarg",
+  Instagram: "https://www.instagram.com/nnisarg.in/",
+};
+
 export const projects = [
   {
     title: "The Dwij Times",
