@@ -7,7 +7,7 @@ const blog = Astro.props.blog;
 <a
   href={`/blog/${blog.slug}`}
   title={`Read ${blog.data.title}`}
-  class="move-up h-fit flex flex-col md:flex-row bg-white bg-opacity-20 hover:bg-opacity-30 shadow-lg hover:shadow-black hover:-translate-y-1 hover:scale-105 rounded cursor-pointer transition-all ease-in-out duration-300"
+  class="move-up h-fit flex flex-col-reverse md:flex-row bg-white bg-opacity-20 hover:bg-opacity-30 shadow-lg hover:shadow-black hover:-translate-y-1 hover:scale-105 rounded cursor-pointer transition-all ease-in-out duration-300"
 >
   <div class="w-full flex flex-col gap-4 p-4">
     <h2 class="text-3xl font-bold">{blog.data.title}</h2>

@@ -3,7 +3,7 @@ import Rss from "@components/svgs/Rss.astro";
 ---
 
 <footer
-  class="w-full flex items-center justify-between bg-neutral-950 bg-opacity-50 backdrop-blur-md shadow-md shadow-black text-md p-6 md:py-6 md:px-6 lg:px-36"
+  class="w-full flex flex-col md:flex-row gap-8 items-center justify-between bg-neutral-950 bg-opacity-50 backdrop-blur-md shadow-md shadow-black text-md p-6 md:py-6 md:px-6 lg:px-36"
 >
   <h1>
     Made with <span class="text-rose-500">❤</span> by <a
@@ -11,9 +11,33 @@ import Rss from "@components/svgs/Rss.astro";
       class="text-accent hover:underline">nnisarg</a
     >
   </h1>
-  <a href="/rss.xml" class="flex items-center gap-2 hover:underline"
-    ><span class="text-orange-500"><Rss /></span><span class="hidden md:block"
-      >Subscribe to RSS Feed</span
-    ></a
+  <div
+    class="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-8 lg:gap-12"
   >
+    <a
+      href="/rss.xml"
+      title="Subscribe to my RSS Feed"
+      class="flex items-center gap-2 hover:underline"
+    >
+      <span class="text-orange-500"><Rss /></span>
+      <span class="md:block">Subscribe to RSS Feed</span>
+    </a>
+    <a
+      href="buymeacoffee.com/nnisarggada"
+      target="_blank"
+      title="Support me"
+      class="flex items-center gap-2 hover:underline"
+    >
+      <span class="text-orange-500">
+        <img
+          src="/images/coffee.png"
+          alt="Buy me a coffee"
+          class="w-6 aspect-square"
+          loading="lazy"
+          decoding="async"
+        />
+      </span>
+      <span class="">Support me</span>
+    </a>
+  </div>
 </footer>
