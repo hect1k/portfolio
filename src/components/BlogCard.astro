@@ -1,15 +1,14 @@
 ---
 import { formatDate, calculateReadingTime } from "@utils";
-
 const blog = Astro.props.blog;
 ---
 
 <a
   href={`/blog/${blog.slug}`}
   title={`Read ${blog.data.title}`}
-  class="move-up h-fit flex flex-col-reverse md:flex-row bg-white bg-opacity-20 hover:bg-opacity-30 shadow-lg hover:shadow-black hover:-translate-y-1 hover:scale-105 rounded cursor-pointer transition-all ease-in-out duration-300"
+  class="move-up flex h-fit cursor-pointer flex-col-reverse rounded bg-white bg-opacity-20 shadow-lg transition-all duration-300 ease-in-out hover:-translate-y-1 hover:scale-105 hover:bg-opacity-30 hover:shadow-black md:flex-row"
 >
-  <div class="w-full flex flex-col gap-4 p-4">
+  <div class="flex w-full flex-col gap-4 p-4">
     <h2 class="text-3xl font-bold">{blog.data.title}</h2>
     <h3 class="text-lg">{blog.data.description}</h3>
     <div class="flex flex-wrap gap-2">
@@ -17,7 +16,7 @@ const blog = Astro.props.blog;
         blog.data.tags
           .split(", ")
           .map((tag: string) => (
-            <div class="font-bold text-sm bg-accent px-2 py-1 rounded">
+            <div class="rounded bg-accent px-2 py-1 text-sm font-bold">
               #{tag}
             </div>
           ))
@@ -34,7 +33,7 @@ const blog = Astro.props.blog;
     blog.data.image && (
       <img
         loading="lazy"
-        class=" md:w-1/3 aspect-video object-cover rounded-t md:rounded-none md:rounded-l"
+        class=" aspect-video rounded-t object-cover md:w-1/3 md:rounded-none md:rounded-l"
         src={blog.data.image}
         alt={blog.data.title}
       />
