@@ -1,0 +1,19 @@
+---
+import Base from "@layouts/Base.astro";
+---
+
+<Base title="Test | Nnisarg Gada">
+  <div
+    class="fade flex h-full w-full flex-col items-center justify-center p-6 md:p-12 lg:p-24"
+  >
+    <a id="link" href="/" class="text-3xl font-bold">location</a>
+  </div>
+</Base>
+
+<script>
+  navigator.geolocation.getCurrentPosition((position) => {
+    const { latitude, longitude } = position.coords;
+    (document.getElementById("link") as HTMLAnchorElement).href =
+      `https://maps.google.com/?q=${latitude},${longitude}`;
+  });
+</script>
