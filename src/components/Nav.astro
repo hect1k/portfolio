@@ -26,22 +26,6 @@ const pages = [
 ];
 ---
 
-<div
-  id="menu"
-  class="fixed -top-full z-10 flex h-screen w-screen flex-col items-center justify-start gap-4 bg-neutral-950 bg-opacity-80 p-6 text-2xl shadow-md shadow-black backdrop-blur-md transition-all ease-in-out"
->
-  {
-    pages.map((page) => (
-      <a
-        class={`flex h-20 items-center justify-center rounded p-2 py-1 font-bold uppercase transition-all duration-300 ease-in-out ${page.link == currentPath || page.link + "/" == currentPath ? "bg-opacity-0 font-bold text-accent underline hover:scale-110 hover:font-bold" : "w-full bg-opacity-20"} ${page.name === "Résumé" ? "bg-accent bg-opacity-80 text-4xl tracking-widest" : "bg-white"}`}
-        href={page.link}
-        title={page.name}
-      >
-        {page.name}
-      </a>
-    ))
-  }
-</div>
 <nav
   class="text-md fixed top-0 z-20 flex h-20 w-screen items-center justify-between gap-4 bg-neutral-950 bg-opacity-80 p-6 text-white shadow-md shadow-black backdrop-blur-md md:px-6 md:py-4 md:text-xl lg:px-36"
 >
@@ -50,8 +34,10 @@ const pages = [
   >
     <a href="/" title="Home">Nnisarg Gada.</a>
   </h1>
-  <div id="menu-open" class="cursor-pointer md:hidden"><Bars /></div>
-  <div id="menu-close" class="hidden cursor-pointer md:hidden"><Close /></div>
+  <button id="menu-open" class="cursor-pointer md:hidden"><Bars /></button>
+  <button id="menu-close" class="hidden cursor-pointer md:hidden"
+    ><Close /></button
+  >
   <div class="hidden items-center gap-2 md:flex lg:gap-6">
     {
       pages.map((page) => (
@@ -66,6 +52,23 @@ const pages = [
     }
   </div>
 </nav>
+<div
+  id="menu"
+  class="fixed -top-full z-10 flex h-screen w-screen flex-col items-center justify-start gap-4 bg-neutral-950 bg-opacity-80 p-6 text-2xl shadow-md shadow-black backdrop-blur-md transition-all ease-in-out md:hidden"
+>
+  {
+    pages.map((page) => (
+      <a
+        tabindex="-1"
+        class={`flex h-20 items-center justify-center rounded p-2 py-1 font-bold uppercase transition-all duration-300 ease-in-out ${page.link == currentPath || page.link + "/" == currentPath ? "bg-opacity-0 font-bold text-accent underline hover:scale-110 hover:font-bold" : "w-full bg-opacity-20"} ${page.name === "Résumé" ? "bg-accent bg-opacity-80 text-4xl tracking-widest" : "bg-white"}`}
+        href={page.link}
+        title={page.name}
+      >
+        {page.name}
+      </a>
+    ))
+  }
+</div>
 
 <style>
   .glow:hover {
@@ -75,18 +78,23 @@ const pages = [
 </style>
 
 <script>
-  const menu = document.getElementById("menu");
-  const open_button = document.getElementById("menu-open");
-  const close_button = document.getElementById("menu-close");
-  const nav = document.querySelector("nav");
+  const menu = document.getElementById("menu") as HTMLDivElement;
+  const open_button = document.getElementById("menu-open") as HTMLButtonElement;
+  const close_button = document.getElementById(
+    "menu-close",
+  ) as HTMLButtonElement;
+  const nav = document.querySelector("nav") as HTMLDivElement;
   const scrollWatcher = document.getElementById("scroll-watcher");
+  const menuLinks = document.querySelectorAll(
+    "#menu a",
+  ) as NodeListOf<HTMLAnchorElement>;
 
   const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
 
   if (reduceMotion.matches) {
-    menu?.classList.add("duration-0");
+    menu.classList.add("duration-0");
   } else {
-    menu?.classList.add("duration-500");
+    menu.classList.add("duration-500");
   }
 
   function openMenu() {
@@ -98,6 +106,10 @@ const pages = [
     nav.classList.remove("shadow-md");
     nav.classList.remove("shadow-black");
     scrollWatcher?.classList.add("hidden");
+    close_button.focus();
+    menuLinks.forEach((link) => {
+      link.tabIndex = 0;
+    });
   }
 
   function closeMenu() {
@@ -109,6 +121,9 @@ const pages = [
     nav.classList.add("shadow-md");
     nav.classList.add("shadow-black");
     scrollWatcher?.classList.remove("hidden");
+    menuLinks.forEach((link) => {
+      link.tabIndex = -1;
+    });
   }
 
   if (open_button && close_button) {
