@@ -55,3 +55,38 @@ html {
 * {
   scrollbar-color: #818cf8 rgba(255, 255, 255, 0.1);
 }
+
+.loader {
+  --width: 5px;
+
+  border: var(--width) solid rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  border-top: var(--width) solid #efefef;
+  width: 25px;
+  aspect-ratio: 1;
+  /* Safari */
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
+  margin-inline: 1.75rem;
+}
+
+/* Safari */
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
