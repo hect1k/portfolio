@@ -1,5 +1,9 @@
 ---
 import ScreenLayout from "@layouts/Screen.astro";
+import Avatar from "@components/Avatar.astro";
+import NewsletterSuccess from "@components/NewsletterSuccess.astro";
+import NewsletterError from "@components/NewsletterError.astro";
+
 import Github from "@components/svgs/Github.astro";
 import Linkedin from "@components/svgs/LinkedIn.astro";
 import X from "@components/svgs/X.astro";
@@ -24,6 +28,9 @@ blogs = blogs.slice(0, 3);
 ---
 
 <ScreenLayout>
+  <Avatar />
+  <NewsletterSuccess />
+  <NewsletterError />
   <section
     class="fade grid h-full min-h-[calc(100vh-5rem)] w-full place-items-center p-6 md:p-12 lg:p-24"
   >
@@ -97,6 +104,35 @@ blogs = blogs.slice(0, 3);
           >
         </div>
       </div>
+      <div id="newsletter" class="flex scroll-m-24 flex-col gap-2 md:gap-4">
+        <h2 class="text-3xl font-bold">Newsletter</h2>
+        <div
+          class="mt-4 flex w-full flex-col items-center justify-center gap-6 rounded bg-neutral-600 bg-opacity-50 p-4 md:flex-row md:p-6 lg:p-8"
+        >
+          <p class="text-lg font-medium md:w-1/2 md:text-xl lg:text-2xl">
+            Get exclusive emails about interesting things in the Tech World, and
+            my thoughts on them!
+          </p>
+          <form
+            id="newsletter-form"
+            class="flex w-full items-stretch gap-2 md:w-1/2 md:text-lg lg:text-xl"
+          >
+            <input
+              type="email"
+              name="email"
+              placeholder="Email"
+              required
+              class="w-full rounded bg-neutral-900 bg-opacity-50 p-2 focus:outline-none"
+            />
+            <button
+              id="newsletter-submit"
+              type="submit"
+              class="w-fit rounded bg-accent/90 px-4 py-2 font-semibold transition-all duration-300 ease-in-out hover:scale-105 hover:bg-accent hover:drop-shadow-xl focus-visible:scale-105 focus-visible:bg-accent focus-visible:drop-shadow-xl"
+              >Subscribe</button
+            >
+          </form>
+        </div>
+      </div>
       <div class="flex flex-col gap-4 md:gap-8">
         <div class="flex w-full flex-wrap items-end justify-between gap-2">
           <h2 class="text-3xl font-bold">Recent Projects</h2>
@@ -125,39 +161,166 @@ blogs = blogs.slice(0, 3);
       </div>
     </div>
   </section>
-
-  <style>
-    #wave {
-      animation: wave 2.5s linear infinite;
-      transform-origin: 70% 70%;
-      display: inline-block;
-    }
-
-    @keyframes wave {
-      0% {
-        transform: rotate(0deg);
-      }
-      10% {
-        transform: rotate(14deg);
-      }
-      20% {
-        transform: rotate(-8deg);
-      }
-      30% {
-        transform: rotate(14deg);
-      }
-      40% {
-        transform: rotate(-4deg);
-      }
-      50% {
-        transform: rotate(10deg);
-      }
-      60% {
-        transform: rotate(0deg);
-      }
-      100% {
-        transform: rotate(0deg);
-      }
-    }
-  </style>
 </ScreenLayout>
+
+<style>
+  #wave {
+    animation: wave 2.5s linear infinite;
+    transform-origin: 70% 70%;
+    display: inline-block;
+  }
+
+  @keyframes wave {
+    0% {
+      transform: rotate(0deg);
+    }
+    10% {
+      transform: rotate(14deg);
+    }
+    20% {
+      transform: rotate(-8deg);
+    }
+    30% {
+      transform: rotate(14deg);
+    }
+    40% {
+      transform: rotate(-4deg);
+    }
+    50% {
+      transform: rotate(10deg);
+    }
+    60% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(0deg);
+    }
+  }
+
+  .loader {
+    --width: 5px;
+
+    border: var(--width) solid rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    border-top: var(--width) solid #efefef;
+    width: 25px;
+    aspect-ratio: 1;
+    /* Safari */
+    -webkit-animation: spin 2s linear infinite;
+    animation: spin 2s linear infinite;
+    margin-inline: 1.75rem;
+  }
+
+  /* Safari */
+  @-webkit-keyframes spin {
+    0% {
+      -webkit-transform: rotate(0deg);
+    }
+
+    100% {
+      -webkit-transform: rotate(360deg);
+    }
+  }
+
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+</style>
+
+<script>
+  const newsletterForm = document.getElementById(
+    "newsletter-form",
+  ) as HTMLFormElement;
+  const subscribeBtn = document.getElementById(
+    "newsletter-submit",
+  ) as HTMLButtonElement;
+  const successAlert = document.getElementById(
+    "newsletter-success",
+  ) as HTMLDivElement;
+  const errorAlert = document.getElementById(
+    "newsletter-error",
+  ) as HTMLDivElement;
+  const errorText = document.getElementById(
+    "newsletter-error-text",
+  ) as HTMLDivElement;
+
+  const validateEmail = (email: string) => {
+    return String(email)
+      .toLowerCase()
+      .match(
+        /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
+      );
+  };
+
+  const showSuccessAlert = () => {
+    successAlert.classList.remove("-bottom-full");
+    successAlert.classList.add("bottom-8");
+    setTimeout(() => {
+      successAlert.classList.add("-bottom-full");
+      successAlert.classList.remove("bottom-8");
+    }, 3000);
+  };
+
+  const showErrorAlert = () => {
+    errorAlert.classList.remove("-bottom-full");
+    errorAlert.classList.add("bottom-8");
+    setTimeout(() => {
+      errorAlert.classList.add("-bottom-full");
+      errorAlert.classList.remove("bottom-8");
+    }, 3000);
+  };
+
+  newsletterForm.addEventListener("submit", (event) => {
+    event.preventDefault();
+    subscribeBtn.disabled = true;
+    subscribeBtn.classList.add("cursor-not-allowed");
+    subscribeBtn.innerHTML = "<div class='loader'></div>";
+
+    const email = newsletterForm.email.value;
+
+    if (!validateEmail(email)) {
+      errorText.innerHTML = "Please enter a valid email address";
+      showErrorAlert();
+      subscribeBtn.disabled = false;
+      subscribeBtn.classList.remove("cursor-not-allowed");
+      subscribeBtn.innerHTML = "Subscribe";
+      return;
+    }
+
+    fetch("https://news.nnisarg.in/subscribe?email=" + email, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
+      .then((response) => {
+        if (!response.ok) {
+          if (response.status === 409) {
+            throw new Error("Email already subscribed");
+          } else {
+            throw new Error("Something went wrong :/");
+          }
+        }
+        return response.json();
+      })
+      .then(() => {
+        showSuccessAlert();
+        subscribeBtn.disabled = false;
+        subscribeBtn.classList.remove("cursor-not-allowed");
+        subscribeBtn.innerHTML = "Subscribe";
+      })
+      .catch((error) => {
+        errorText.innerHTML = error.message;
+        showErrorAlert();
+        subscribeBtn.disabled = false;
+        subscribeBtn.classList.remove("cursor-not-allowed");
+        subscribeBtn.innerHTML = "Subscribe";
+      });
+  });
+</script>
