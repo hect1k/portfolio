@@ -126,7 +126,7 @@ import Phone from "@components/svgs/Phone.astro";
         email.value +
         "<br><br>Message:" +
         message.value,
-    }).then((message) => alert("Message Sent!"));
+    }).then(() => alert("Message Sent!"));
   }
 
   document.getElementById("contact-form").addEventListener("submit", sendEmail);
