@@ -23,6 +23,21 @@ export const socialLinks = {
 
 export const projects = [
   {
+    title: "EzHLS",
+    description: "A simple open-source HLS Stream generator built with FastAPI",
+    categories: [
+      "webdev",
+      "open-source",
+      "self-host",
+      "fastapi",
+      "tailwindcss",
+    ],
+    image: "EzHLS.jpg",
+    url: "https://hls.nnisarg.in",
+    repo: "https://github.com/nnisarggada/ezhls",
+    blog: "magic-behind-video-streaming",
+  },
+  {
     title: "MAARG India",
     description:
       "PWA for an NGO that helps India's underprivileged youth with career guidance",
