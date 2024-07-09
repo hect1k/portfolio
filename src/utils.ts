@@ -19,14 +19,28 @@ export const socialLinks = {
   LinkedIn: "https://www.linkedin.com/in/nnisarggada/",
   X: "https://x.com/gadannisarg",
   Dev: "https://dev.to/nnisarggada",
-  Medium: "https://medium.com/@gadannisarg",
 };
 
 export const projects = [
   {
+    title: "MAARG India",
+    description:
+      "PWA for an NGO that helps India's underprivileged youth with career guidance",
+    categories: ["webdev", "pwa", "astro", "tailwindcss", "client-work"],
+    image: "Maarg.jpg",
+    url: "https://maarg.nnisarg.in",
+  },
+  {
+    title: "Trainchess",
+    description: "A website for a chess coaching company",
+    categories: ["webdev", "astro", "tailwindcss", "client-work"],
+    image: "Trainchess.jpg",
+    url: "https://trainchess.nnisarg.in",
+  },
+  {
     title: "The Dwij Times",
     description: "A simple website for an album with 3D perspective effects",
-    categories: ["webdev", "astro", "tailwindcss", "creative", "css"],
+    categories: ["webdev", "astro", "tailwindcss", "client-work"],
     image: "TheDwijTimes.png",
     url: "https://dwij.nnisarg.in",
   },
