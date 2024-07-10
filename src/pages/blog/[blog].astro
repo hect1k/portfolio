@@ -24,7 +24,11 @@ export async function getStaticPaths() {
 const { blog } = Astro.props;
 ---
 
-<ScreenLayout title={`${blog.data.title} | Blog by Nnisarg Gada`}>
+<ScreenLayout
+  title={`${blog.data.title} | Blog by Nnisarg Gada`}
+  description={blog.data.description}
+  image={blog.data.image}
+>
   <div
     id="scroll-watcher"
     class="scroll-watcher fixed left-0 top-20 z-20 h-1 bg-accent"

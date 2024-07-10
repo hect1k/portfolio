@@ -1,9 +1,24 @@
 ---
 import BaseLayout from "@layouts/Base.astro";
-const { title } = Astro.props;
+
+const title =
+  Astro.props.title ||
+  "Nnisarg Gada | Developer, Tech Enthusiast, Problem Solver";
+const description =
+  Astro.props.description ||
+  "Nnisarg's portfolio website showcasing coding projects and tech adventures as a developer.";
+const keywords =
+  Astro.props.keywords ||
+  "Nnisarg, portfolio, coding projects, tech adventures, developer, web development, programming, software projects, developer portfolio, coding journey, technology showcase, web developer, programming adventures, tech enthusiast";
+const image = Astro.props.image || "https://nnisarg.in/images/profile-pic.png";
 ---
 
-<BaseLayout title={title || "Nnisarg Gada | Student Developer"}>
+<BaseLayout
+  title={title}
+  description={description}
+  keywords={keywords}
+  image={image}
+>
   <div class="mx-auto min-h-[100dvh] w-full max-w-7xl pt-20">
     <slot />
   </div>
