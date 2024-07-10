@@ -150,3 +150,12 @@ projects.forEach((project: any) => {
     }
   });
 });
+
+export const metaData = {
+  title: "Nnisarg Gada | Developer, Tech Enthusiast, Problem Solver",
+  description:
+    "Nnisarg's portfolio website showcasing coding projects and tech adventures as a developer.",
+  keywords:
+    "Nnisarg, portfolio, coding projects, tech adventures, developer, web development, programming, software projects, developer portfolio, coding journey, technology showcase, web developer, programming adventures, tech enthusiast",
+  image: "https://nnisarg.in/images/profile-pic.png",
+};

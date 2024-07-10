@@ -5,16 +5,8 @@ import Loader from "@components/Loader.astro";
 import Nav from "@components/Nav.astro";
 import Footer from "@components/Footer.astro";
 
-const title =
-  Astro.props.title ||
-  "Nnisarg Gada | Developer, Tech Enthusiast, Problem Solver";
-const description =
-  Astro.props.description ||
-  "Nnisarg's portfolio website showcasing coding projects and tech adventures as a developer.";
-const keywords =
-  Astro.props.keywords ||
-  "Nnisarg, portfolio, coding projects, tech adventures, developer, web development, programming, software projects, developer portfolio, coding journey, technology showcase, web developer, programming adventures, tech enthusiast";
-const image = Astro.props.image || "https://nnisarg.in/images/profile-pic.png";
+import { metaData } from "@utils";
+const { title, description, keywords, image } = metaData;
 ---
 
 <html lang="en">
