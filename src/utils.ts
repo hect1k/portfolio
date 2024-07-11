@@ -23,6 +23,13 @@ export const socialLinks = {
 
 export const projects = [
   {
+    title: "MB Mundada Group",
+    description: "Website for an Indian Textile Company",
+    categories: ["webdev", "astro", "tailwindcss", "client-work"],
+    image: "MBGroup.jpg",
+    url: "https://MBGroup.nnisarg.in",
+  },
+  {
     title: "EzHLS",
     description: "A simple open-source HLS Stream generator built with FastAPI",
     categories: [
