@@ -37,7 +37,7 @@ const image = Astro.props.image || metaData.image;
     <meta property="og:site_name" content={title} />
     <meta property="og:locale" content="en_US" />
     <meta property="og:image" content={image} />
-    <link rel="canonical" href="https://nnisarg.in" />
+    <link rel="canonical" href={Astro.url.href} />
     <!-- SEO -->
     <script src="../scripts/main.js"></script>
   </head>
