@@ -50,7 +50,7 @@ export const projects = [
       "PWA for an NGO that helps India's underprivileged youth with career guidance",
     categories: ["webdev", "pwa", "astro", "tailwindcss", "client-work"],
     image: "Maarg.jpg",
-    url: "https://maarg.nnisarg.in",
+    url: "https://maargindia.org",
   },
   {
     title: "Trainchess",
