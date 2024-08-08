@@ -8,7 +8,6 @@ import Footer from "@components/Footer.astro";
 import { metaData } from "@utils";
 const title = Astro.props.title || metaData.title;
 const description = Astro.props.description || metaData.description;
-const keywords = Astro.props.keywords || metaData.keywords;
 const image = Astro.props.image || metaData.image;
 ---
 
@@ -19,17 +18,14 @@ const image = Astro.props.image || metaData.image;
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
     <link rel="manifest" href="/site.webmanifest" />
-    <meta
-      name="viewport"
-      content="width=device-width, height=device-height, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0"
-    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="generator" content={Astro.generator} />
     <title>
       {title}
     </title>
     <!-- SEO -->
     <meta name="description" content={description} />
-    <meta name="keywords" content={keywords} />
+    <meta name="author" content="Nnisarg Gada" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content={Astro.url.href} />
     <meta property="og:title" content={title} />
@@ -38,6 +34,7 @@ const image = Astro.props.image || metaData.image;
     <meta property="og:locale" content="en_US" />
     <meta property="og:image" content={image} />
     <link rel="canonical" href={Astro.url.href} />
+    <meta name="”robots”" content="index, follow" />
     <!-- SEO -->
     <script src="../scripts/main.js"></script>
   </head>
