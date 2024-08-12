@@ -23,6 +23,13 @@ export const socialLinks = {
 
 export const projects = [
   {
+    title: "stabl",
+    description: "A simple open-source load balancer",
+    categories: ["go", "devops", "open-source", "self-host"],
+    image: "stabl.jpg",
+    repo: "https://github.com/nnisarggada/stabl",
+  },
+  {
     title: "MB Mundada Group",
     description: "Website for an Indian Textile Company",
     categories: ["webdev", "astro", "tailwindcss", "client-work"],
