@@ -22,16 +22,11 @@ export async function getStaticPaths() {
 }
 
 const { blog } = Astro.props;
-
-import { metaData } from "@utils";
-
-const keywords = blog.data.tags + ", Blog, " + metaData.keywords;
 ---
 
 <ScreenLayout
   title={`${blog.data.title} | Blog by Nnisarg Gada`}
   description={blog.data.description}
-  keywords={keywords}
   image={`https://nnisarg.in${blog.data.image}`}
 >
   <div

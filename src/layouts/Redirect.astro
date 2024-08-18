@@ -1,0 +1,50 @@
+---
+import { metaData } from "@utils";
+
+const name = Astro.props.name;
+const link = Astro.props.link;
+const description = Astro.props.description || metaData.description;
+const title = Astro.props.name ? `Nnisarg's ${name}` : metaData.title;
+const image = Astro.props.image || metaData.image;
+---
+
+<!doctype html>
+<html>
+  <head>
+    <title>Nnisarg's GitHub</title>
+    <meta http-equiv="refresh" content={`10;url=${link}`} />
+    <link rel="canonical" href={link} />
+    <meta name="robots" content="noindex" />
+    <meta charset="UTF-8" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content={Astro.generator} />
+    <title>
+      {title}
+    </title>
+    <!-- SEO -->
+    <meta name="description" content={description} />
+    <meta name="author" content="Nnisarg Gada" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={link} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:site_name" content={title} />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:image" content={image} />
+    <link rel="canonical" href={Astro.url.href} />
+    <meta name="”robots”" content="index, follow" />
+  </head>
+  <body>
+    <p>Redirecting to {title}...</p>
+    <p>
+      If you are not redirected, <a
+        href={link}
+        class="font-medium text-blue-700 underline">click here</a
+      >.
+    </p>
+  </body>
+</html>

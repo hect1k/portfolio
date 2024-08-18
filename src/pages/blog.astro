@@ -4,6 +4,8 @@ import Breadcrumbs from "@components/Breadcrumbs.astro";
 import BlogCard from "@components/BlogCard.astro";
 import { getCollection } from "astro:content";
 
+import { metaData } from "@utils";
+
 let blogs = await getCollection("blog");
 blogs.sort((a, b) => {
   const pubDateA: Date = new Date(a.data.pubDate);
@@ -12,9 +14,25 @@ blogs.sort((a, b) => {
   // @ts-ignore
   return pubDateB - pubDateA;
 });
+
+const description =
+  "Explore insightful articles on web development, design, and technology trends on Nnisarg Gada's blog. Stay updated with tips, tutorials, and industry insights.";
+
+let image = metaData.image;
+
+for (const blog of blogs) {
+  if (!blog.data.draft && blog.data.image) {
+    image = blog.data.image;
+    break;
+  }
+}
 ---
 
-<ScreenLayout title="Blog Posts by Nnisarg Gada">
+<ScreenLayout
+  title="Blog Posts by Nnisarg Gada"
+  description={description}
+  image={image}
+>
   <div class="fade flex w-full flex-col gap-6 p-6 md:py-24">
     <Breadcrumbs />
     <h1 class="text-5xl font-bold">Blog Posts</h1>

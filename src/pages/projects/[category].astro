@@ -25,9 +25,15 @@ const title = `#${category} | Projects by Nnisarg Gada`;
 const filteredProjects = allProjects.filter((project: any) =>
   project.categories.includes(category),
 );
+
+const description = `Explore a curated collection of ${category} projects by Nnisarg Gada, showcasing creativity and technical expertise in web development, design, and more.`;
 ---
 
-<ScreenLayout title={title}>
+<ScreenLayout
+  title={title}
+  description={description}
+  image={filteredProjects[0].image}
+>
   <div class="flex w-full flex-col gap-6 p-6 md:py-24">
     <Breadcrumbs />
     <h1 class="text-5xl font-bold">Projects</h1>

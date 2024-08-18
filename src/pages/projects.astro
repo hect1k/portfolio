@@ -3,9 +3,27 @@ import ScreenLayout from "@layouts/Screen.astro";
 import Breadcrumbs from "@components/Breadcrumbs.astro";
 import ProjectCard from "@components/ProjectCard.astro";
 import { projects, uniqueCategories } from "@utils";
+
+import { metaData } from "@utils";
+
+const description =
+  "Discover a diverse portfolio of projects by Nnisarg Gada, featuring innovative web development, design, and technology solutions. Explore my work and see creativity in action.";
+
+let image = metaData.image;
+
+for (const project of projects) {
+  if (project.image) {
+    image = project.image;
+    break;
+  }
+}
 ---
 
-<ScreenLayout title="Projects by Nnisarg Gada">
+<ScreenLayout
+  title="Projects by Nnisarg Gada"
+  description={description}
+  image={image}
+>
   <div class="fade flex w-full flex-col gap-6 p-6 md:py-24">
     <Breadcrumbs />
     <h1 class="text-5xl font-bold">Projects</h1>

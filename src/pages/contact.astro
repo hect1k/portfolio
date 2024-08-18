@@ -3,9 +3,12 @@ import ScreenLayout from "@layouts/Screen.astro";
 import Location from "@components/svgs/Location.astro";
 import Email from "@components/svgs/Email.astro";
 import Phone from "@components/svgs/Phone.astro";
+
+const description =
+  "Get in touch with Nnisarg Gada for collaborations, inquiries, or project discussions. Reach out via the contact form, email, or social media.";
 ---
 
-<ScreenLayout title="Contact | Nnisarg Gada">
+<ScreenLayout title="Contact | Nnisarg Gada" description={description}>
   <div
     class="fade flex h-full w-full flex-col gap-6 p-6 md:mx-auto md:w-2/3 md:py-24"
   >
