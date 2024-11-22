@@ -23,6 +23,16 @@ export const socialLinks = {
 
 export const projects = [
   {
+    title: "MUNDRA",
+    description:
+      "MUNDRA simplifies MUN delegate management with a FastAPI-powered backend",
+    categories: ["python", "fastapi", "backend", "open-source", "self-host"],
+    image: "MUNDRA.jpg",
+    url: "https://mundra.nnisarg.in/redoc",
+    repo: "https://github.com/nnisarggada/mundra",
+    blog: "building-mundra",
+  },
+  {
     title: "stabl",
     description: "A simple open-source load balancer",
     categories: ["go", "devops", "open-source", "self-host"],
