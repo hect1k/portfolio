@@ -24,6 +24,18 @@ The Unix philosophy and suckless philosophy share a common disdain for unnecessa
 
 This synergy resonates with me. It fosters an environment where I am not just a user but an active participant in shaping my tools to my needs. It also challenges me to be deliberate in what I adopt and to question the value of the tools I use.
 
+## My DWM Dots
+
+One of the aspects I love about using DWM is the freedom to make it my own. Over time, I’ve customized my setup to match my specific workflow and preferences. If you're interested in seeing my configurations or trying them out, check out my DWM dots repository here: [github.com/nnisarggada/dwm-dots](https://github.com/nnisarggada/dwm-dots).
+
+In the repo, I’ve included:
+
+- My patches for DWM to add features while maintaining minimalism.
+- A carefully curated configuration file for an efficient and clean workflow.
+- Tips and notes for getting started or adapting the setup to your needs.
+
+Feel free to fork or contribute if you share the same love for lightweight, suckless software!
+
 ## Considering DWL and Wayland
 
 [Wayland](https://wayland.freedesktop.org/) represents the future of Linux display servers, offering smoother performance and modern features compared to Xorg. I briefly considered making the leap to Wayland full-time with [DWL](https://github.com/djpohly/dwl), the suckless-inspired Wayland compositor. DWL offers the same core principles as DWM but for the Wayland ecosystem. However, Wayland's landscape still lacks a broader array of software adhering to the suckless ethos.
@@ -43,3 +55,5 @@ This journey with suckless isn’t just about software; it’s a reflection of m
 Switching back to Xorg and DWM wasn’t just a technical decision—it was a personal choice grounded in values I want to uphold. The suckless philosophy serves as a reminder that **less can indeed be more**. As Wayland continues to mature and tools like DWL gain traction, I’m excited about the possibility of extending these ideals into the next generation of Linux computing.
 
 For now, I’ll continue to build my computing environment with tools that emphasize simplicity and transparency, while striving to bring those same qualities into my life. Because in the end, suckless isn’t just about software—it’s about a way of thinking and living.
+
+Explore my DWM dots: [github.com/nnisarggada/dwm-dots](https://github.com/nnisarggada/dwm-dots)
