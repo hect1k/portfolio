@@ -3,6 +3,7 @@ title: "Embracing the Suckless Philosophy: A Minimalist Approach to Computing an
 description: "A reflection on the suckless philosophy, its connection to Unix principles, and how it inspires minimalist computing and intentional living."
 tags: guide, linux, unix, philosophy, minimalist
 pubDate: 2024-12-05T00:00:00+05:30
+image: "/images/blog/dwm.jpg"
 draft: false
 ---
 
@@ -25,6 +26,8 @@ The Unix philosophy and suckless philosophy share a common disdain for unnecessa
 This synergy resonates with me. It fosters an environment where I am not just a user but an active participant in shaping my tools to my needs. It also challenges me to be deliberate in what I adopt and to question the value of the tools I use.
 
 ## My DWM Dots
+
+![My DWM configuration](https://nnisarg.in/images/blog/dwm.jpg)
 
 One of the aspects I love about using DWM is the freedom to make it my own. Over time, I’ve customized my setup to match my specific workflow and preferences. If you're interested in seeing my configurations or trying them out, check out my DWM dots repository here: [github.com/nnisarggada/dwm-dots](https://github.com/nnisarggada/dwm-dots).
 
