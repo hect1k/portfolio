@@ -40,14 +40,14 @@ Ready to start managing your contacts securely? Follow these steps to self-host 
 
 ### Installation
 
-1. **Clone the Repository**:
+1. Clone the Repository:
 
    ```bash
    git clone https://github.com/nnisarggada/pacman
    cd pacman
    ```
 
-2. **Build and Run the Application**:
+2. Build and Run the Application:
 
    ```bash
    go run main.go
