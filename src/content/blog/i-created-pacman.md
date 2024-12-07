@@ -1,39 +1,93 @@
 ---
 title: "I created PACMAN - not what you think 👀👀"
-description: "A step-by-step guide on how to self-host PACMAN on your own servers."
-tags: nextjs, tailwindcss, open-source, privacy
-pubDate: 2023-09-04T00:00:00+05:30
-image: "/images/blog/pacman-ui.png"
+description: "PACMAN is a free, open-source, web-based contact management app designed for simplicity and privacy."
+tags: go, golang, open-source, privacy
+pubDate: 2024-12-07T00:00:00+05:30
+image: "/images/blog/PACAMN.jpg"
 draft: false
 ---
 
-When I say "PACMAN" you might think of the classic video game where a yellow, voracious circle gobbles up dots while evading colorful ghosts. But today, I want to introduce you to a different kind of PACMAN — one that’s all about contact management and privacy. [**PACMAN**](https://github.com/nnisarggada/pacman), short for **_"Private Alternative for Contact Management And Networking"_** is not your typical contact manager. It’s a privacy-centric solution that I’ve developed to empower users like you to regain control over your contact data. Let’s dive into this innovative platform, built with [NextJS](https://nextjs.org) and [TailwindCSS](https://tailwindcss.com), and explore how it can revolutionize the way you manage your contacts and network with others.
+When it comes to managing your contacts, privacy is often an afterthought. That’s why I created **PACMAN**: **Private Alternative for Contact Management And Networking**. PACMAN is an open-source, web-based application that gives you full control over your contact data. With features like contact creation, editing, and export to VCF format, PACMAN is designed for individuals and organizations who value simplicity and privacy above all else.
 
-![PACMAN](https://nnisarg.in/images/blog/pacman-ui.png)
+![PACMAN](https://nnisarg.in/images/blog/PACMAN.jpg)
 
-## Regaining Control Over Your Contacts
+## Why Choose PACMAN?
 
-In a world where data privacy is a growing concern, it’s crucial to have solutions that put you in charge of your personal information. PACMAN is designed with this principle at its core. By self-hosting PACMAN on your own servers, you can ensure that your contact data remains confidential and secure. No more worrying about your information being stored on third-party servers or exploited for marketing purposes. With PACMAN, your contacts are under your control.
+PACMAN is built with a **privacy-first philosophy**, meaning your contact data stays with you. Unlike other solutions that store your information in the cloud, PACMAN ensures you’re always in control.
 
-## Streamlined Contact Management
+Here’s why PACMAN stands out:
 
-Managing contacts has never been easier than with PACMAN. This platform offers a user-friendly interface that simplifies the entire process. With just a few clicks, you can export your contacts to VCF files, making them compatible with various devices and applications. But that’s not all — PACMAN also lets you share a URL with others, allowing them to add their contact details to your list effortlessly. Say goodbye to the days of exchanging business cards or manually inputting information. PACMAN streamlines contact management, making it efficient and hassle-free.
+- **Free and Open Source**: Yours to tweak and modify as you see fit.
+- **Web-Based**: Access PACMAN securely from any browser on your network.
+- **VCF Export**: Export your contacts to the universally compatible `.vcf` format.
+- **Basic Authentication**: Protect access to your contact data with built-in Basic Auth.
+- **Lightweight and Simple**: Focused on essential features without the bloat.
 
-## Embracing Open Source Freedom
+## Features
 
-Transparency is a fundamental value of PACMAN. I believe that users should have the freedom to take control of their data, and that’s why I’ve made the code open source. This means that you have the flexibility to host PACMAN on your own servers, tailoring the platform to your specific needs. It’s an ideal choice for those who value privacy and want to reduce their dependence on third-party services. With PACMAN’s open-source nature, you can trust that your data is truly yours to manage.
+- **Add, Edit, and Delete Contacts**: A clean interface makes managing contacts intuitive and efficient.
+- **Search Contacts**: Quickly find any contact by name, phone, or email.
+- **Export to VCF**: Share or back up your contacts with ease.
+- **Secure Access**: Browser-based Basic Authentication ensures only you can view your contacts.
 
-## What’s on the Horizon
+## Setting Up PACMAN
 
-PACMAN is an ever-evolving project, and I have exciting plans for its future. Some upcoming features to look forward to include:
+Ready to start managing your contacts securely? Follow these steps to self-host PACMAN on your server or local machine.
 
-- **Contact Importing**: PACMAN understands that contact management isn’t just about creating new connections; it’s also about efficiently importing existing ones. Soon, you’ll be able to import contacts from various sources seamlessly.
-- **UI Enhancements**: The user interface of PACMAN will see significant improvements to enhance navigation and interaction. Expect a cleaner, more visually appealing experience that makes managing contacts a breeze.
+### Prerequisites
+
+- [Go (Golang)](https://golang.org/dl/) installed on your system.
+
+### Installation
+
+1. **Clone the Repository**:
+
+   ```bash
+   git clone https://github.com/nnisarggada/pacman
+   cd pacman
+   ```
+
+2. **Build and Run the Application**:
+
+   ```bash
+   go run main.go
+   ```
+
+   By default, PACMAN will run on `http://localhost:8080`.
+
+## Customizing PACMAN
+
+PACMAN is designed to be configurable with minimal effort. Here’s what you can modify in `main.go`:
+
+```go
+const (
+    port     = 8080                       // Port to run the app on
+    username = "your_username"            // Basic Auth username
+    password = "your_password"            // Basic Auth password
+    dbFile   = "database/contacts.db"     // Path to SQLite database file
+    vcfFile  = "contacts.vcf"             // Default VCF export file
+)
+```
+
+Once configured, simply restart the application for changes to take effect.
+
+## Using PACMAN
+
+- **Add Contacts**: Fill out a simple form to add new contacts to your database.
+- **Edit or Delete Contacts**: Modify details or remove outdated entries in just a few clicks.
+- **Export to VCF**: Export your contact list to a `.vcf` file for easy sharing or backup.
+- **Search Contacts**: Use the built-in search functionality to find specific contacts instantly.
+
+## What’s Next for PACMAN?
+
+PACMAN is continually evolving, with exciting features on the way:
+
+- **Bulk Import from VCF**: Easily migrate existing contacts into PACMAN.
+- **Group Management**: Organize contacts into groups for better organization.
+- **Enhanced Authentication**: Explore additional security measures beyond Basic Auth.
 
 ## Conclusion
 
-So, while I may not be talking about the famous video game character, I am thrilled to introduce you to **PACMAN** — the contact manager that’s all about your privacy and control. With NextJS and TailwindCSS at its core, PACMAN empowers you to take charge of your contact data, network confidently, and enjoy the peace of mind that comes with knowing your information is safe and secure. Say hello to the future of contact management and networking with **PACMAN**.
+If you’re looking for a simple, secure, and self-hosted solution for managing your contacts, **PACMAN** is the perfect fit. Whether for personal use or small businesses, PACMAN lets you take control of your data while keeping things lightweight and user-friendly.
 
-> _Note: I have created a separate blog post for detailed instructions on how to self-host PACMAN. You can read it [here](https://nnisarg.in/blog/self-hosting-pacman) to learn how to take your data privacy to the next level by hosting PACMAN on your own servers._
-
-Don’t miss out on the opportunity to reclaim your data privacy and revolutionize the way you manage your contacts. **PACMAN** is not just a contact manager; it’s a symbol of empowerment and control in a digital age. Say hello to the future of contact management and networking with [**PACMAN**](https://github.com/nnisarggada/pacman)!
+Ready to take the leap? Check out the [PACMAN repository](https://github.com/nnisarggada/pacman) on GitHub and get started today!

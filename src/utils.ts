@@ -23,9 +23,17 @@ export const socialLinks = {
 
 export const projects = [
   {
+    title: "PACMAN",
+    description: "A free, open-source, web-based contact management app designed for simplicity and privacy.",
+    categories: ["webdev", "go", "golang", "open-source", "privacy"],
+    image: "PACMAN.jpg",
+    repo: "https://github.com/nnisarggada/pacman",
+    blog: "i-created-pacman",
+  },
+  {
     title: "MUNDRA",
     description:
-      "MUNDRA simplifies MUN delegate management with a FastAPI-powered backend",
+      "Simplifies MUN delegate management with a FastAPI-powered backend",
     categories: ["python", "fastapi", "backend", "open-source", "self-host"],
     image: "MUNDRA.jpg",
     url: "https://mundra.nnisarg.in/redoc",
@@ -107,15 +115,6 @@ export const projects = [
     url: "https://share.nnisarg.in",
     repo: "https://github.com/nnisarggada/swft",
     blog: "introducing-swft",
-  },
-  {
-    title: "PACMAN",
-    description: "An open-source contact management system",
-    categories: ["webdev", "open-source", "self-host", "nextjs", "tailwindcss"],
-    image: "PACMAN.png",
-    url: "https://pacman.nnisarg.in",
-    repo: "https://github.com/nnisarggada/pacman",
-    blog: "i-created-pacman",
   },
   {
     title: "Cyno5ure",
