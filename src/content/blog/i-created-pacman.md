@@ -3,7 +3,7 @@ title: "I created PACMAN - not what you think 👀👀"
 description: "PACMAN is a free, open-source, web-based contact management app designed for simplicity and privacy."
 tags: go, golang, open-source, privacy
 pubDate: 2024-12-07T00:00:00+05:30
-image: "/images/blog/PACAMN.jpg"
+image: "/images/blog/PACMAN.jpg"
 draft: false
 ---
 
