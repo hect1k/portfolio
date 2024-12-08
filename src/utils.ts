@@ -23,8 +23,16 @@ export const socialLinks = {
 
 export const projects = [
   {
+    title: "CPIG",
+    description: "Command-line tool to generate color palettes from images.",
+    categories: ["c", "command-line", "open-source", "image-processing"],
+    image: "CPIG.jpg",
+    repo: "https://github.com/nnisarggada/cpig",
+  },
+  {
     title: "PACMAN",
-    description: "A free, open-source, web-based contact management app designed for simplicity and privacy.",
+    description:
+      "Web-based contact management app designed for simplicity and privacy.",
     categories: ["webdev", "go", "golang", "open-source", "privacy"],
     image: "PACMAN.jpg",
     repo: "https://github.com/nnisarggada/pacman",
