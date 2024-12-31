@@ -28,6 +28,7 @@ export const projects = [
     categories: ["c", "command-line", "open-source", "image-processing"],
     image: "CPIG.jpg",
     repo: "https://github.com/nnisarggada/cpig",
+    blog: "my-first-aur-package",
   },
   {
     title: "PACMAN",
