@@ -16,7 +16,8 @@ export function calculateReadingTime(content: string) {
 
 export const socialLinks = {
   GitHub: "https://github.com/nnisarggada",
-  LinkedIn: "https://www.linkedin.com/in/nnisarggada/",
+  LinkedIn: "https://www.linkedin.com/in/nnisarggada",
+  YouTube: "https://www.youtube.com/@nnisarggada",
   X: "https://x.com/gadannisarg",
   Dev: "https://dev.to/nnisarggada",
 };
