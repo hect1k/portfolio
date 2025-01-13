@@ -188,5 +188,5 @@ export const metaData = {
   title: "Nnisarg Gada | Developer, Tech Enthusiast, Problem Solver",
   description:
     "Nnisarg's portfolio website showcasing coding projects and tech adventures as a developer.",
-  image: "https://nnisarg.in/images/profile-pic.png",
+  image: "https://nnisarg.in/images/og_image.jpg",
 };

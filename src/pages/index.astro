@@ -1,14 +1,11 @@
 ---
 import ScreenLayout from "@layouts/Screen.astro";
-import Avatar from "@components/Avatar.astro";
 import NewsletterSuccess from "@components/NewsletterSuccess.astro";
 import NewsletterError from "@components/NewsletterError.astro";
 
 import Github from "@components/svgs/Github.astro";
 import Linkedin from "@components/svgs/LinkedIn.astro";
 import Youtube from "@components/svgs/Youtube.astro";
-// import X from "@components/svgs/X.astro";
-// import Dev from "@components/svgs/Dev.astro";
 import ProjectCard from "@components/ProjectCard.astro";
 import BlogCard from "@components/BlogCard.astro";
 
@@ -28,7 +25,6 @@ blogs = blogs.slice(0, 3);
 ---
 
 <ScreenLayout>
-  <Avatar />
   <NewsletterSuccess />
   <NewsletterError />
   <section
