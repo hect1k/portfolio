@@ -1,0 +1,132 @@
+[
+  {
+    "slug": "become-a-css-god",
+    "recommendations": [
+      "how-do-i-learn-to-code",
+      "what-i-use",
+      "my-first-aur-package",
+      "building-mundra",
+      "embracing-the-suckless-philosophy"
+    ]
+  },
+  {
+    "slug": "building-mundra",
+    "recommendations": [
+      "my-first-aur-package",
+      "i-created-pacman",
+      "embracing-the-suckless-philosophy",
+      "how-do-i-learn-to-code",
+      "magic-behind-video-streaming"
+    ]
+  },
+  {
+    "slug": "dealing-with-burnout",
+    "recommendations": [
+      "my-first-aur-package",
+      "how-do-i-learn-to-code",
+      "embracing-the-suckless-philosophy",
+      "introducing-swft",
+      "building-mundra"
+    ]
+  },
+  {
+    "slug": "embracing-the-suckless-philosophy",
+    "recommendations": [
+      "my-first-aur-package",
+      "building-mundra",
+      "how-do-i-learn-to-code",
+      "what-i-use",
+      "i-created-pacman"
+    ]
+  },
+  {
+    "slug": "how-do-i-learn-to-code",
+    "recommendations": [
+      "my-first-aur-package",
+      "building-mundra",
+      "embracing-the-suckless-philosophy",
+      "urls-should-be-simple",
+      "dealing-with-burnout"
+    ]
+  },
+  {
+    "slug": "i-created-pacman",
+    "recommendations": [
+      "building-mundra",
+      "my-first-aur-package",
+      "introducing-swft",
+      "urls-should-be-simple",
+      "embracing-the-suckless-philosophy"
+    ]
+  },
+  {
+    "slug": "introducing-swft",
+    "recommendations": [
+      "my-first-aur-package",
+      "urls-should-be-simple",
+      "i-created-pacman",
+      "embracing-the-suckless-philosophy",
+      "how-do-i-learn-to-code"
+    ]
+  },
+  {
+    "slug": "magic-behind-video-streaming",
+    "recommendations": [
+      "building-mundra",
+      "how-do-i-learn-to-code",
+      "my-first-aur-package",
+      "embracing-the-suckless-philosophy",
+      "urls-should-be-simple"
+    ]
+  },
+  {
+    "slug": "my-first-aur-package",
+    "recommendations": [
+      "building-mundra",
+      "i-created-pacman",
+      "how-do-i-learn-to-code",
+      "embracing-the-suckless-philosophy",
+      "introducing-swft"
+    ]
+  },
+  {
+    "slug": "organising-my-first-hackathon",
+    "recommendations": [
+      "building-mundra",
+      "how-do-i-learn-to-code",
+      "embracing-the-suckless-philosophy",
+      "my-first-aur-package",
+      "what-i-use"
+    ]
+  },
+  {
+    "slug": "paradox-of-popularity",
+    "recommendations": [
+      "my-first-aur-package",
+      "embracing-the-suckless-philosophy",
+      "what-i-use",
+      "dealing-with-burnout",
+      "magic-behind-video-streaming"
+    ]
+  },
+  {
+    "slug": "urls-should-be-simple",
+    "recommendations": [
+      "introducing-swft",
+      "my-first-aur-package",
+      "how-do-i-learn-to-code",
+      "i-created-pacman",
+      "building-mundra"
+    ]
+  },
+  {
+    "slug": "what-i-use",
+    "recommendations": [
+      "embracing-the-suckless-philosophy",
+      "building-mundra",
+      "how-do-i-learn-to-code",
+      "dealing-with-burnout",
+      "my-first-aur-package"
+    ]
+  }
+]
