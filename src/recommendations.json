@@ -14,18 +14,18 @@
     "recommendations": [
       "my-first-aur-package",
       "i-created-pacman",
-      "embracing-the-suckless-philosophy",
       "how-do-i-learn-to-code",
+      "embracing-the-suckless-philosophy",
       "magic-behind-video-streaming"
     ]
   },
   {
     "slug": "dealing-with-burnout",
     "recommendations": [
+      "introducing-swft",
       "my-first-aur-package",
       "how-do-i-learn-to-code",
       "embracing-the-suckless-philosophy",
-      "introducing-swft",
       "building-mundra"
     ]
   },
@@ -33,20 +33,20 @@
     "slug": "embracing-the-suckless-philosophy",
     "recommendations": [
       "my-first-aur-package",
-      "building-mundra",
       "how-do-i-learn-to-code",
       "what-i-use",
-      "i-created-pacman"
+      "building-mundra",
+      "introducing-swft"
     ]
   },
   {
     "slug": "how-do-i-learn-to-code",
     "recommendations": [
-      "my-first-aur-package",
       "building-mundra",
+      "my-first-aur-package",
       "embracing-the-suckless-philosophy",
-      "urls-should-be-simple",
-      "dealing-with-burnout"
+      "introducing-swft",
+      "urls-should-be-simple"
     ]
   },
   {
@@ -82,11 +82,11 @@
   {
     "slug": "my-first-aur-package",
     "recommendations": [
-      "building-mundra",
+      "introducing-swft",
       "i-created-pacman",
+      "building-mundra",
       "how-do-i-learn-to-code",
-      "embracing-the-suckless-philosophy",
-      "introducing-swft"
+      "embracing-the-suckless-philosophy"
     ]
   },
   {
@@ -96,7 +96,7 @@
       "how-do-i-learn-to-code",
       "embracing-the-suckless-philosophy",
       "my-first-aur-package",
-      "what-i-use"
+      "become-a-css-god"
     ]
   },
   {
@@ -123,10 +123,10 @@
     "slug": "what-i-use",
     "recommendations": [
       "embracing-the-suckless-philosophy",
-      "building-mundra",
       "how-do-i-learn-to-code",
       "dealing-with-burnout",
-      "my-first-aur-package"
+      "building-mundra",
+      "become-a-css-god"
     ]
   }
 ]

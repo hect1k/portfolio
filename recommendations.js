@@ -15,22 +15,26 @@ const STOPWORDS = new Set([
   'these', 'them', 'into', 'some', 'more', 'any', 'also', 'just', 'like',
   'up', 'out', 'only', 'how', 'its', 'because', 'here', 'there', 'whether',
   're', 'into', 'each', 'different', 'keep', 'path', 'when', 'other',
-  'every', 'their', 'those', 'ready', 'existing', 'always', 'find', 'just', 'll'
+  'every', 'their', 'those', 'ready', 'existing', 'always', 'find', 'just', 'll',
+
+  // Special characters and numbers
+  'https', 'com', 's', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9'
 ]);
 
-// Function to tokenize and filter out stopwords
+// Function to tokenize and filter out stopwords and short words
 const tokenizeAndFilter = (text) => {
   const tokenizer = new natural.WordTokenizer();
-  return tokenizer.tokenize(text.toLowerCase()).filter((word) => !STOPWORDS.has(word));
+  return tokenizer.tokenize(text.toLowerCase()).filter((word) => !STOPWORDS.has(word) && word.length > 2);
 };
 
-// Function to read all blog posts
+// Function to read all blog posts (not draft posts)
 const getAllPosts = () => {
   const files = fs.readdirSync(BLOG_DIR);
-  return files.map((file) => {
+  const posts = files.map((file) => {
     const filePath = path.join(BLOG_DIR, file);
     const content = fs.readFileSync(filePath, 'utf-8');
     const { data, content: mainContent } = matter(content);
+    if (data.draft === true) return null;
     return {
       ...data,
       slug: file.replace('.md', ''),
@@ -38,6 +42,8 @@ const getAllPosts = () => {
       pubDate: new Date(data.pubDate)
     };
   });
+
+  return posts.filter((post) => post !== null);
 };
 
 // Function to calculate similarity between two posts
