@@ -25,6 +25,15 @@ export const socialLinks = {
 
 export const projects = [
   {
+    title: "SWFT",
+    description: "A simple temporary file sharing solution",
+    categories: ["webdev", "open-source", "self-host", "flask", "tailwindcss"],
+    image: "SWFT.png",
+    url: "https://share.nnisarg.in",
+    repo: "https://github.com/nnisarggada/swft",
+    blog: "introducing-swft",
+  },
+  {
     title: "CPIG",
     description: "Command-line tool to generate color palettes from images.",
     categories: ["c", "command-line", "open-source", "image-processing"],
@@ -89,6 +98,15 @@ export const projects = [
     url: "https://maargindia.org",
   },
   {
+    title: "ZenLink",
+    description: "A simple open-source URL shortener",
+    categories: ["webdev", "open-source", "self-host", "flask", "tailwindcss"],
+    image: "ZenLink.png",
+    url: "https://short.nnisarg.in",
+    repo: "https://github.com/nnisarggada/zenlink",
+    blog: "urls-should-be-simple",
+  },
+  {
     title: "Trainchess",
     description: "A website for a chess coaching company",
     categories: ["webdev", "astro", "tailwindcss", "client-work"],
@@ -110,44 +128,11 @@ export const projects = [
     url: "https://dat.nnisarg.in",
   },
   {
-    title: "ZenLink",
-    description: "A simple open-source URL shortener",
-    categories: ["webdev", "open-source", "self-host", "flask", "tailwindcss"],
-    image: "ZenLink.png",
-    url: "https://short.nnisarg.in",
-    repo: "https://github.com/nnisarggada/zenlink",
-    blog: "urls-should-be-simple",
-  },
-  {
-    title: "SWFT",
-    description: "A simple temporary file sharing solution",
-    categories: ["webdev", "open-source", "self-host", "flask", "tailwindcss"],
-    image: "SWFT.png",
-    url: "https://share.nnisarg.in",
-    repo: "https://github.com/nnisarggada/swft",
-    blog: "introducing-swft",
-  },
-  {
-    title: "Cyno5ure",
-    description: "An e-commerce website built for a clothing store",
-    categories: ["webdev", "client-work", "shopify", "nextjs", "tailwindcss"],
-    image: "Cyno5ure.png",
-    url: "https://cyno5ure.nnisarg.in",
-  },
-  {
     title: "NyChess",
     description: "A simple chess game and AI coded in Python",
     categories: ["python", "pygame", "ai-ml"],
     image: "NyChess.png",
     repo: "https://github.com/nnisarggada/nychess",
-  },
-  {
-    title: "TwoDu",
-    description: "A simple cross-platform To-Do Manager",
-    categories: ["webdev", "flutter", "dart", "firebase"],
-    image: "TwoDu.png",
-    url: "https://twodu.nnisarg.in",
-    repo: "https://github.com/nnisarggada/twodu",
   },
   {
     title: "CubeRun3D",
