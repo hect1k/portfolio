@@ -150,14 +150,6 @@ export const projects = [
     repo: "https://github.com/nnisarggada/oneplayerpong",
     url: "https://play.google.com/store/apps/details?id=com.nnisarg.OnePlayerPong&pli=1",
   },
-  {
-    title: "Artistic Humans",
-    description: "Website for a theater company",
-    categories: ["webdev", "client-work", "html", "css"],
-    image: "ArtisticHumans.png",
-    repo: "https://github.com/nnisarggada/artistichumans",
-    url: "https://artistichumans.nnisarg.in",
-  },
 ];
 
 export const uniqueCategories: string[] = [];
