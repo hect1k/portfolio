@@ -43,7 +43,8 @@ export default {
               padding: "2px",
             },
             img: {
-              maxWidth: "100%",
+              maxWidth: "36rem",
+              width: "100%",
               height: "auto",
               margin: "0 auto",
             },
