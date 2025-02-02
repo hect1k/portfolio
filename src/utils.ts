@@ -34,21 +34,18 @@ export const projects = [
     blog: "introducing-swft",
   },
   {
-    title: "CPIG",
-    description: "Command-line tool to generate color palettes from images.",
-    categories: ["c", "command-line", "open-source", "image-processing"],
-    image: "CPIG.jpg",
-    repo: "https://github.com/nnisarggada/cpig",
-    blog: "my-first-aur-package",
+    title: "MB Mundada Group",
+    description: "Website for an Indian textile company",
+    categories: ["webdev", "astro", "tailwindcss", "client-work"],
+    image: "MBGroup.jpg",
+    url: "https://mbgroup.nnisarg.in",
   },
   {
-    title: "PACMAN",
-    description:
-      "Web-based contact management app designed for simplicity and privacy.",
-    categories: ["webdev", "go", "golang", "open-source", "privacy"],
-    image: "PACMAN.jpg",
-    repo: "https://github.com/nnisarggada/pacman",
-    blog: "i-created-pacman",
+    title: "Palvi Healthcare",
+    description: "Website for a healthcare clinic",
+    categories: ["webdev", "astro", "tailwindcss", "client-work"],
+    image: "Palvi.jpg",
+    url: "https://palvi.nnisarg.in",
   },
   {
     title: "MUNDRA",
@@ -68,11 +65,21 @@ export const projects = [
     repo: "https://github.com/nnisarggada/stabl",
   },
   {
-    title: "MB Mundada Group",
-    description: "Website for an Indian Textile Company",
-    categories: ["webdev", "astro", "tailwindcss", "client-work"],
-    image: "MBGroup.jpg",
-    url: "https://MBGroup.nnisarg.in",
+    title: "CPIG",
+    description: "Command-line tool to generate color palettes from images.",
+    categories: ["c", "command-line", "open-source", "image-processing"],
+    image: "CPIG.jpg",
+    repo: "https://github.com/nnisarggada/cpig",
+    blog: "my-first-aur-package",
+  },
+  {
+    title: "PACMAN",
+    description:
+      "Web-based contact management app designed for simplicity and privacy.",
+    categories: ["webdev", "go", "golang", "open-source", "privacy"],
+    image: "PACMAN.jpg",
+    repo: "https://github.com/nnisarggada/pacman",
+    blog: "i-created-pacman",
   },
   {
     title: "EzHLS",
@@ -140,7 +147,6 @@ export const projects = [
     categories: ["gamedev", "c-sharp", "mobile", "unity"],
     image: "CubeRun3D.png",
     repo: "https://github.com/nnisarggada/cuberun3d",
-    url: "https://play.google.com/store/apps/details?id=com.nnisarg.CubeRun3D&pli=1",
   },
   {
     title: "OnePlayerPong",
@@ -148,7 +154,6 @@ export const projects = [
     categories: ["gamedev", "c-sharp", "mobile", "unity"],
     image: "OnePlayerPong.png",
     repo: "https://github.com/nnisarggada/oneplayerpong",
-    url: "https://play.google.com/store/apps/details?id=com.nnisarg.OnePlayerPong&pli=1",
   },
 ];
 
