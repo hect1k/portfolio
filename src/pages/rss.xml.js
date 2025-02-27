@@ -31,9 +31,9 @@ export async function GET(context) {
           : "") +
         (post.data.tags
           ? post.data.tags
-              .split(", ")
-              .map((tag) => `<category>${tag}</category>`)
-              .join("")
+            .split(", ")
+            .map((tag) => `<category>${tag}</category>`)
+            .join("")
           : ""),
       content: parser.render(post.body),
       ...post.data,
