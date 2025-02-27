@@ -1,10 +1,17 @@
+---
+import { Image } from "astro:assets";
+---
+
 <div
   id="avatar"
   class="pointer-events-none absolute inset-0 z-20 hidden aspect-square w-48 rounded-full bg-orange-500 opacity-0 shadow-lg shadow-black transition-all lg:block"
 >
-  <img
+  <Image
     src="/images/profile-pic.png"
     alt="Nnisarg Gada"
+    width={400}
+    height={400}
+    format="webp"
     class="aspect-square w-[150%] rounded-full object-cover"
   />
 </div>

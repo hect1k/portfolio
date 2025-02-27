@@ -1,4 +1,6 @@
 ---
+import { Image } from "astro:assets";
+
 const project = Astro.props.project;
 ---
 
@@ -7,11 +9,12 @@ const project = Astro.props.project;
 >
   {
     project.image && (
-      <img
+      <Image
         src={`/images/projects/${project.image}`}
         alt={project.title}
-        loading="lazy"
-        decoding="async"
+        width={800}
+        height={450}
+        format="webp"
         class="aspect-video object-cover md:w-1/3"
       />
     )
