@@ -2,6 +2,8 @@ import { defineConfig } from "astro/config";
 import tailwind from "@astrojs/tailwind";
 import robotsTxt from "astro-robots-txt";
 
+import sitemap from "@astrojs/sitemap";
+
 // https://astro.build/config
 export default defineConfig({
   prefetch: {
@@ -9,5 +11,5 @@ export default defineConfig({
     defaultStrategy: "viewport",
   },
   site: "https://nnisarg.in",
-  integrations: [tailwind(), robotsTxt()],
+  integrations: [tailwind(), robotsTxt(), sitemap()],
 });

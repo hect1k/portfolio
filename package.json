@@ -1,4 +1,4 @@
-{
+{packe
   "name": "astro-portfolio",
   "type": "module",
   "version": "0.0.1",
@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@astrojs/rss": "^3.0.0",
+    "@astrojs/sitemap": "^3.2.1",
     "@astrojs/tailwind": "^5.1.4",
     "@babel/core": "^7.26.0",
     "astro": "^3.6.5",
