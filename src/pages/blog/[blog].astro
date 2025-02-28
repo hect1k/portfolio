@@ -50,11 +50,6 @@ const { blog } = Astro.props;
   image={`https://nnisarg.in${blog.data.image}`}
 >
   <div
-    id="scroll-watcher"
-    class="scroll-watcher fixed left-0 top-20 z-20 h-1 bg-accent"
-  >
-  </div>
-  <div
     class="fade prose mx-auto w-full max-w-none p-6 md:prose-lg lg:prose-xl md:p-8 lg:p-12"
   >
     <div class="my-4 md:my-8 lg:my-12">
@@ -98,22 +93,3 @@ const { blog } = Astro.props;
     </div>
   </div>
 </ScreenLayout>
-
-<style>
-  .scroll-watcher {
-    --width: 0;
-    width: var(--width);
-  }
-</style>
-
-<script>
-  window.addEventListener("scroll", () => {
-    const { scrollTop, scrollHeight } = document.documentElement;
-    const scrollPercent = `${(scrollTop / (scrollHeight - window.innerHeight)) * 100}%`;
-    const scrollWatcher = document.querySelector(
-      ".scroll-watcher",
-    ) as HTMLDivElement;
-
-    scrollWatcher.style.setProperty("--width", scrollPercent);
-  });
-</script>

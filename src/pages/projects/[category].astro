@@ -56,24 +56,3 @@ const description = `Explore a curated collection of ${category} projects by Nni
     </div>
   </div>
 </ScreenLayout>
-
-<script>
-  const filterButton = document.getElementById("filter-button");
-  const filterMenu = document.getElementById("filter-menu");
-  const filterTooltip = document.getElementById("filter-tooltip");
-  if (filterMenu && filterButton && filterTooltip) {
-    filterButton.addEventListener("click", () => {
-      if (filterMenu.classList.contains("hidden")) {
-        filterMenu.classList.remove("hidden");
-        filterTooltip.classList.add("hidden");
-        filterButton.innerText = "Close";
-      } else {
-        filterMenu.classList.add("hidden");
-        filterButton.innerText = "Filter by Category";
-        filterTooltip.classList.remove("hidden");
-      }
-    });
-  }
-</script>
-} }); } } }); }
-

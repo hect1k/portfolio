@@ -1,6 +1,6 @@
 ---
 import Bars from "@components/svgs/Bars.astro";
-import Close from "@components/svgs/Close.astro";
+import Close from "./svgs/Close.astro";
 const currentPath = Astro.url.pathname;
 const pages = [
   {
@@ -27,22 +27,57 @@ const pages = [
 ---
 
 <nav
-  class="text-md fixed top-0 z-20 flex h-20 w-screen items-center justify-between gap-4 bg-neutral-950 bg-opacity-80 p-6 text-white shadow-md shadow-black backdrop-blur-md md:px-6 md:py-4 md:text-xl lg:px-36"
+  class="fixed top-0 z-20 flex h-20 w-full items-center justify-between bg-neutral-950 bg-opacity-80 p-6 text-white shadow-md shadow-black backdrop-blur-md md:px-6 md:py-4 md:text-xl lg:px-36"
 >
   <h1
     class="text-2xl font-bold transition-all duration-300 ease-in-out hover:text-orange-500 hover:underline lg:text-3xl"
   >
     <a href="/" title="Home">Nnisarg Gada.</a>
   </h1>
-  <button id="menu-open" class="cursor-pointer md:hidden"><Bars /></button>
-  <button id="menu-close" class="hidden cursor-pointer md:hidden"
-    ><Close /></button
+
+  <input type="checkbox" id="menu-toggle" class="peer hidden" />
+
+  <label for="menu-toggle" class="cursor-pointer peer-checked:hidden md:hidden">
+    <Bars />
+  </label>
+  <label
+    for="menu-toggle"
+    class="hidden cursor-pointer peer-checked:block md:hidden"
   >
+    <Close />
+  </label>
+
   <div class="hidden items-center gap-2 md:flex lg:gap-6">
     {
       pages.map((page) => (
         <a
-          class={`h-fit rounded p-2 py-1 transition-all duration-300 ease-in-out ${page.link == currentPath || page.link + "/" == currentPath ? "font-bold text-accent underline hover:scale-110 hover:font-bold" : ""} ${page.name == "Résumé" ? "glow bg-white bg-opacity-20 p-4 py-2 text-xl font-bold uppercase tracking-widest hover:scale-105 hover:bg-accent" : "hover:underline"}`}
+          class={`rounded p-2 py-1 transition-all duration-300 ease-in-out ${
+            page.link == currentPath || page.link + "/" == currentPath
+              ? "font-bold text-accent underline hover:scale-110 hover:font-bold"
+              : ""
+          } ${
+            page.name == "Résumé"
+              ? "glow bg-white bg-opacity-20 p-4 py-2 text-xl font-bold uppercase tracking-widest hover:scale-105 hover:bg-accent"
+              : "hover:underline"
+          }`}
+          href={page.link}
+          title={page.name}
+        >
+          {page.name}
+        </a>
+      ))
+    }
+  </div>
+
+  <div
+    id="menu"
+    class="fixed left-0 top-20 z-10 flex h-[calc(100dvh-5rem)] w-screen translate-x-full flex-col items-center justify-start gap-4 bg-neutral-900 p-6 text-2xl transition-all ease-in-out peer-checked:translate-x-0 md:hidden"
+  >
+    {
+      pages.map((page) => (
+        <a
+          tabindex="-1"
+          class={`flex h-20 items-center justify-center rounded p-2 py-1 font-bold uppercase transition-all duration-300 ease-in-out ${page.link == currentPath || page.link + "/" == currentPath ? "bg-opacity-0 font-bold text-accent underline hover:scale-110 hover:font-bold" : "w-full bg-opacity-20"} ${page.name === "Résumé" ? "bg-accent bg-opacity-80 text-4xl tracking-widest" : "bg-white"}`}
           href={page.link}
           title={page.name}
         >
@@ -52,23 +87,6 @@ const pages = [
     }
   </div>
 </nav>
-<div
-  id="menu"
-  class="fixed -top-full z-10 flex h-screen w-screen flex-col items-center justify-start gap-4 bg-neutral-950 bg-opacity-80 p-6 text-2xl shadow-md shadow-black backdrop-blur-md transition-all ease-in-out md:hidden"
->
-  {
-    pages.map((page) => (
-      <a
-        tabindex="-1"
-        class={`flex h-20 items-center justify-center rounded p-2 py-1 font-bold uppercase transition-all duration-300 ease-in-out ${page.link == currentPath || page.link + "/" == currentPath ? "bg-opacity-0 font-bold text-accent underline hover:scale-110 hover:font-bold" : "w-full bg-opacity-20"} ${page.name === "Résumé" ? "bg-accent bg-opacity-80 text-4xl tracking-widest" : "bg-white"}`}
-        href={page.link}
-        title={page.name}
-      >
-        {page.name}
-      </a>
-    ))
-  }
-</div>
 
 <style>
   .glow:hover {
@@ -76,62 +94,3 @@ const pages = [
     box-shadow: 0 0 25px -5px var(--color);
   }
 </style>
-
-<script>
-  const menu = document.getElementById("menu") as HTMLDivElement;
-  const open_button = document.getElementById("menu-open") as HTMLButtonElement;
-  const close_button = document.getElementById(
-    "menu-close",
-  ) as HTMLButtonElement;
-  const nav = document.querySelector("nav") as HTMLDivElement;
-  const scrollWatcher = document.getElementById("scroll-watcher");
-  const menuLinks = document.querySelectorAll(
-    "#menu a",
-  ) as NodeListOf<HTMLAnchorElement>;
-
-  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
-
-  if (reduceMotion.matches) {
-    menu.classList.add("duration-0");
-  } else {
-    menu.classList.add("duration-500");
-  }
-
-  function openMenu() {
-    if (!menu || !open_button || !close_button || !nav) return;
-    menu.classList.remove("-top-full");
-    menu.classList.add("top-20");
-    open_button.classList.add("hidden");
-    close_button.classList.remove("hidden");
-    nav.classList.remove("shadow-md");
-    nav.classList.remove("shadow-black");
-    scrollWatcher?.classList.add("hidden");
-    close_button.focus();
-    menuLinks.forEach((link) => {
-      link.tabIndex = 0;
-    });
-  }
-
-  function closeMenu() {
-    if (!menu || !open_button || !close_button || !nav) return;
-    menu.classList.add("-top-full");
-    menu.classList.remove("top-20");
-    open_button.classList.remove("hidden");
-    close_button.classList.add("hidden");
-    nav.classList.add("shadow-md");
-    nav.classList.add("shadow-black");
-    scrollWatcher?.classList.remove("hidden");
-    menuLinks.forEach((link) => {
-      link.tabIndex = -1;
-    });
-  }
-
-  if (open_button && close_button) {
-    open_button.addEventListener("click", openMenu);
-    close_button.addEventListener("click", closeMenu);
-  }
-
-  window.addEventListener("scroll", () => {
-    closeMenu();
-  });
-</script>

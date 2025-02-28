@@ -29,53 +29,44 @@ for (const project of projects) {
     <h1 class="text-5xl font-bold">Projects</h1>
     <div class="flex flex-col gap-2">
       <div class="flex flex-col gap-4">
-        <button
-          id="filter-button"
-          class="w-fit rounded bg-white bg-opacity-20 px-4 py-2 font-bold"
-          >Filter by Category</button
+        <!-- Hidden checkbox to toggle filter menu -->
+        <input type="checkbox" id="filter-toggle" class="peer hidden" />
+        <label
+          for="filter-toggle"
+          class="w-fit cursor-pointer rounded bg-white bg-opacity-20 px-4 py-2 font-bold peer-checked:hidden"
         >
-        <p id="filter-tooltip" class="text-xl font-bold">
+          Filter by Category
+        </label>
+        <label
+          for="filter-toggle"
+          class="hidden w-fit cursor-pointer rounded bg-white bg-opacity-20 px-4 py-2 font-bold peer-checked:block"
+        >
+          Close
+        </label>
+
+        <p id="filter-tooltip" class="text-xl font-bold peer-checked:hidden">
           💡 You can also click on the <span class="text-accent">#</span> to filter
           by category
         </p>
-      </div>
-      <div id="filter-menu" class="hidden gap-4 overflow-x-auto py-2">
-        {
-          uniqueCategories.map((category: string) => (
-            <a
-              href={`/projects/${category}`}
-              title={`See projects in ${category}`}
-              class="w-fit whitespace-nowrap rounded bg-accent px-4 py-2 font-bold transition-all duration-300 ease-in-out hover:-translate-y-1 hover:scale-105 hover:drop-shadow-xl"
-            >
-              #{category}
-            </a>
-          ))
-        }
+
+        <div class="hidden gap-4 overflow-x-auto py-2 peer-checked:flex">
+          {
+            uniqueCategories.map((category: string) => (
+              <a
+                href={`/projects/${category}`}
+                title={`See projects in ${category}`}
+                class="w-fit whitespace-nowrap rounded bg-accent px-4 py-2 font-bold transition-all duration-300 ease-in-out hover:-translate-y-1 hover:scale-105 hover:drop-shadow-xl"
+              >
+                #{category}
+              </a>
+            ))
+          }
+        </div>
       </div>
     </div>
+
     <div class="flex flex-col gap-6">
       {projects.map((project) => <ProjectCard project={project} />)}
     </div>
   </div>
 </ScreenLayout>
-
-<script>
-  const filterButton = document.getElementById("filter-button");
-  const filterMenu = document.getElementById("filter-menu");
-  const filterTooltip = document.getElementById("filter-tooltip");
-  if (filterMenu && filterButton && filterTooltip) {
-    filterButton.addEventListener("click", () => {
-      if (filterMenu.classList.contains("hidden")) {
-        filterMenu.classList.remove("hidden");
-        filterMenu.classList.add("flex");
-        filterTooltip.classList.add("hidden");
-        filterButton.innerText = "Close";
-      } else {
-        filterMenu.classList.remove("flex");
-        filterMenu.classList.add("hidden");
-        filterButton.innerText = "Filter by Category";
-        filterTooltip.classList.remove("hidden");
-      }
-    });
-  }
-</script>
