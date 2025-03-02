@@ -4,9 +4,9 @@
     "recommendations": [
       "how-do-i-learn-to-code",
       "what-i-use",
+      "man-is-mans-best-friend",
       "my-first-aur-package",
-      "building-mundra",
-      "embracing-the-suckless-philosophy"
+      "building-mundra"
     ]
   },
   {
@@ -77,6 +77,16 @@
       "my-first-aur-package",
       "embracing-the-suckless-philosophy",
       "urls-should-be-simple"
+    ]
+  },
+  {
+    "slug": "man-is-mans-best-friend",
+    "recommendations": [
+      "my-first-aur-package",
+      "introducing-swft",
+      "building-mundra",
+      "how-do-i-learn-to-code",
+      "embracing-the-suckless-philosophy"
     ]
   },
   {
