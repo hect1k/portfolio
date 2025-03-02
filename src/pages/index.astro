@@ -53,13 +53,11 @@ blogs = blogs.slice(0, 3);
             > — crafting fast, scalable websites while exploring diverse <a
               href="/projects"
               title="View My Projects"
-              class="text-accent underline focus-visible:underline"
-              >projects</a
+              class="text-accent underline focus-visible:underline">projects</a
             > and penning my journey in my <a
               href="/blog"
               title="View My Blog"
-              class="text-accent underline focus-visible:underline"
-              >blog</a
+              class="text-accent underline focus-visible:underline">blog</a
             > along the way.
           </p>
         </div>
@@ -114,8 +112,18 @@ blogs = blogs.slice(0, 3);
               required
               class="w-full rounded bg-neutral-900 bg-opacity-50 p-2 focus:outline-none"
             />
+
+            <!--Honeypot-->
+            <input
+              type="text"
+              name="hp_field"
+              id="hp_field"
+              style="position: absolute; left: -9999px; opacity: 0;"
+              aria-hidden="true"
+              tabindex="-1"
+            />
+
             <button
-              id="newsletter-submit"
               title="Subscribe"
               type="submit"
               class="w-full rounded bg-accent/90 px-4 py-2 font-semibold transition-all duration-300 ease-in-out hover:scale-105 hover:bg-accent hover:drop-shadow-xl focus-visible:scale-105 focus-visible:bg-accent focus-visible:drop-shadow-xl md:w-fit"
