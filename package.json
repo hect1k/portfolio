@@ -15,7 +15,6 @@
     "@astrojs/tailwind": "^5.1.4",
     "@babel/core": "^7.26.0",
     "astro": "^3.6.5",
-    "astro-robots-txt": "^1.0.0",
     "gray-matter": "^4.0.3",
     "markdown-it": "^13.0.2",
     "natural": "^8.0.1",
