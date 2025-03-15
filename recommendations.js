@@ -74,7 +74,7 @@ const calculateSimilarity = (postA, postB) => {
   console.log(`Recency score: ${recencyScore}`);
 
   // Weighted score: tags are most important, followed by content, description, and recency
-  const score = commonTags.length * 3 + commonContentWords.length * 2 + commonDescWords.length + 0.5 * recencyScore;
+  const score = commonTags.length * 5 + commonDescWords.length * 2.5 + commonContentWords.length * 2 + 0.5 * recencyScore;
   console.log(`Weighted score: ${score}`);
 
   console.log('\n\n');

@@ -15,8 +15,8 @@
       "my-first-aur-package",
       "i-created-pacman",
       "how-do-i-learn-to-code",
-      "embracing-the-suckless-philosophy",
-      "magic-behind-video-streaming"
+      "magic-behind-video-streaming",
+      "embracing-the-suckless-philosophy"
     ]
   },
   {
@@ -54,9 +54,9 @@
     "recommendations": [
       "building-mundra",
       "my-first-aur-package",
+      "using-the-internet-securely",
       "introducing-swft",
-      "urls-should-be-simple",
-      "embracing-the-suckless-philosophy"
+      "urls-should-be-simple"
     ]
   },
   {
@@ -83,8 +83,8 @@
     "slug": "man-is-mans-best-friend",
     "recommendations": [
       "my-first-aur-package",
+      "using-the-internet-securely",
       "introducing-swft",
-      "building-mundra",
       "how-do-i-learn-to-code",
       "embracing-the-suckless-philosophy"
     ]
@@ -124,9 +124,19 @@
     "recommendations": [
       "introducing-swft",
       "my-first-aur-package",
-      "how-do-i-learn-to-code",
       "i-created-pacman",
+      "how-do-i-learn-to-code",
       "building-mundra"
+    ]
+  },
+  {
+    "slug": "using-the-internet-securely",
+    "recommendations": [
+      "i-created-pacman",
+      "my-first-aur-package",
+      "how-do-i-learn-to-code",
+      "building-mundra",
+      "embracing-the-suckless-philosophy"
     ]
   },
   {
