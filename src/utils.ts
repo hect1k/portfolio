@@ -77,7 +77,7 @@ export const projects = [
     title: "PACMAN",
     description:
       "Web-based contact management app designed for simplicity and privacy.",
-    categories: ["webdev", "go", "golang", "open-source", "privacy"],
+    categories: ["webdev", "go", "self-host", "open-source", "privacy"],
     image: "PACMAN.jpg",
     repo: "https://github.com/nnisarggada/pacman",
     blog: "i-created-pacman",
