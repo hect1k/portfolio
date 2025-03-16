@@ -1,6 +1,7 @@
 import typography from "@tailwindcss/typography";
 
 export default {
+  darkMode: "media",
   content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
   theme: {
     extend: {
@@ -9,30 +10,31 @@ export default {
         mono: ["JetBrains Mono Nerd Font", "monospace"],
       },
       colors: {
-        accent: "#818cf8",
+        accent: {
+          DEFAULT: "#6b75e6",
+          dark: "#818cf8",
+        },
+        background: {
+          light: "#efefef",
+          dark: "#1c1c1c",
+        },
+        text: {
+          light: "#1c1c1c",
+          dark: "#efefef",
+        },
       },
-      typography: {
+      typography: (theme) => ({
         DEFAULT: {
           css: {
-            color: "#ffffff",
+            color: theme("colors.text.light"),
             a: {
-              color: "#818cf8",
+              color: theme("colors.accent.DEFAULT"),
               "&:hover": {
-                color: "#cad5ff",
+                color: "#5a63d5",
               },
             },
             strong: {
-              color: "#818cf8",
-            },
-            h1: {
-              fontSize: "0rem",
-              color: "#ffffff",
-            },
-            h2: {
-              color: "#ffffff",
-            },
-            h3: {
-              color: "#ffffff",
+              color: theme("colors.accent.DEFAULT"),
             },
             em: {
               color: "#ffffff",
@@ -41,6 +43,7 @@ export default {
               color: "#ffffff",
               backgroundColor: "#2f2f2f",
               padding: "2px",
+              borderRadius: "4px",
             },
             img: {
               maxWidth: "36rem",
@@ -50,10 +53,44 @@ export default {
             },
             pre: {
               backgroundColor: "#131313",
+              padding: "1rem",
+              borderRadius: "6px",
+            },
+            '[class~="dark"] &': {
+              color: theme("colors.text.dark"),
+              a: {
+                color: theme("colors.accent.dark"),
+                "&:hover": {
+                  color: "#cad5ff",
+                },
+              },
+              strong: {
+                color: theme("colors.accent.dark"),
+              },
+              em: {
+                color: "#ffffff",
+              },
+              code: {
+                color: "#ffffff",
+                backgroundColor: "#2f2f2f",
+                padding: "2px",
+                borderRadius: "4px",
+              },
+              img: {
+                maxWidth: "36rem",
+                width: "100%",
+                height: "auto",
+                margin: "0 auto",
+              },
+              pre: {
+                backgroundColor: "#131313",
+                padding: "1rem",
+                borderRadius: "6px",
+              },
             },
           },
         },
-      },
+      }),
     },
   },
   plugins: [typography],

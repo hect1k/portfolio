@@ -19,7 +19,7 @@ export async function GET(context) {
 
   const rssFeed = rss({
     title: "Nnisarg’s Blog",
-    description: "The adventures of a self-taught student developer :P",
+    description: "Dive into musings on the software Nnisarg loves and his views on life and tech :P",
     site: context.site,
     items: validPosts.map((post) => ({
       title: post.data.title,
@@ -27,7 +27,7 @@ export async function GET(context) {
       link: `/blog/${post.slug}/`,
       customData:
         (post.data.image
-          ? `<image src="https://nnisarg.in${post.data.image}"}/>`
+          ? `<image src="https://nnisarg.in${post.data.image}" />`
           : "") +
         (post.data.tags
           ? post.data.tags
@@ -40,5 +40,6 @@ export async function GET(context) {
     })),
     stylesheet: "/rss/styles.xsl",
   });
+
   return rssFeed;
 }

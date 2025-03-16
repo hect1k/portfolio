@@ -7,23 +7,25 @@ const blog = Astro.props.blog;
 <a
   href={`/blog/${blog.slug}`}
   title={`Read ${blog.data.title}`}
-  class="move-up flex h-fit cursor-pointer flex-col-reverse rounded bg-white bg-opacity-20 shadow-lg transition-all duration-300 ease-in-out hover:-translate-y-1 hover:scale-105 hover:bg-opacity-30 hover:shadow-black md:flex-row"
+  class="move-up flex h-fit cursor-pointer flex-col-reverse rounded bg-background-light shadow-lg transition-all duration-300 ease-in-out hover:-translate-y-1 hover:scale-105 hover:bg-white md:flex-row dark:bg-neutral-800 dark:hover:bg-neutral-700"
 >
-  <div class="flex w-full flex-col gap-4 p-4">
-    <h2 class="text-3xl font-bold">{blog.data.title}</h2>
-    <h3 class="text-lg">{blog.data.description}</h3>
+  <div
+    class="flex w-full flex-col gap-4 p-4 text-sm text-text-light md:text-base dark:text-text-dark"
+  >
+    <h2 class="text-2xl font-bold md:text-3xl">{blog.data.title}</h2>
+    <h3 class="text-base md:text-lg">{blog.data.description}</h3>
     <div class="flex flex-wrap gap-2">
       {
         blog.data.tags
           .split(", ")
           .map((tag: string) => (
-            <div class="rounded bg-accent px-2 py-1 text-sm font-bold">
+            <div class="rounded bg-accent px-2 py-1 text-xs font-bold text-text-dark md:text-sm">
               #{tag}
             </div>
           ))
       }
     </div>
-    <p class="text-xl">
+    <p class="text-sm md:text-lg">
       {formatDate(blog.data.pubDate)} •{" "}
       <span class="italic">
         {calculateReadingTime(blog.body)} mins

@@ -34,18 +34,24 @@ const description = `Explore a curated collection of ${category} projects by Nni
   description={description}
   image={filteredProjects[0].image}
 >
-  <div class="flex w-full flex-col gap-6 p-6 md:py-24">
+  <div
+    class="flex w-full flex-col gap-6 p-6 text-text-light md:py-20 dark:text-text-dark"
+  >
     <Breadcrumbs />
-    <h1 class="text-5xl font-bold">Projects</h1>
+    <h1 class="text-3xl font-bold md:text-4xl">Projects</h1>
     <div class="flex items-center gap-4">
       <a
-        class="w-fit rounded bg-accent px-4 py-2 font-bold"
-        href={`/projects/${category}`}>#{category}</a
+        class="w-fit rounded bg-accent px-4 py-2 text-sm font-semibold text-white md:text-base"
+        href={`/projects/${category}`}
       >
-      <a class="font-medium text-rose-300" href="/projects">Clear Filter</a>
+        #{category}
+      </a>
+      <a class="text-sm font-medium text-red-500 md:text-base" href="/projects"
+        >Clear Filter</a
+      >
     </div>
     <div class="flex items-center justify-between">
-      <p class="text-lg">{filteredProjects.length} projects</p>
+      <p class="text-sm md:text-lg">{filteredProjects.length} projects</p>
     </div>
     <div class="flex flex-col gap-6">
       {

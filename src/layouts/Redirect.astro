@@ -21,9 +21,7 @@ const image = Astro.props.image || metaData.image;
     <link rel="manifest" href="/site.webmanifest" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="generator" content={Astro.generator} />
-    <title>
-      {title}
-    </title>
+    <title>{title}</title>
     <script
       is:inline
       defer
@@ -41,14 +39,16 @@ const image = Astro.props.image || metaData.image;
     <meta property="og:locale" content="en_US" />
     <meta property="og:image" content={image} />
     <link rel="canonical" href={Astro.url.href} />
-    <meta name="”robots”" content="index, follow" />
+    <meta name="robots" content="index, follow" />
   </head>
-  <body>
+  <body
+    class="bg-background-light text-sm text-text-light md:text-base dark:bg-background-dark dark:text-text-dark"
+  >
     <p>Redirecting to {title}...</p>
     <p>
       If you are not redirected, <a
         href={link}
-        class="font-medium text-blue-700 underline">click here</a
+        class="font-medium text-accent underline">click here</a
       >.
     </p>
   </body>

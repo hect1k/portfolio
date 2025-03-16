@@ -1,11 +1,10 @@
 ---
 import { Image } from "astro:assets";
-
 const project = Astro.props.project;
 ---
 
 <article
-  class="move-up flex h-fit flex-col items-stretch overflow-hidden rounded bg-white bg-opacity-20 shadow-lg shadow-black md:flex-row"
+  class="move-up flex h-fit flex-col items-stretch overflow-hidden rounded bg-background-light shadow-lg transition-all duration-300 ease-in-out hover:-translate-y-1 hover:scale-105 hover:bg-white md:flex-row dark:bg-neutral-800 dark:hover:bg-neutral-700"
 >
   {
     project.image && (
@@ -19,20 +18,16 @@ const project = Astro.props.project;
       />
     )
   }
-  <div class="flex w-full flex-col gap-2 md:w-2/3">
-    <div class="flex flex-col justify-evenly gap-4">
-      <h2 class="bg-black bg-opacity-50 p-4 text-3xl font-bold">
-        {project.title}
-      </h2>
-      <p class="p-4 py-0 text-2xl font-semibold">
-        {project.description}
-      </p>
-    </div>
-    <div class="flex flex-wrap gap-2 p-4 py-2 font-bold italic text-accent">
+  <div
+    class="flex w-full flex-col gap-4 p-4 text-sm text-text-light md:text-base dark:text-text-dark"
+  >
+    <h2 class="text-2xl font-bold md:text-3xl">{project.title}</h2>
+    <p class="text-base md:text-lg">{project.description}</p>
+    <div class="flex flex-wrap gap-2 font-bold italic text-accent">
       {
         project.categories.map((category: string) => (
           <a
-            class="hover:underline"
+            class="text-xs hover:underline md:text-sm"
             href={`/projects/${category}`}
             title={`View projects in ${category}`}
           >
@@ -42,7 +37,7 @@ const project = Astro.props.project;
       }
     </div>
     <div
-      class="flex w-full flex-col gap-6 p-6 md:mt-auto md:flex-row md:items-center md:justify-between md:pr-12"
+      class="flex w-full flex-col gap-6 md:mt-auto md:flex-row md:items-center md:justify-between md:pr-12"
     >
       <div class="flex gap-4">
         {
@@ -51,7 +46,7 @@ const project = Astro.props.project;
               href={project.url}
               title={`View demo for ${project.title}`}
               target="_blank"
-              class="rounded bg-accent px-4 py-2 font-bold transition-all duration-300 ease-in-out hover:-translate-y-1 hover:scale-105 hover:drop-shadow-xl"
+              class="rounded bg-accent px-4 py-2 text-xs font-bold text-text-dark transition-all duration-300 ease-in-out hover:-translate-y-1 hover:scale-105 hover:drop-shadow-xl md:text-sm"
             >
               Demo
             </a>
@@ -63,7 +58,7 @@ const project = Astro.props.project;
               href={project.repo}
               title={`View source code for ${project.title}`}
               target="_blank"
-              class="rounded bg-black bg-opacity-30 px-4 py-2 font-bold transition-all duration-300 ease-in-out hover:-translate-y-1 hover:scale-105 hover:drop-shadow-xl"
+              class="rounded bg-background-dark bg-opacity-80 px-4 py-2 text-xs font-bold text-text-dark transition-all duration-300 ease-in-out hover:-translate-y-1 hover:scale-105 hover:drop-shadow-xl md:text-sm dark:bg-background-light dark:bg-opacity-20"
             >
               Github Repo
             </a>
@@ -75,7 +70,7 @@ const project = Astro.props.project;
           <a
             href={`/blog/${project.blog}`}
             title={`Read blog about ${project.title}`}
-            class="font-bold text-accent underline transition-all duration-300 ease-in-out hover:translate-x-2"
+            class="text-xs font-bold text-accent underline transition-all duration-300 ease-in-out hover:translate-x-2 md:text-sm"
           >
             Read Blog
           </a>

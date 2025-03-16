@@ -3,7 +3,7 @@ const blog = Astro.props.blog;
 const pages = Astro.url.pathname.split("/").filter((page) => page != "");
 ---
 
-<div class="flex w-full items-center truncate text-lg">
+<div class="flex w-full items-center truncate text-sm md:text-lg dark:text-text-dark text-text-light">
   <div>
     <a href="/" class="text-accent no-underline hover:underline">Home</a>
     <span class="mx-2 font-mono"></span>
@@ -19,10 +19,10 @@ const pages = Astro.url.pathname.split("/").filter((page) => page != "");
       return (
         <div>
           {i != pages.length - 1 && (
-            <a href={`/${pages.slice(0, i + 1).join("/")}`} class="text-accent hover:underline no-underline" >{text}</a>
+            <a href={`/${pages.slice(0, i + 1).join("/")}`} class="text-accent hover:underline no-underline">{text}</a>
             <span class="font-mono mx-2"></span>
           )}
-            {i == pages.length - 1 && <span>{blog || text}</span>}
+          {i == pages.length - 1 && <span>{blog || text}</span>}
         </div>
       );
     })

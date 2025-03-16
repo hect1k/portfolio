@@ -1,0 +1,32 @@
+<div
+  class="fixed bottom-0 left-1/2 z-50 w-full max-w-3xl -translate-x-1/2 transform p-4"
+>
+  <input type="checkbox" id="theme-popup-checkbox" class="hidden" />
+  <div
+    id="theme-popup"
+    class="flex hidden justify-between rounded-md bg-background-dark p-4 text-lg text-white shadow-lg transition-all duration-300 ease-in-out"
+  >
+    <p>
+      This site looks better on dark theme! You can switch to dark theme via
+      your browser settings.
+    </p>
+
+    <label
+      for="theme-popup-checkbox"
+      class="mt-2 w-fit cursor-pointer self-end text-sm font-semibold text-red-500 underline hover:text-red-600"
+      >Dismiss</label
+    >
+  </div>
+</div>
+
+<style>
+  @media (prefers-color-scheme: light) {
+    #theme-popup {
+      display: flex;
+    }
+  }
+
+  #theme-popup-checkbox:checked + #theme-popup {
+    display: none;
+  }
+</style>

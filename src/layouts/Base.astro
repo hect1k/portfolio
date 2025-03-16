@@ -19,10 +19,7 @@ const image = Astro.props.image || metaData.image;
     <link rel="manifest" href="/site.webmanifest" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="generator" content={Astro.generator} />
-    <title>
-      {title}
-    </title>
-    <!-- SEO -->
+    <title>{title}</title>
     <meta name="description" content={description} />
     <meta name="author" content="Nnisarg Gada" />
     <meta property="og:type" content="website" />
@@ -35,7 +32,6 @@ const image = Astro.props.image || metaData.image;
     <link rel="canonical" href={Astro.url.href} />
     <meta name="robots" content="index, follow" />
     <link rel="sitemap" href="/sitemap-index.xml" />
-    <!-- SEO -->
     <script
       is:inline
       defer
@@ -44,7 +40,7 @@ const image = Astro.props.image || metaData.image;
       data-domains="nnisarg.in,www.nnisarg.in"></script>
   </head>
   <body
-    class="h-screen w-screen bg-neutral-900 text-white selection:bg-accent selection:text-white"
+    class="h-screen w-screen bg-neutral-200 text-sm text-text-light selection:bg-accent selection:text-white md:text-base dark:bg-background-dark dark:text-text-dark"
   >
     <Nav />
     <slot />

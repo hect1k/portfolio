@@ -15,21 +15,25 @@ const description =
   <div
     class="fade flex h-full w-full flex-col gap-6 p-6 md:mx-auto md:w-2/3 md:py-24"
   >
-    <h1 class="text-5xl font-bold">Let's connect</h1>
+    <h1 class="text-4xl font-bold text-text-light dark:text-text-dark">
+      Let's connect
+    </h1>
     <div
-      class="move-up flex w-full flex-col justify-evenly gap-4 rounded-md bg-white bg-opacity-20 p-6 text-xl"
+      class="move-up flex w-full flex-col justify-evenly gap-4 rounded-md bg-background-light p-6 text-xl drop-shadow-xl dark:bg-neutral-800"
     >
       <div class="flex w-fit items-center gap-4">
         <Location />
-        <h2>Mumbai, India</h2>
+        <h2 class="text-lg text-text-light dark:text-text-dark">
+          Mumbai, India
+        </h2>
       </div>
       <div
-        class="flex w-fit items-center gap-4 transition-all duration-300 ease-in-out hover:text-accent"
+        class="group flex w-fit items-center gap-4 transition-all duration-300 ease-in-out hover:text-accent"
       >
         <Email />
-        <h2>
+        <h2 class="text-lg text-text-light dark:text-text-dark">
           <a
-            class="underline"
+            class="underline transition-all duration-300 ease-in-out group-hover:text-accent"
             href={`mailto:${socialLinks["Email"]}`}
             title="Email"
             target="_blank">{socialLinks["Email"]}</a
@@ -37,12 +41,12 @@ const description =
         </h2>
       </div>
       <div
-        class="flex w-fit items-center gap-4 transition-all duration-300 ease-in-out hover:text-accent"
+        class="group flex w-fit items-center gap-4 transition-all duration-300 ease-in-out hover:text-accent"
       >
         <LinkedIn />
-        <h2>
+        <h2 class="text-lg text-text-light dark:text-text-dark">
           <a
-            class="underline"
+            class="underline transition-all duration-300 ease-in-out group-hover:text-accent"
             href={socialLinks["LinkedIn"]}
             title="LinkedIn"
             target="_blank">nnisarggada</a
@@ -50,12 +54,12 @@ const description =
         </h2>
       </div>
       <div
-        class="flex w-fit items-center gap-4 transition-all duration-300 ease-in-out hover:text-accent"
+        class="group flex w-fit items-center gap-4 transition-all duration-300 ease-in-out hover:text-accent"
       >
         <GitHub />
-        <h2>
+        <h2 class="text-lg text-text-light dark:text-text-dark">
           <a
-            class="underline"
+            class="underline transition-all duration-300 ease-in-out group-hover:text-accent"
             href={socialLinks["GitHub"]}
             title="GitHub"
             target="_blank">nnisarggada</a

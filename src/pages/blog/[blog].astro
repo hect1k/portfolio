@@ -50,26 +50,28 @@ const { blog } = Astro.props;
   image={`https://nnisarg.in${blog.data.image}`}
 >
   <div
-    class="fade prose mx-auto w-full max-w-none p-6 md:prose-lg lg:prose-xl md:p-8 lg:p-12"
+    class="fade prose mx-auto w-full max-w-none p-6 text-text-light md:prose-lg lg:prose-xl dark:prose-invert md:p-8 lg:p-12 dark:text-text-dark"
   >
     <div class="my-4 md:my-8 lg:my-12">
       <Breadcrumbs blog={blog.data.title} />
     </div>
     <div class="blog-content">
-      <h1 class="text-4xl font-bold">{blog.data.title}</h1>
-      <h3 class="text-xl">{blog.data.description}</h3>
+      <h1 class="text-3xl font-bold md:text-4xl lg:text-5xl">
+        {blog.data.title}
+      </h1>
+      <h3 class="text-lg md:text-xl">{blog.data.description}</h3>
       <div class="flex flex-wrap gap-2">
         {
           blog.data.tags
             .split(", ")
             .map((tag: string) => (
-              <div class="rounded bg-accent px-2 py-1 text-sm font-bold">
+              <div class="rounded bg-accent px-2 py-1 text-sm font-bold text-white md:text-base">
                 #{tag}
               </div>
             ))
         }
       </div>
-      <p>
+      <p class="text-base md:text-lg">
         <span class="font-bold">{formatDate(blog.data.pubDate)}</span> • <span
           class="italic">{calculateReadingTime(blog.body)} min read</span
         >
@@ -79,7 +81,9 @@ const { blog } = Astro.props;
   </div>
   <div class="flex flex-col gap-4 p-6 md:gap-8 md:p-8 lg:p-12">
     <div class="flex w-full flex-wrap items-end justify-between gap-2">
-      <h2 class="text-3xl font-bold">You May Also Like</h2>
+      <h2 class="text-xl font-bold md:text-2xl lg:text-3xl">
+        You May Also Like
+      </h2>
       <a href="/blog" title="View All Blog Posts" class="underline">
         View All</a
       >

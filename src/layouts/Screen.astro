@@ -8,7 +8,9 @@ const image = Astro.props.image || metaData.image;
 ---
 
 <BaseLayout title={title} description={description} image={image}>
-  <div class="mx-auto min-h-[100dvh] w-full max-w-7xl pt-20">
+  <div
+    class="mx-auto min-h-[100dvh] w-full max-w-7xl pt-20 text-sm text-text-light md:text-base dark:text-text-dark"
+  >
     <slot />
   </div>
 </BaseLayout>

@@ -7,6 +7,8 @@ import Youtube from "@components/svgs/Youtube.astro";
 import ProjectCard from "@components/ProjectCard.astro";
 import BlogCard from "@components/BlogCard.astro";
 
+import LightThemePopup from "@components/LightThemePopup.astro";
+
 import { projects, socialLinks } from "@utils";
 const recentProjects = projects.slice(0, 3);
 
@@ -23,25 +25,30 @@ blogs = blogs.slice(0, 3);
 ---
 
 <ScreenLayout>
+  <LightThemePopup />
   <section
     class="fade grid h-full min-h-[calc(100vh-5rem)] w-full place-items-center p-6 md:p-12 lg:p-24"
   >
     <div class="flex w-full flex-col gap-16 md:gap-20">
       <div class="flex w-full flex-col gap-8 md:gap-10 lg:gap-12">
         <div class="flex flex-col gap-2 md:gap-4">
-          <p class="text-xl">Hi there <span id="wave">👋</span></p>
-          <h1 class="text-5xl font-bold">
+          <p class="text-base text-text-light md:text-xl dark:text-text-dark">
+            Hi there <span id="wave">👋</span>
+          </p>
+          <h1
+            class="text-4xl font-bold text-text-light md:text-5xl dark:text-text-dark"
+          >
             I'm <a
               href={socialLinks["GitHub"]}
               target="_blank"
               title="View Github Profile"
-              class="text-orange-500 underline"
+              class="text-orange-400 underline dark:text-orange-500"
               >Nnisarg
             </a>
           </h1>
         </div>
         <div
-          class="flex flex-col gap-4 text-lg md:gap-6 md:text-xl lg:text-2xl"
+          class="flex flex-col gap-4 text-base text-text-light md:text-lg lg:text-xl dark:text-text-dark"
         >
           <p>
             I'm a Computer Engineering student, developer, GNU/Linux user,
@@ -63,7 +70,11 @@ blogs = blogs.slice(0, 3);
         </div>
       </div>
       <div class="flex flex-col gap-2 md:gap-4">
-        <h2 class="text-3xl font-bold">My Socials</h2>
+        <h2
+          class="text-2xl font-bold text-text-light md:text-3xl dark:text-text-dark"
+        >
+          My Socials
+        </h2>
         <div
           class="iw-full flex flex-wrap items-center gap-6 p-2 pl-0 text-3xl text-accent"
         >
@@ -91,11 +102,17 @@ blogs = blogs.slice(0, 3);
         </div>
       </div>
       <div id="newsletter" class="flex scroll-m-24 flex-col gap-2 md:gap-4">
-        <h2 class="text-3xl font-bold">Newsletter</h2>
-        <div
-          class="mt-4 flex w-full flex-col items-center justify-center gap-6 rounded bg-neutral-600 bg-opacity-50 p-4 md:flex-row md:p-6 lg:p-8"
+        <h2
+          class="text-2xl font-bold text-text-light md:text-3xl dark:text-text-dark"
         >
-          <p class="text-lg font-medium md:w-1/2 md:text-xl lg:text-2xl">
+          Newsletter
+        </h2>
+        <div
+          class="mt-4 flex w-full flex-col items-center justify-center gap-6 rounded bg-background-light p-4 drop-shadow-sm md:flex-row md:p-6 lg:p-8 dark:bg-opacity-20"
+        >
+          <p
+            class="text-base font-medium text-text-light md:w-1/2 md:text-lg lg:text-xl dark:text-text-dark"
+          >
             Get exclusive emails about interesting things in the Tech World, and
             my thoughts on them!
           </p>
@@ -103,14 +120,14 @@ blogs = blogs.slice(0, 3);
             action="https://news.nnisarg.in/subscribe"
             method="POST"
             id="newsletter-form"
-            class="flex w-full flex-col items-stretch gap-4 md:w-1/2 md:flex-row md:gap-2 md:text-lg lg:text-xl"
+            class="flex w-full flex-col items-stretch gap-4 md:w-1/2 md:flex-row md:gap-2 md:text-base lg:text-lg"
           >
             <input
               type="email"
               name="email"
               placeholder="Email"
               required
-              class="w-full rounded bg-neutral-900 bg-opacity-50 p-2 focus:outline-none"
+              class="w-full rounded bg-neutral-300 p-2 focus:outline-none dark:bg-neutral-800 dark:bg-opacity-50"
             />
 
             <!--Honeypot-->
@@ -126,7 +143,7 @@ blogs = blogs.slice(0, 3);
             <button
               title="Subscribe"
               type="submit"
-              class="w-full rounded bg-accent/90 px-4 py-2 font-semibold transition-all duration-300 ease-in-out hover:scale-105 hover:bg-accent hover:drop-shadow-xl focus-visible:scale-105 focus-visible:bg-accent focus-visible:drop-shadow-xl md:w-fit"
+              class="w-full rounded bg-accent/90 px-4 py-2 font-semibold text-text-dark transition-all duration-300 ease-in-out hover:scale-105 hover:bg-accent hover:drop-shadow-xl focus-visible:scale-105 focus-visible:bg-accent focus-visible:drop-shadow-xl md:w-fit"
               >Subscribe</button
             >
           </form>
@@ -134,8 +151,16 @@ blogs = blogs.slice(0, 3);
       </div>
       <div class="flex flex-col gap-4 md:gap-8">
         <div class="flex w-full flex-wrap items-end justify-between gap-2">
-          <h2 class="text-3xl font-bold">Recent Projects</h2>
-          <a href="/projects" title="View All Projects" class="underline">
+          <h2
+            class="text-2xl font-bold text-text-light md:text-3xl dark:text-text-dark"
+          >
+            Recent Projects
+          </h2>
+          <a
+            href="/projects"
+            title="View All Projects"
+            class="text-accent underline"
+          >
             View All</a
           >
         </div>
@@ -145,8 +170,16 @@ blogs = blogs.slice(0, 3);
       </div>
       <div class="flex flex-col gap-4 md:gap-8">
         <div class="flex w-full flex-wrap items-end justify-between gap-2">
-          <h2 class="text-3xl font-bold">Recent Blog Posts</h2>
-          <a href="/blog" title="View All Blog Posts" class="underline">
+          <h2
+            class="text-2xl font-bold text-text-light md:text-3xl dark:text-text-dark"
+          >
+            Recent Blog Posts
+          </h2>
+          <a
+            href="/blog"
+            title="View All Blog Posts"
+            class="text-accent underline"
+          >
             View All</a
           >
         </div>

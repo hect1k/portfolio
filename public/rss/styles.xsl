@@ -5,7 +5,7 @@
     <html>
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>📣 RSS Feed for Nnisarg's Blogs | Nnisarg Gada</title>
+        <title>RSS Feed for Nnisarg's Blog Posts | Nnisarg Gada</title>
         <style>
           body {
             font-family: Inter, sans-serif;
@@ -15,7 +15,7 @@
             box-sizing: border-box;
             overflow-x: hidden;
           }
-                    
+
           *::-webkit-scrollbar {
             width: 5px;
             height: 5px;
@@ -71,7 +71,7 @@
 
           ul {
             list-style-type: none;
-            padding: 24px;
+            padding: 1rem;
           }
 
           li {
