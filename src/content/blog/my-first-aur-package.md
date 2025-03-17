@@ -3,13 +3,13 @@ title: "Publishing My First AUR Package: CPIG"
 description: "From Code to AUR: How I Got My Code onto Arch’s Servers"
 tags: arch-linux, linux, open-source, c
 pubDate: 2024-12-31T00:00:00+05:30
-image: "/images/blog/CPIG.jpg"
+image: "/images/blog/cpig.jpg"
 draft: false
 ---
 
 Today, I’m excited to share that I’ve published my **first package** to the **Arch User Repository (AUR)**! 🎉 The package is **CPIG - Color Palette Inference Generator**, a simple C-based tool that generates color palettes from images using the **K-means clustering algorithm**. It’s been a rewarding experience, and I’d love to walk you through the process of creating and publishing a package to the AUR.
 
-![CPIG Banner](https://nnisarg.in/images/blog/CPIG.jpg)
+![CPIG Banner](https://nnisarg.in/images/blog/cpig.jpg)
 
 ## What is CPIG?
 

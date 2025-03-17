@@ -1,18 +1,9 @@
-<!doctype html>
-<html>
-  <head>
-    <title>Support Nnisarg!</title>
-    <meta
-      http-equiv="refresh"
-      content="0;url=https://buymeacoffee.com/nnisarggada"
-    />
-  </head>
-  <body>
-    <p>Redirecting to Buymeacoffee...</p>
-    <p>
-      If you are not redirected, <a href="https://buymeacoffee.com/nnisarggada"
-        >click here</a
-      >.
-    </p>
-  </body>
-</html>
+---
+import Redirect from "@layouts/Redirect.astro";
+import { socialLinks } from "@utils";
+
+const name = "Buy Me a Coffee";
+const link = socialLinks["BuyMeACoffee"];
+---
+
+<Redirect name={name} link={link} />

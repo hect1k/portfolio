@@ -3,13 +3,13 @@ title: "I created PACMAN - not what you think 👀👀"
 description: "PACMAN is a free, open-source, web-based contact management app designed for simplicity and privacy."
 tags: go, golang, open-source, privacy
 pubDate: 2024-12-07T00:00:00+05:30
-image: "/images/blog/PACMAN.jpg"
+image: "/images/blog/pacman.jpg"
 draft: false
 ---
 
 When it comes to managing your contacts, privacy is often an afterthought. That’s why I created **PACMAN**: **Private Alternative for Contact Management And Networking**. PACMAN is an open-source, web-based application that gives you full control over your contact data. With features like contact creation, editing, and export to VCF format, PACMAN is designed for individuals and organizations who value simplicity and privacy above all else.
 
-![PACMAN](https://nnisarg.in/images/blog/PACMAN.jpg)
+![PACMAN](https://nnisarg.in/images/blog/pacman.jpg)
 
 ## Why Choose PACMAN?
 

@@ -3,13 +3,13 @@ title: "URLs Should Be Simple: Presenting ZenLink"
 description: "A simple open-source URL shortener that can be self-hosted."
 tags: python, tailwindcss, open-source, productivity
 pubDate: 2023-09-23T23:30:00+05:30
-image: "/images/blog/zenlink-ui.png"
+image: "/images/blog/zenlink-ui.jpg"
 draft: false
 ---
 
 In a world where the internet is filled with lengthy and cumbersome URLs, there's a rising need for simplicity and convenience. Enter [ZenLink](https://short.nnisarg.in), a powerful yet elegantly simple open-source URL shortener that can be self-hosted to streamline your online experience. In this blog post, we'll explore the wonders of ZenLink, learn how to try it out, and encourage you to join the ZenLink community on GitHub.
 
-![ZenLink UI](https://nnisarg.in/images/blog/zenlink-ui.png)
+![ZenLink UI](https://nnisarg.in/images/blog/zenlink-ui.jpg)
 
 ## Why ZenLink?
 

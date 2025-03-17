@@ -1,5 +1,7 @@
 ---
 import Rss from "@components/svgs/Rss.astro";
+import { Image } from "astro:assets";
+import CoffeeImage from "@assets/coffee.webp";
 ---
 
 <footer
@@ -8,7 +10,7 @@ import Rss from "@components/svgs/Rss.astro";
   <h1 class="text-base md:text-lg">
     Made with <span class="text-rose-500">❤</span> by <a
       href="https://nnisarg.in"
-      class="text-accent hover:underline">nnisarg</a
+      class="text-accent hover:underline">Nnisarg Gada</a
     >
   </h1>
   <div
@@ -29,12 +31,10 @@ import Rss from "@components/svgs/Rss.astro";
       class="flex items-center gap-2 hover:underline"
     >
       <span class="text-orange-500">
-        <img
-          src="/images/coffee.png"
+        <Image
+          src={CoffeeImage}
           alt="Buy me a coffee"
           class="aspect-square w-6"
-          loading="lazy"
-          decoding="async"
         />
       </span>
       <span class="text-sm md:text-base">Support me</span>

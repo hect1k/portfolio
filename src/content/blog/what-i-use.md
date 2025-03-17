@@ -2,7 +2,7 @@
 title: "Unveiling My Digital Arsenal: What I Use"
 description: "Dive into the heart of my tech sanctuary and discover the tools and hardware that fuel my digital endeavors."
 tags: tech, digital, life, productivity
-image: "/images/blog/what-i-use.png"
+image: "/images/blog/what-i-use.jpg"
 pubDate: 2024-02-28T00:00:00+05:30
 draft: false
 ---
@@ -15,7 +15,7 @@ Step into my workspace, where innovation takes flight. Here, [Arch Linux](https:
 
 If you're curious about the intricate workings of my workspace, feel free to take a peek at [my i3 configuration](https://github.com/nnisarggada/i3-dots).
 
-![My Linux Setup](https://nnisarg.in/images/blog/what-i-use.png)
+![My Linux Setup](https://nnisarg.in/images/blog/what-i-use.jpg)
 
 ## Hardware Highlights:
 
