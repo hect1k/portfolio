@@ -13,7 +13,6 @@ const image = Astro.props.image || metaData.image;
   <head>
     <meta http-equiv="refresh" content={`0;url=${link}`} />
     <link rel="canonical" href={link} />
-    <meta name="robots" content="noindex" />
     <meta charset="UTF-8" />
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
@@ -44,7 +43,11 @@ const image = Astro.props.image || metaData.image;
   <body>
     <p>Redirecting to {title}...</p>
     <p>
-      If you are not redirected, <a href={link} title={title}>click here</a>.
+      If you are not redirected, <a
+        href={link}
+        title={title}
+        style="text-decoration: underline; color: blue">click here</a
+      >.
     </p>
   </body>
 </html>
