@@ -7,7 +7,7 @@ export default {
     extend: {
       fontFamily: {
         sans: ["Inter", "sans-serif"],
-        mono: ["JetBrains Mono Nerd Font", "monospace"],
+        mono: ["JetBrains Mono", "monospace"],
       },
       colors: {
         accent: {
