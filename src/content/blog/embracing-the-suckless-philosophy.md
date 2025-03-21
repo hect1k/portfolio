@@ -29,7 +29,7 @@ This synergy resonates with me. It fosters an environment where I am not just a 
 
 ![My DWM configuration](https://nnisarg.in/images/blog/dwm.jpg)
 
-One of the aspects I love about using DWM is the freedom to make it my own. Over time, I’ve customized my setup to match my specific workflow and preferences. If you're interested in seeing my configurations or trying them out, check out my DWM dots repository here: [github.com/nnisarggada/dwm-dots](https://github.com/nnisarggada/dwm-dots).
+One of the aspects I love about using DWM is the freedom to make it my own. Over time, I’ve customized my setup to match my specific workflow and preferences. If you're interested in seeing my configurations or trying them out, check out my DWM dots repository here: [github.com/hect1k/dwm-dots](https://github.com/hect1k/dwm-dots).
 
 In the repo, I’ve included:
 
@@ -59,4 +59,4 @@ Switching back to Xorg and DWM wasn’t just a technical decision—it was a per
 
 For now, I’ll continue to build my computing environment with tools that emphasize simplicity and transparency, while striving to bring those same qualities into my life. Because in the end, suckless isn’t just about software—it’s about a way of thinking and living.
 
-Explore my DWM dots: [github.com/nnisarggada/dwm-dots](https://github.com/nnisarggada/dwm-dots)
+Explore my DWM dots: [github.com/hect1k/dwm-dots](https://github.com/hect1k/dwm-dots)

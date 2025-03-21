@@ -44,7 +44,7 @@ One of the most incredible aspects of learning to code is the wealth of free res
 
 - **[YouTube Videos](https://youtube.com)**: YouTube is a treasure trove of coding tutorials. Many passionate educators create video content covering various programming topics. Find channels that align with your interests and learning style.
 
-Additionally, platforms like [GitHub](https://github.com) provide a space to access open-source projects and collaborate with others. GitHub is not only a code repository but also a vibrant community where you can learn from experienced developers, contribute to projects, and showcase your own work. If you're curious, feel free to check out [my GitHub profile](https://github.com/nnisarggada) to see some of my own coding projects and contributions. It's a great way to get inspired and connect with fellow developers in the community.
+Additionally, platforms like [GitHub](https://github.com) provide a space to access open-source projects and collaborate with others. GitHub is not only a code repository but also a vibrant community where you can learn from experienced developers, contribute to projects, and showcase your own work. If you're curious, feel free to check out [my GitHub profile](https://github.com/hect1k) to see some of my own coding projects and contributions. It's a great way to get inspired and connect with fellow developers in the community.
 
 These resources are not only free but also highly accessible and can be incredibly beneficial as you embark on your coding journey.
 

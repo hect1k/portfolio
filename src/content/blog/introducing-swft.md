@@ -13,7 +13,7 @@ In today's digital age, file sharing has become an integral part of our daily ro
 
 ## The SWFT Advantage
 
-[SWFT](https://github.com/nnisarggada/swft) is a lightweight and intuitive web-based file sharing service that simplifies the process of sharing files with others. With its impressive set of features, it's poised to become your go-to file sharing solution. Let's take a closer look at what sets SWFT apart:
+[SWFT](https://github.com/hect1k/swft) is a lightweight and intuitive web-based file sharing service that simplifies the process of sharing files with others. With its impressive set of features, it's poised to become your go-to file sharing solution. Let's take a closer look at what sets SWFT apart:
 
 ## Seamless File Uploads and Shareable Links
 
@@ -49,7 +49,7 @@ It's that simple! SWFT streamlines the file sharing process, making it accessibl
 
 ## Get Involved on GitHub
 
-Ready to get involved with SWFT? Visit our GitHub repository at [SWFT on GitHub](https://github.com/nnisarggada/swft). Here, you can:
+Ready to get involved with SWFT? Visit our GitHub repository at [SWFT on GitHub](https://github.com/hect1k/swft). Here, you can:
 
 - Fork the project: Create your own copy of SWFT and start making changes.
 

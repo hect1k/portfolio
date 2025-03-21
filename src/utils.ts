@@ -17,7 +17,7 @@ export function calculateReadingTime(content: string) {
 export const socialLinks = {
   Email: "contact@nnisarg.in",
   Resume: "https://nnisarg.in/resume.pdf",
-  GitHub: "https://github.com/nnisarggada",
+  GitHub: "https://github.com/hect1k",
   LinkedIn: "https://www.linkedin.com/in/nnisarggada",
   YouTube: "https://www.youtube.com/@nnisarggada",
   BuyMeACoffee: "https://buymeacoffee.com/nnisarggada",
@@ -30,7 +30,7 @@ export const projects = [
     categories: ["webdev", "open-source", "self-host", "flask", "tailwindcss"],
     image: "swft.jpg",
     url: "https://share.nnisarg.in",
-    repo: "https://github.com/nnisarggada/swft",
+    repo: "https://github.com/hect1k/swft",
     blog: "introducing-swft",
   },
   {
@@ -54,7 +54,7 @@ export const projects = [
     categories: ["python", "fastapi", "backend", "open-source", "self-host"],
     image: "mundra.jpg",
     url: "https://mundra.nnisarg.in/redoc",
-    repo: "https://github.com/nnisarggada/mundra",
+    repo: "https://github.com/hect1k/mundra",
     blog: "building-mundra",
   },
   {
@@ -62,14 +62,14 @@ export const projects = [
     description: "A simple open-source load balancer",
     categories: ["go", "devops", "open-source", "self-host"],
     image: "stabl.jpg",
-    repo: "https://github.com/nnisarggada/stabl",
+    repo: "https://github.com/hect1k/stabl",
   },
   {
     title: "CPIG",
     description: "Command-line tool to generate color palettes from images.",
     categories: ["c", "command-line", "open-source", "image-processing"],
     image: "cpig.jpg",
-    repo: "https://github.com/nnisarggada/cpig",
+    repo: "https://github.com/hect1k/cpig",
     blog: "my-first-aur-package",
   },
   {
@@ -78,7 +78,7 @@ export const projects = [
       "Web-based contact management app designed for simplicity and privacy.",
     categories: ["webdev", "go", "self-host", "open-source", "privacy"],
     image: "pacman.jpg",
-    repo: "https://github.com/nnisarggada/pacman",
+    repo: "https://github.com/hect1k/pacman",
     blog: "i-created-pacman",
   },
   {
@@ -93,7 +93,7 @@ export const projects = [
     ],
     image: "ezhls.jpg",
     url: "https://hls.nnisarg.in",
-    repo: "https://github.com/nnisarggada/ezhls",
+    repo: "https://github.com/hect1k/ezhls",
     blog: "magic-behind-video-streaming",
   },
   {
@@ -110,7 +110,7 @@ export const projects = [
     categories: ["webdev", "open-source", "self-host", "flask", "tailwindcss"],
     image: "zenlink.jpg",
     url: "https://short.nnisarg.in",
-    repo: "https://github.com/nnisarggada/zenlink",
+    repo: "https://github.com/hect1k/zenlink",
     blog: "urls-should-be-simple",
   },
   {
@@ -139,21 +139,21 @@ export const projects = [
     description: "A simple chess game and AI coded in Python",
     categories: ["python", "pygame", "ai-ml"],
     image: "nychess.jpg",
-    repo: "https://github.com/nnisarggada/nychess",
+    repo: "https://github.com/hect1k/nychess",
   },
   {
     title: "CubeRun3D",
     description: "A simple hyper-casual mobile game",
     categories: ["gamedev", "c-sharp", "mobile", "unity"],
     image: "cuberun3d.jpg",
-    repo: "https://github.com/nnisarggada/cuberun3d",
+    repo: "https://github.com/hect1k/cuberun3d",
   },
   {
     title: "OnePlayerPong",
     description: "A unique twist on the classic pong game",
     categories: ["gamedev", "c-sharp", "mobile", "unity"],
     image: "oneplayerpong.jpg",
-    repo: "https://github.com/nnisarggada/oneplayerpong",
+    repo: "https://github.com/hect1k/oneplayerpong",
   },
 ];
 

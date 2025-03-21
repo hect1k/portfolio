@@ -27,7 +27,7 @@ Publishing a package to the AUR not only allows other users to easily install an
 
 ### Step 1: Packaging the Project
 
-The first step in publishing to the AUR was **packaging** my project. This involves creating a [**PKGBUILD**](https://github.com/nnisarggada/cpig/blob/master/PKGBUILD) file, which is a script that defines how the package is built, installed, and maintained on Arch Linux.
+The first step in publishing to the AUR was **packaging** my project. This involves creating a [**PKGBUILD**](https://github.com/hect1k/cpig/blob/master/PKGBUILD) file, which is a script that defines how the package is built, installed, and maintained on Arch Linux.
 
 For CPIG, the PKGBUILD script included the project’s dependencies, such as the [**STB Image**](https://github.com/nothings/stb/blob/master/stb_image.h) library for loading images, and instructions for building the program using **GCC** (GNU Compiler Collection). Once the PKGBUILD was ready, I tested it locally to ensure everything was working as expected.
 
@@ -93,6 +93,6 @@ I’m looking forward to continuing the development of CPIG and adding more feat
 
 Publishing my first package to the AUR was a fulfilling and educational experience. It taught me a lot about packaging, the AUR submission process, and how to maintain open-source projects. If you’re an Arch Linux user, I hope you find CPIG useful for your projects. And if you’re new to packaging, I encourage you to give it a try—there’s no better way to learn than by diving in!
 
-If you'd like to contribute to the project, check out the [**CPIG repository**](https://github.com/nnisarggada/cpig) on GitHub. Whether it's improving the code, adding new features, or simply reporting issues, contributions are always welcome. Open-source projects thrive on community involvement, and I look forward to collaborating with others to make CPIG even better.
+If you'd like to contribute to the project, check out the [**CPIG repository**](https://github.com/hect1k/cpig) on GitHub. Whether it's improving the code, adding new features, or simply reporting issues, contributions are always welcome. Open-source projects thrive on community involvement, and I look forward to collaborating with others to make CPIG even better.
 
-Check out CPIG on the [AUR](https://aur.archlinux.org/packages/cpig-git) and [GitHub](https://github.com/nnisarggada/cpig). Let me know if you have any feedback or suggestions. Here's to more open-source contributions! 🚀
+Check out CPIG on the [AUR](https://aur.archlinux.org/packages/cpig-git) and [GitHub](https://github.com/hect1k/cpig). Let me know if you have any feedback or suggestions. Here's to more open-source contributions! 🚀

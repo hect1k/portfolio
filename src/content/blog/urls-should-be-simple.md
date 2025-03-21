@@ -33,7 +33,7 @@ Ready to simplify your URLs? Give ZenLink a spin at [short.nnisarg.in](http://sh
 
 ## Get Involved: ZenLink on GitHub
 
-ZenLink is an open-source project, which means you can not only use it but also contribute to its development. I encourage you to visit the [GitHub repository](https://github.com/nnisarggada/zenlink) and consider becoming part of the ZenLink community.
+ZenLink is an open-source project, which means you can not only use it but also contribute to its development. I encourage you to visit the [GitHub repository](https://github.com/hect1k/zenlink) and consider becoming part of the ZenLink community.
 
 On the GitHub repository, you can:
 
@@ -48,6 +48,6 @@ By joining the ZenLink community, you become a part of a collaborative effort to
 
 In a world where every character counts, ZenLink is your go-to solution for shortening URLs effortlessly. Its open-source nature and self-hosting capabilities empower you to take control of your link management. So why wait? Give ZenLink a try at [short.nnisarg.in](https://short.nnisarg.in), and explore the limitless possibilities of simplified URLs.
 
-Remember, ZenLink thrives on community support. Join us on [GitHub](https://github.com/nnisarggada/zenlink) and help us make ZenLink the ultimate URL shortening experience.
+Remember, ZenLink thrives on community support. Join us on [GitHub](https://github.com/hect1k/zenlink) and help us make ZenLink the ultimate URL shortening experience.
 
 Simplify your links, simplify your life — choose ZenLink.

@@ -43,7 +43,7 @@ Ready to start managing your contacts securely? Follow these steps to self-host 
 1. Clone the Repository:
 
    ```bash
-   git clone https://github.com/nnisarggada/pacman
+   git clone https://github.com/hect1k/pacman
    cd pacman
    ```
 
@@ -90,4 +90,4 @@ PACMAN is continually evolving, with exciting features on the way:
 
 If you’re looking for a simple, secure, and self-hosted solution for managing your contacts, **PACMAN** is the perfect fit. Whether for personal use or small businesses, PACMAN lets you take control of your data while keeping things lightweight and user-friendly.
 
-Ready to take the leap? Check out the [PACMAN repository](https://github.com/nnisarggada/pacman) on GitHub and get started today!
+Ready to take the leap? Check out the [PACMAN repository](https://github.com/hect1k/pacman) on GitHub and get started today!

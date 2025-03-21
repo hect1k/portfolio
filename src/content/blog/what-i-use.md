@@ -13,7 +13,7 @@ Welcome, to my digital sanctuary! In this ever-evolving landscape of technology,
 
 Step into my workspace, where innovation takes flight. Here, [Arch Linux](https://archlinux.org/) reigns supreme, providing the solid foundation upon which my digital adventures unfold. Paired with the sleek efficiency of [i3wm](https://i3wm.org/), navigating through tasks feels effortless, like a well-choreographed dance. When it's time to delve into the intricate world of code, [neovim](https://neovim.io/) emerges as my stalwart companion, guiding my fingers through lines of logic and creativity. And for traversing the vast expanses of the internet, I rely on the steadfast companionship of [Firefox](https://www.mozilla.org/en-US/firefox/) and [Google Chrome](https://www.google.com/intl/en_in/chrome/) (only used while developing websites), guiding me through the digital wilderness with ease.
 
-If you're curious about the intricate workings of my workspace, feel free to take a peek at [my i3 configuration](https://github.com/nnisarggada/i3-dots).
+If you're curious about the intricate workings of my workspace, feel free to take a peek at [my i3 configuration](https://github.com/hect1k/i3-dots).
 
 ![My Linux Setup](https://nnisarg.in/images/blog/what-i-use.jpg)
 

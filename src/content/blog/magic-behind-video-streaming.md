@@ -46,7 +46,7 @@ To simplify the process of converting videos to HLS Streams, we’ve developed a
 - **Customization:** Flexible options to tailor the streaming experience to your specific needs.
 - **Self-Hosting:** Option to self-host the API for greater control and customization.
 
-You can find the repository for self-hosting on GitHub: [EzHLS Repository](https://github.com/nnisarggada/ezhls).
+You can find the repository for self-hosting on GitHub: [EzHLS Repository](https://github.com/hect1k/ezhls).
 
 By leveraging **EzHLS**, you can transform your video delivery system, providing your users with the high-quality, seamless streaming experience they expect.
 

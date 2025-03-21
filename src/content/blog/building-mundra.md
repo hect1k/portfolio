@@ -8,7 +8,7 @@ draft: false
 
 When it comes to managing Model United Nations (MUN) events, the challenges are endless—keeping track of hundreds of delegates, streamlining communication, and planning large-scale events with precision. As the **Joint General Secretary - Tech** of the **[MUN Society MPSTME](https://munsocietympstme.com)**, I decided to tackle these challenges head-on.
 
-That’s how **[MUNDRA](https://github.com/nnisarggada/mundra)** – the **MUNSoc Delegate Resource Application** – was born. Named after the bustling Mundra Port in Gujarat, this backend application is designed to be the central hub for all delegate-related activities. More than just a database, MUNDRA is a scalable, secure, and modular solution that will power everything from our apps to email workflows and websites.
+That’s how **[MUNDRA](https://github.com/hect1k/mundra)** – the **MUNSoc Delegate Resource Application** – was born. Named after the bustling Mundra Port in Gujarat, this backend application is designed to be the central hub for all delegate-related activities. More than just a database, MUNDRA is a scalable, secure, and modular solution that will power everything from our apps to email workflows and websites.
 
 For developers and enthusiasts, MUNDRA's API is fully documented and accessible [here](https://mundra.nnisarg.in/redoc), showcasing its well-structured design and functionality.
 
@@ -97,7 +97,7 @@ MUNDRA is just getting started. Here’s a glimpse into the roadmap:
 
 Interested in the technical details or want to contribute?
 
-- Check out the source code on [GitHub](https://github.com/nnisarggada/mundra).
+- Check out the source code on [GitHub](https://github.com/hect1k/mundra).
 - View the live API documentation at [mundra.nnisarg.in/redoc](https://mundra.nnisarg.in/redoc).
 
 Let’s build the future of MUN management together.
