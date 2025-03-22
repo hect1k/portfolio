@@ -1,7 +1,5 @@
 ---
 import Rss from "@components/svgs/Rss.astro";
-import { Image } from "astro:assets";
-import CoffeeImage from "@assets/coffee.webp";
 ---
 
 <footer
@@ -23,21 +21,6 @@ import CoffeeImage from "@assets/coffee.webp";
     >
       <span class="text-orange-500"><Rss /></span>
       <span class="text-sm md:text-base">Subscribe to RSS Feed</span>
-    </a>
-    <a
-      href="https://buymeacoffee.com/nnisarggada"
-      target="_blank"
-      title="Support me"
-      class="flex items-center gap-2 hover:underline"
-    >
-      <span class="text-orange-500">
-        <Image
-          src={CoffeeImage}
-          alt="Buy me a coffee"
-          class="aspect-square w-6"
-        />
-      </span>
-      <span class="text-sm md:text-base">Support me</span>
     </a>
   </div>
 </footer>

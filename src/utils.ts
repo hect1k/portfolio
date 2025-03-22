@@ -20,7 +20,6 @@ export const socialLinks = {
   GitHub: "https://github.com/hect1k",
   LinkedIn: "https://www.linkedin.com/in/nnisarggada",
   YouTube: "https://www.youtube.com/@nnisarggada",
-  BuyMeACoffee: "https://buymeacoffee.com/nnisarggada",
 };
 
 export const projects = [
