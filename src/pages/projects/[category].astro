@@ -1,8 +1,8 @@
 ---
-import ScreenLayout from "@layouts/Screen.astro";
-import Breadcrumbs from "@components/Breadcrumbs.astro";
-import ProjectCard from "@components/ProjectCard.astro";
-import { projects, uniqueCategories } from "@utils";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import Breadcrumbs from "@/components/Breadcrumbs.astro";
+import ProjectCard from "@/components/ProjectCard.astro";
+import { projects, uniqueCategories } from "@/utils";
 
 export function getStaticPaths() {
   return [
@@ -29,19 +29,17 @@ const filteredProjects = allProjects.filter((project: any) =>
 const description = `Explore a curated collection of ${category} projects by Nnisarg Gada, showcasing creativity and technical expertise in web development, design, and more.`;
 ---
 
-<ScreenLayout
+<BaseLayout
   title={title}
   description={description}
   image={filteredProjects[0].image}
 >
-  <div
-    class="flex w-full flex-col gap-6 p-6 text-text-light md:py-20 dark:text-text-dark"
-  >
+  <div class="flex w-full flex-col gap-6 p-6 md:py-20">
     <Breadcrumbs />
     <h1 class="text-3xl font-bold md:text-4xl">Projects</h1>
     <div class="flex items-center gap-4">
       <a
-        class="w-fit rounded bg-accent px-4 py-2 text-sm font-semibold text-white md:text-base"
+        class="bg-primary w-fit rounded px-4 py-2 text-sm font-semibold text-white md:text-base"
         href={`/projects/${category}`}
       >
         #{category}
@@ -61,4 +59,4 @@ const description = `Explore a curated collection of ${category} projects by Nni
       }
     </div>
   </div>
-</ScreenLayout>
+</BaseLayout>

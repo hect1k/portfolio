@@ -1,32 +1,33 @@
 {
-  "name": "astro-portfolio",
+  "name": "portfolio",
   "type": "module",
   "version": "0.0.1",
   "scripts": {
     "dev": "astro dev",
-    "start": "astro dev",
-    "build": "node recommendations.js && astro build",
+    "build": "astro build",
     "preview": "astro preview",
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/rss": "^3.0.0",
-    "@astrojs/sitemap": "^3.2.1",
-    "@astrojs/tailwind": "^5.1.4",
-    "@babel/core": "^7.26.0",
-    "astro": "^3.6.5",
+    "@astrojs/rss": "^4.0.11",
+    "@astrojs/sitemap": "^3.3.0",
+    "@tailwindcss/typography": "^0.5.16",
+    "@tailwindcss/vite": "^4.0.15",
+    "astro": "^5.5.4",
     "gray-matter": "^4.0.3",
-    "markdown-it": "^13.0.2",
+    "markdown-it": "^14.1.0",
     "natural": "^8.0.1",
     "sharp": "^0.33.5",
-    "tailwindcss": "^3.4.17"
+    "tailwindcss": "^4.0.15"
   },
   "devDependencies": {
-    "@tailwindcss/typography": "^0.5.16",
-    "@types/markdown-it": "^14.1.2",
-    "prettier": "^3.4.2",
-    "prettier-plugin-astro": "^0.12.3",
-    "prettier-plugin-tailwindcss": "^0.5.14"
+    "@tailwindcss/postcss": "^4.0.15",
+    "autoprefixer": "^10.4.21",
+    "cssnano": "^7.0.6",
+    "postcss": "^8.5.3",
+    "prettier": "^3.5.3",
+    "prettier-plugin-astro": "^0.14.1",
+    "prettier-plugin-tailwindcss": "^0.6.11"
   },
   "pnpm": {
     "onlyBuiltDependencies": [

@@ -1,20 +1,18 @@
 ---
-import ScreenLayout from "@layouts/Screen.astro";
+import BaseLayout from "@/layouts/BaseLayout.astro";
 
-import Github from "@components/svgs/GitHub.astro";
-import Linkedin from "@components/svgs/LinkedIn.astro";
-import Youtube from "@components/svgs/Youtube.astro";
-import ProjectCard from "@components/ProjectCard.astro";
-import BlogCard from "@components/BlogCard.astro";
+import Github from "@/components/svgs/GitHub.astro";
+import Linkedin from "@/components/svgs/LinkedIn.astro";
+import Youtube from "@/components/svgs/Youtube.astro";
+import ProjectCard from "@/components/ProjectCard.astro";
+import BlogCard from "@/components/BlogCard.astro";
 
-import LightThemePopup from "@components/LightThemePopup.astro";
-
-import { projects, socialLinks } from "@utils";
+import { projects, socialLinks } from "@/utils";
 const recentProjects = projects.slice(0, 3);
 
 import { getCollection } from "astro:content";
 let blogs = await getCollection("blog");
-blogs.sort((a, b) => {
+blogs.sort((a: any, b: any) => {
   const pubDateA: Date = new Date(a.data.pubDate);
   const pubDateB: Date = new Date(b.data.pubDate);
 
@@ -24,59 +22,52 @@ blogs.sort((a, b) => {
 blogs = blogs.slice(0, 3);
 ---
 
-<ScreenLayout>
-  <LightThemePopup />
+<BaseLayout>
   <section
-    class="fade grid h-full min-h-[calc(100vh-5rem)] w-full place-items-center p-6 md:p-12 lg:p-24"
+    class="grid h-full min-h-[calc(100vh-5rem)] w-full place-items-center p-6 md:p-12 lg:p-24"
   >
     <div class="flex w-full flex-col gap-16 md:gap-20">
       <div class="flex w-full flex-col gap-8 md:gap-10 lg:gap-12">
         <div class="flex flex-col gap-2 md:gap-4">
-          <p class="text-base text-text-light md:text-xl dark:text-text-dark">
+          <p class="text-base md:text-xl">
             Hi there <span id="wave">👋</span>
           </p>
-          <h1
-            class="text-4xl font-bold text-text-light md:text-5xl dark:text-text-dark"
-          >
+          <h1 class="text-4xl font-bold md:text-5xl">
             I'm <a
               href={socialLinks["GitHub"]}
               target="_blank"
-              title="View Github Profile"
-              class="text-orange-400 underline dark:text-orange-500"
+              title="aka hect1k"
+              class="hover:text-accent/80 text-accent font-bold underline transition-all duration-300 ease-in-out"
               >Nnisarg
             </a>
           </h1>
         </div>
-        <div
-          class="flex flex-col gap-4 text-base text-text-light md:text-lg lg:text-xl dark:text-text-dark"
-        >
+        <div class="flex flex-col gap-4 text-base md:text-lg lg:text-xl">
           <p>
             I'm a Computer Engineering student, developer, GNU/Linux user,
             open-source enthusiast and an existentialist :P
           </p>
           <p>
-            I embrace <i class="italic text-accent"
+            I embrace <i class="text-primary font-semibold italic"
               >"less code, less bloat, more freedom"</i
             > — crafting fast, scalable websites while exploring diverse <a
               href="/projects"
               title="View My Projects"
-              class="text-accent underline focus-visible:underline">projects</a
+              class="text-primary font-medium underline focus-visible:underline"
+              >projects</a
             > and penning my journey in my <a
               href="/blog"
               title="View My Blog"
-              class="text-accent underline focus-visible:underline">blog</a
+              class="text-primary font-medium underline focus-visible:underline"
+              >blog</a
             > along the way.
           </p>
         </div>
       </div>
       <div class="flex flex-col gap-2 md:gap-4">
-        <h2
-          class="text-2xl font-bold text-text-light md:text-3xl dark:text-text-dark"
-        >
-          My Socials
-        </h2>
+        <h2 class="text-2xl font-bold md:text-3xl">My Socials</h2>
         <div
-          class="iw-full flex flex-wrap items-center gap-6 p-2 pl-0 text-3xl text-accent"
+          class="text-primary flex w-full flex-wrap items-center gap-6 p-2 pl-0 text-3xl"
         >
           <a
             href={socialLinks["GitHub"]}
@@ -102,17 +93,11 @@ blogs = blogs.slice(0, 3);
         </div>
       </div>
       <div id="newsletter" class="flex scroll-m-24 flex-col gap-2 md:gap-4">
-        <h2
-          class="text-2xl font-bold text-text-light md:text-3xl dark:text-text-dark"
-        >
-          Newsletter
-        </h2>
+        <h2 class="text-2xl font-bold md:text-3xl">Newsletter</h2>
         <div
-          class="mt-4 flex w-full flex-col items-center justify-center gap-6 rounded bg-background-light p-4 drop-shadow-sm md:flex-row md:p-6 lg:p-8 dark:bg-opacity-20"
+          class="flex w-full flex-col items-center justify-center gap-6 rounded drop-shadow-sm md:flex-row"
         >
-          <p
-            class="text-base font-medium text-text-light md:w-1/2 md:text-lg lg:text-xl dark:text-text-dark"
-          >
+          <p class="text-base md:w-1/2 md:text-lg lg:text-xl">
             Get exclusive emails about interesting things in the Tech World, and
             my thoughts on them!
           </p>
@@ -127,7 +112,7 @@ blogs = blogs.slice(0, 3);
               name="email"
               placeholder="Email"
               required
-              class="w-full rounded bg-neutral-300 p-2 focus:outline-none dark:bg-neutral-800 dark:bg-opacity-50"
+              class="bg-text/10 w-full rounded p-2 focus:outline-none"
             />
 
             <!--Honeypot-->
@@ -143,7 +128,7 @@ blogs = blogs.slice(0, 3);
             <button
               title="Subscribe"
               type="submit"
-              class="w-full rounded bg-accent/90 px-4 py-2 font-semibold text-text-dark transition-all duration-300 ease-in-out hover:scale-105 hover:bg-accent hover:drop-shadow-xl focus-visible:scale-105 focus-visible:bg-accent focus-visible:drop-shadow-xl md:w-fit"
+              class="bg-primary text-background dark:text-text hover:bg-primary focus-visible:bg-primary w-full rounded px-4 py-2 font-semibold transition-all duration-300 ease-in-out hover:scale-105 hover:cursor-pointer hover:drop-shadow-xl focus-visible:scale-105 focus-visible:drop-shadow-xl md:w-fit"
               >Subscribe</button
             >
           </form>
@@ -151,15 +136,11 @@ blogs = blogs.slice(0, 3);
       </div>
       <div class="flex flex-col gap-4 md:gap-8">
         <div class="flex w-full flex-wrap items-end justify-between gap-2">
-          <h2
-            class="text-2xl font-bold text-text-light md:text-3xl dark:text-text-dark"
-          >
-            Recent Projects
-          </h2>
+          <h2 class="text-2xl font-bold md:text-3xl">Recent Projects</h2>
           <a
             href="/projects"
             title="View All Projects"
-            class="text-accent underline"
+            class="text-primary font-medium underline"
           >
             View All</a
           >
@@ -170,15 +151,11 @@ blogs = blogs.slice(0, 3);
       </div>
       <div class="flex flex-col gap-4 md:gap-8">
         <div class="flex w-full flex-wrap items-end justify-between gap-2">
-          <h2
-            class="text-2xl font-bold text-text-light md:text-3xl dark:text-text-dark"
-          >
-            Recent Blog Posts
-          </h2>
+          <h2 class="text-2xl font-bold md:text-3xl">Recent Blog Posts</h2>
           <a
             href="/blog"
             title="View All Blog Posts"
-            class="text-accent underline"
+            class="text-primary font-medium underline"
           >
             View All</a
           >
@@ -193,7 +170,7 @@ blogs = blogs.slice(0, 3);
       </div>
     </div>
   </section>
-</ScreenLayout>
+</BaseLayout>
 
 <style>
   #wave {

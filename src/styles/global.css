@@ -1,40 +1,164 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+@layer base {
+
+  :root {
+    --text: #0f0f0f;
+    --background: #e3e3e3;
+    --primary: #5c68eb;
+    --accent: #f97415;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --text: #efefef;
+      --background: #1c1c1c;
+      --primary: #6b75e6;
+      --accent: #f97415;
+    }
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html,
+  body {
+    overflow-x: clip;
+    scroll-behavior: smooth;
+    width: 100%;
+    font-family: 'Inter', sans-serif;
+  }
+
+  .h-screen {
+    height: 100vh;
+    height: 100dvh;
+  }
+
+  * {
+    scrollbar-color: var(--primary) var(--background);
+  }
+
+  *::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background-color: var(--primary);
+    border-radius: 5px;
+  }
+
+  *::-webkit-scrollbar-track {
+    background-color: var(--background);
+    border-radius: 3px;
+  }
 }
 
-html {
-  overflow-y: scroll;
-  overflow-x: clip;
-  scroll-behavior: smooth;
-  width: 100%;
+@theme {
+  --color-text: var(--text);
+  --color-background: var(--background);
+  --color-primary: var(--primary);
+  --color-secondary: var(--secondary);
+  --color-accent: var(--accent);
+
+  --font-mono: 'JetBrains Mono', monospace;
+  --font-sans: 'Inter', sans-serif;
 }
 
-.h-screen {
-  height: 100vh;
-  height: 100dvh;
-}
+@utility prose {
 
-*::-webkit-scrollbar {
-  width: 5px;
-  height: 5px;
-  scrollbar-width: thin;
-}
+  * {
+    color: var(--text);
+  }
 
-*::-webkit-scrollbar-thumb {
-  background-color: #818cf8;
-  border-radius: 5px;
-}
+  strong {
+    color: var(--primary);
+  }
 
-*::-webkit-scrollbar-track {
-  background-color: rgba(255, 255, 255, 0.1);
-  border-radius: 3px;
-}
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
 
-* {
-  scrollbar-color: #818cf8 rgba(255, 255, 255, 0.1);
+    &,
+    &>strong {
+      color: var(--text);
+    }
+  }
+
+  a {
+    color: var(--primary);
+  }
+
+  li::marker {
+    color: var(--text);
+  }
+
+  em {
+    color:
+  }
+
+  code {
+    color: var(--text);
+    background-color: rgba(0, 0, 0, 0.1);
+    padding: 2px 4px;
+    border-radius: 4px;
+  }
+
+  img {
+    max-width: 36rem;
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+  }
+
+  pre {
+    background-color: rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+    border-radius: 6px;
+  }
+
+  blockquote p {
+    &:first-of-type {
+      &::before {
+        content: none;
+      }
+    }
+  }
+
+  h1,
+  h2 {
+    margin-top: 0;
+  }
+
+  pre,
+  code {
+
+    &::before,
+    &::after {
+      content: none;
+    }
+  }
+
+  pre>code {
+    background-color: transparent;
+    padding: 0;
+  }
+
+  @media (prefers-color-scheme: dark) {
+
+    pre,
+    code {
+      background-color: rgba(255, 255, 255, 0.1);
+    }
+  }
 }

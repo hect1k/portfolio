@@ -1,5 +1,5 @@
 ---
-import { formatDate, calculateReadingTime } from "@utils";
+import { formatDate, calculateReadingTime } from "@/utils";
 import { Image } from "astro:assets";
 const blog = Astro.props.blog;
 ---
@@ -7,11 +7,9 @@ const blog = Astro.props.blog;
 <a
   href={`/blog/${blog.slug}`}
   title={`Read ${blog.data.title}`}
-  class="move-up flex h-fit cursor-pointer flex-col-reverse rounded bg-background-light shadow-lg transition-all duration-300 ease-in-out hover:-translate-y-1 hover:scale-105 hover:bg-white md:flex-row dark:bg-neutral-800 dark:hover:bg-neutral-700"
+  class="dark:bg-text/10 dark:hover:bg-text/20 flex h-fit cursor-pointer flex-col-reverse rounded bg-white/25 shadow-lg transition-all duration-300 ease-in-out hover:-translate-y-1 hover:scale-105 hover:bg-white md:flex-row"
 >
-  <div
-    class="flex w-full flex-col gap-4 p-4 text-sm text-text-light md:text-base dark:text-text-dark"
-  >
+  <div class="flex w-full flex-col gap-4 p-4 text-sm md:text-base">
     <h2 class="text-2xl font-bold md:text-3xl">{blog.data.title}</h2>
     <h3 class="text-base md:text-lg">{blog.data.description}</h3>
     <div class="flex flex-wrap gap-2">
@@ -19,7 +17,7 @@ const blog = Astro.props.blog;
         blog.data.tags
           .split(", ")
           .map((tag: string) => (
-            <div class="rounded bg-accent px-2 py-1 text-xs font-bold text-text-dark md:text-sm">
+            <div class="bg-primary text-background dark:text-text rounded px-2 py-1 text-xs font-bold md:text-sm">
               #{tag}
             </div>
           ))

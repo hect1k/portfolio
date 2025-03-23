@@ -1,39 +1,35 @@
 ---
-import ScreenLayout from "@layouts/Screen.astro";
-import Location from "@components/svgs/Location.astro";
-import Email from "@components/svgs/Email.astro";
-import LinkedIn from "@components/svgs/LinkedIn.astro";
-import GitHub from "@components/svgs/GitHub.astro";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import Location from "@/components/svgs/Location.astro";
+import Email from "@/components/svgs/Email.astro";
+import LinkedIn from "@/components/svgs/LinkedIn.astro";
+import GitHub from "@/components/svgs/GitHub.astro";
 
-import { socialLinks } from "@utils";
+import { socialLinks } from "@/utils";
 
 const description =
   "Get in touch with Nnisarg Gada for collaborations, inquiries, or project discussions. Reach out via the contact form, email, or social media.";
 ---
 
-<ScreenLayout title="Contact | Nnisarg Gada" description={description}>
+<BaseLayout title="Contact | Nnisarg Gada" description={description}>
   <div
-    class="fade flex h-full w-full flex-col gap-6 p-6 md:mx-auto md:w-2/3 md:py-24"
+    class="flex h-full w-full flex-col gap-6 p-6 md:mx-auto md:w-2/3 md:py-24"
   >
-    <h1 class="text-4xl font-bold text-text-light dark:text-text-dark">
-      Let's connect
-    </h1>
-    <div
-      class="move-up flex w-full flex-col justify-evenly gap-4 rounded-md bg-background-light p-6 text-xl drop-shadow-xl dark:bg-neutral-800"
-    >
+    <h1 class="text-3xl font-bold md:text-4xl">Let's connect</h1>
+    <div class="flex w-full flex-col justify-evenly gap-4 rounded-md text-xl">
       <div class="flex w-fit items-center gap-4">
         <Location />
-        <h2 class="text-lg text-text-light dark:text-text-dark">
+        <h2 class="text-text-light dark:text-text-dark text-lg">
           Mumbai, India
         </h2>
       </div>
       <div
-        class="group flex w-fit items-center gap-4 transition-all duration-300 ease-in-out hover:text-accent"
+        class="group hover:text-accent flex w-fit items-center gap-4 transition-all duration-300 ease-in-out"
       >
         <Email />
-        <h2 class="text-lg text-text-light dark:text-text-dark">
+        <h2 class="text-text-light dark:text-text-dark text-lg">
           <a
-            class="underline transition-all duration-300 ease-in-out group-hover:text-accent"
+            class="group-hover:text-accent underline transition-all duration-300 ease-in-out"
             href={`mailto:${socialLinks["Email"]}`}
             title="Email"
             target="_blank">{socialLinks["Email"]}</a
@@ -41,12 +37,12 @@ const description =
         </h2>
       </div>
       <div
-        class="group flex w-fit items-center gap-4 transition-all duration-300 ease-in-out hover:text-accent"
+        class="group hover:text-accent flex w-fit items-center gap-4 transition-all duration-300 ease-in-out"
       >
         <LinkedIn />
-        <h2 class="text-lg text-text-light dark:text-text-dark">
+        <h2 class="text-text-light dark:text-text-dark text-lg">
           <a
-            class="underline transition-all duration-300 ease-in-out group-hover:text-accent"
+            class="group-hover:text-accent underline transition-all duration-300 ease-in-out"
             href={socialLinks["LinkedIn"]}
             title="LinkedIn"
             target="_blank">nnisarggada</a
@@ -54,12 +50,12 @@ const description =
         </h2>
       </div>
       <div
-        class="group flex w-fit items-center gap-4 transition-all duration-300 ease-in-out hover:text-accent"
+        class="group hover:text-accent flex w-fit items-center gap-4 transition-all duration-300 ease-in-out"
       >
         <GitHub />
-        <h2 class="text-lg text-text-light dark:text-text-dark">
+        <h2 class="text-text-light dark:text-text-dark text-lg">
           <a
-            class="underline transition-all duration-300 ease-in-out group-hover:text-accent"
+            class="group-hover:text-accent underline transition-all duration-300 ease-in-out"
             href={socialLinks["GitHub"]}
             title="GitHub"
             target="_blank">hect1k</a
@@ -68,4 +64,4 @@ const description =
       </div>
     </div>
   </div>
-</ScreenLayout>
+</BaseLayout>

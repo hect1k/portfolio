@@ -1,3 +1,16 @@
+export const metaData = {
+  title: "Nnisarg Gada | Developer, Tech Enthusiast, Problem Solver",
+  description: "Nnisarg's portfolio website showcasing coding projects and tech adventures as a developer.",
+  image: "https://nnisarg.in/images/og_image.jpg",
+  author: "Nnisarg Gada",
+};
+
+export const umami = {
+  src: "https://umami.nnisarg.in/script.js",
+  id: "c14b3a5e-f5ef-4050-9e81-1cb1461c5c32",
+  domains: "nnisarg.in,www.nnisarg.in",
+};
+
 export const formatDate = (date: string): string => {
   return new Date(date).toLocaleDateString("en-US", {
     year: "numeric",
@@ -165,10 +178,3 @@ projects.forEach((project: any) => {
     }
   });
 });
-
-export const metaData = {
-  title: "Nnisarg Gada | Developer, Tech Enthusiast, Problem Solver",
-  description:
-    "Nnisarg's portfolio website showcasing coding projects and tech adventures as a developer.",
-  image: "https://nnisarg.in/images/og_image.jpg",
-};

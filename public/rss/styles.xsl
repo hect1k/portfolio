@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>rss
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 
   <xsl:template match="/">
@@ -7,11 +7,28 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>RSS Feed for Nnisarg's Blog Posts | Nnisarg Gada</title>
         <style>
+          :root {
+            --text: #0f0f0f;
+            --background: #e3e3e3;
+            --primary: #5c68eb;
+            --accent: #f97415;
+          }
+
+          @media (prefers-color-scheme: dark) {
+            :root {
+              --text: #efefef;
+              --background: #1c1c1c;
+              --primary: #6b75e6;
+              --accent: #f97415;
+            }
+          }
+
           body {
             font-family: Inter, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #171717;
+            background-color: var(--background);
+            color: var(--text);
             box-sizing: border-box;
             overflow-x: hidden;
           }
@@ -23,29 +40,30 @@
           }
 
           *::-webkit-scrollbar-thumb {
-            background-color: #818cf8;
+            background-color: var(--primary);
             border-radius: 5px;
           }
 
           *::-webkit-scrollbar-track {
-            background-color: rgba(255, 255, 255, 0.1);
+            background-color: var(--background);
             border-radius: 3px;
           }
 
           * {
-            scrollbar-color: #818cf8 rgba(255, 255, 255, 0.1);
+            scrollbar-color: var(--primary) var(--background);
           }
 
           *::selection {
-            background-color: #818cf8;
+            background-color: var(--primary);
             color: white;
           }
 
           header {
-            background-color: #00000050;
-            color: white;
+            background-color: var(--background);
+            color: var(--text);
             text-align: center;
             padding: 24px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
           }
 
           header div {
@@ -75,9 +93,9 @@
           }
 
           li {
-            border: 1px solid #3d3d3d;
-            background-color: #ffffff20;
-            background-opacity: 0.2;
+            background: var(--background);
+            color: var(--text);
+            box-shadow: 0 0 0 1px var(--text);
             border-radius: 5px;
             margin: 20px;
             display: flex;
@@ -86,7 +104,6 @@
 
           .deets {
             padding: 12px 24px;
-            color: white;
             display: flex;
             flex-direction: column;
             gap: 8px;
@@ -115,7 +132,7 @@
           }
 
           .tag {
-            background-color: #818cf8;
+            background-color: var(--primary);
             color: white;
             padding: 4px 8px;
             border-radius: 5px;

@@ -1,13 +1,14 @@
 ---
 import "../styles/global.css";
 
-import Nav from "@components/Nav.astro";
-import Footer from "@components/Footer.astro";
-
-import { metaData } from "@utils";
+import { metaData, umami } from "@/utils";
 const title = Astro.props.title || metaData.title;
 const description = Astro.props.description || metaData.description;
 const image = Astro.props.image || metaData.image;
+const author = Astro.props.author || metaData.author;
+
+import Navbar from "@/components/Navbar.astro";
+import Footer from "@/components/Footer.astro";
 ---
 
 <html lang="en">
@@ -20,8 +21,10 @@ const image = Astro.props.image || metaData.image;
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
+
+    <!-- SEO -->
     <meta name="description" content={description} />
-    <meta name="author" content="Nnisarg Gada" />
+    <meta name="author" content={author} />
     <meta property="og:type" content="website" />
     <meta property="og:url" content={Astro.url.href} />
     <meta property="og:title" content={title} />
@@ -32,18 +35,22 @@ const image = Astro.props.image || metaData.image;
     <link rel="canonical" href={Astro.url.href} />
     <meta name="robots" content="index, follow" />
     <link rel="sitemap" href="/sitemap-index.xml" />
+    <!-- SEO -->
+
     <script
       is:inline
       defer
-      src="https://umami.nnisarg.in/script.js"
-      data-website-id="c14b3a5e-f5ef-4050-9e81-1cb1461c5c32"
-      data-domains="nnisarg.in,www.nnisarg.in"></script>
+      src={umami.src}
+      data-website-id={umami.id}
+      data-domains={umami.domains}></script>
   </head>
   <body
-    class="h-screen w-screen bg-neutral-200 text-sm text-text-light selection:bg-accent selection:text-white md:text-base dark:bg-background-dark dark:text-text-dark"
+    class="bg-background text-text selection:bg-primary h-screen w-screen selection:text-white"
   >
-    <Nav />
-    <slot />
+    <Navbar />
+    <main class="mx-auto min-h-[100dvh] w-full max-w-7xl pt-20">
+      <slot />
+    </main>
     <Footer />
   </body>
 </html>

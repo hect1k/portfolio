@@ -1,25 +1,25 @@
 ---
-import Rss from "@components/svgs/Rss.astro";
+import Rss from "@/components/svgs/Rss.astro";
 ---
 
 <footer
-  class="flex w-full flex-col items-center justify-between gap-8 bg-neutral-400 bg-opacity-50 p-6 text-sm shadow-md shadow-black backdrop-blur-md md:flex-row md:px-6 md:py-6 lg:px-36 dark:bg-neutral-800"
+  class="bg-text/10 flex w-full flex-col items-center justify-between gap-8 p-6 text-sm md:flex-row md:px-6 md:py-6 lg:px-36"
 >
   <h1 class="text-base md:text-lg">
     Made with <span class="text-rose-500">❤</span> by <a
       href="https://nnisarg.in"
-      class="text-accent hover:underline">Nnisarg Gada</a
+      class="text-accent font-medium underline">Nnisarg Gada</a
     >
   </h1>
   <div
-    class="flex flex-col items-center justify-center gap-4 text-text-light md:flex-row md:gap-8 lg:gap-12 dark:text-text-dark"
+    class="flex flex-col items-center justify-center gap-4 md:flex-row md:gap-8 lg:gap-12"
   >
     <a
       href="/rss.xml"
       title="Subscribe to my RSS Feed"
       class="flex items-center gap-2 hover:underline"
     >
-      <span class="text-orange-500"><Rss /></span>
+      <span class="text-accent"><Rss /></span>
       <span class="text-sm md:text-base">Subscribe to RSS Feed</span>
     </a>
   </div>

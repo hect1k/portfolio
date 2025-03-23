@@ -4,7 +4,7 @@ const project = Astro.props.project;
 ---
 
 <article
-  class="move-up flex h-fit flex-col items-stretch overflow-hidden rounded bg-background-light shadow-lg transition-all duration-300 ease-in-out hover:-translate-y-1 hover:scale-105 hover:bg-white md:flex-row dark:bg-neutral-800 dark:hover:bg-neutral-700"
+  class="dark:bg-text/10 dark:hover:bg-text/20 flex h-fit flex-col items-stretch overflow-hidden rounded bg-white/25 shadow-lg transition-all duration-300 ease-in-out hover:-translate-y-1 hover:scale-105 hover:bg-white md:flex-row"
 >
   {
     project.image && (
@@ -18,12 +18,10 @@ const project = Astro.props.project;
       />
     )
   }
-  <div
-    class="flex w-full flex-col gap-4 p-4 text-sm text-text-light md:text-base dark:text-text-dark"
-  >
+  <div class="flex w-full flex-col gap-4 p-4 text-sm md:text-base">
     <h2 class="text-2xl font-bold md:text-3xl">{project.title}</h2>
     <p class="text-base md:text-lg">{project.description}</p>
-    <div class="flex flex-wrap gap-2 font-bold italic text-accent">
+    <div class="text-primary flex flex-wrap gap-2 font-bold italic">
       {
         project.categories.map((category: string) => (
           <a
@@ -46,7 +44,7 @@ const project = Astro.props.project;
               href={project.url}
               title={`View demo for ${project.title}`}
               target="_blank"
-              class="rounded bg-accent px-4 py-2 text-xs font-bold text-text-dark transition-all duration-300 ease-in-out hover:-translate-y-1 hover:scale-105 hover:drop-shadow-xl md:text-sm"
+              class="bg-primary text-background dark:text-text rounded px-4 py-2 text-xs font-bold transition-all duration-300 ease-in-out hover:-translate-y-1 hover:scale-105 hover:drop-shadow-xl md:text-sm"
             >
               Demo
             </a>
@@ -58,7 +56,7 @@ const project = Astro.props.project;
               href={project.repo}
               title={`View source code for ${project.title}`}
               target="_blank"
-              class="rounded bg-background-dark bg-opacity-80 px-4 py-2 text-xs font-bold text-text-dark transition-all duration-300 ease-in-out hover:-translate-y-1 hover:scale-105 hover:drop-shadow-xl md:text-sm dark:bg-background-light dark:bg-opacity-20"
+              class="bg-primary/25 rounded px-4 py-2 text-xs font-bold transition-all duration-300 ease-in-out hover:-translate-y-1 hover:scale-105 hover:drop-shadow-xl md:text-sm"
             >
               Github Repo
             </a>
@@ -70,7 +68,7 @@ const project = Astro.props.project;
           <a
             href={`/blog/${project.blog}`}
             title={`Read blog about ${project.title}`}
-            class="text-xs font-bold text-accent underline transition-all duration-300 ease-in-out hover:translate-x-2 md:text-sm"
+            class="w-fit text-xs font-bold underline transition-all duration-300 ease-in-out hover:translate-x-2 md:text-sm"
           >
             Read Blog
           </a>
