@@ -1,108 +1,108 @@
+import * as tf from '@tensorflow/tfjs'; // Pure JS backend
+import * as use from '@tensorflow-models/universal-sentence-encoder';
 import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
-import natural from 'natural';
+import { fileURLToPath } from 'url';
+import { dirname } from 'path';
 
-// Path to the blog files
-const BLOG_DIR = './src/content/blog/';
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
-// List of common stopwords to ignore during text similarity calculations
-const STOPWORDS = new Set([
-  'the', 'and', 'a', 'to', 'of', 'in', 'is', 'it', 'on', 'for', 'with',
-  'this', 'that', 'an', 'as', 'are', 'by', 'at', 'or', 'from', 'was', 'be',
-  'has', 'but', 'not', 'if', 'your', 'you', 'we', 'can', 'all', 'will', 'one',
-  'their', 'they', 'my', 'our', 'us', 'when', 'about', 'what', 'so', 'which',
-  'these', 'them', 'into', 'some', 'more', 'any', 'also', 'just', 'like',
-  'up', 'out', 'only', 'how', 'its', 'because', 'here', 'there', 'whether',
-  're', 'into', 'each', 'different', 'keep', 'path', 'when', 'other',
-  'every', 'their', 'those', 'ready', 'existing', 'always', 'find', 'just', 'll',
+const BLOG_DIR = path.join(__dirname, 'src/content/blog/');
+const OUTPUT_PATH = path.join(__dirname, 'src/recommendations.json');
 
-  // Special characters and numbers
-  'https', 'com', 's', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9'
-]);
-
-// Function to tokenize and filter out stopwords and short words
-const tokenizeAndFilter = (text) => {
-  const tokenizer = new natural.WordTokenizer();
-  return tokenizer.tokenize(text.toLowerCase()).filter((word) => !STOPWORDS.has(word) && word.length > 2);
-};
-
-// Function to read all blog posts (not draft posts)
+// --- Load blog posts with metadata ---
 const getAllPosts = () => {
   const files = fs.readdirSync(BLOG_DIR);
-  const posts = files.map((file) => {
-    const filePath = path.join(BLOG_DIR, file);
-    const content = fs.readFileSync(filePath, 'utf-8');
-    const { data, content: mainContent } = matter(content);
-    if (data.draft === true) return null;
-    return {
-      ...data,
-      slug: file.replace('.md', ''),
-      mainContent,
-      pubDate: new Date(data.pubDate)
-    };
+
+  return files
+    .filter((file) => path.extname(file) === '.md')
+    .map((file) => {
+      const filePath = path.join(BLOG_DIR, file);
+      const raw = fs.readFileSync(filePath, 'utf-8');
+      const { data, content } = matter(raw);
+      if (data.draft) return null;
+
+      return {
+        slug: file.replace('.md', ''),
+        title: data.title,
+        tags: (data.tags || '').split(',').map(t => t.trim().toLowerCase()),
+        pubDate: new Date(data.pubDate),
+        text: `${data.title || ''} ${data.description || ''} ${content || ''}`,
+      };
+    })
+    .filter(Boolean);
+};
+
+// --- Cosine similarity between vectors ---
+const cosineSimilarity = (vecA, vecB) => {
+  const dot = tf.tidy(() => tf.sum(tf.mul(vecA, vecB)).dataSync()[0]);
+  const normA = tf.norm(vecA).dataSync()[0];
+  const normB = tf.norm(vecB).dataSync()[0];
+  return normA && normB ? dot / (normA * normB) : 0;
+};
+
+// --- Jaccard similarity between tag arrays ---
+const tagSimilarity = (tagsA, tagsB) => {
+  const setA = new Set(tagsA);
+  const setB = new Set(tagsB);
+  const intersection = [...setA].filter(tag => setB.has(tag)).length;
+  const union = new Set([...tagsA, ...tagsB]).size;
+  return union === 0 ? 0 : intersection / union;
+};
+
+// --- Date proximity (inverse days difference) ---
+const dateProximity = (dateA, dateB) => {
+  const diffDays = Math.abs((dateA - dateB) / (1000 * 60 * 60 * 24));
+  return 1 / (1 + diffDays); // more recent = closer to 1
+};
+
+// --- Main recommendation generator ---
+const generateRecommendations = async ({ verbose = false } = {}) => {
+  const log = (...args) => verbose && console.log(...args);
+
+  const posts = getAllPosts();
+  log(`📄 Loaded ${posts.length} posts`);
+
+  const model = await use.load();
+  log(`🧠 USE model loaded`);
+
+  const embeddings = await model.embed(posts.map(p => p.text));
+  const vectors = embeddings.unstack();
+
+  const recommendations = posts.map((post, i) => {
+    log(`\n🔍 ${post.slug}`);
+    const scores = posts.map((other, j) => {
+      if (i === j) return { slug: other.slug, score: -1 };
+
+      const contentSim = cosineSimilarity(vectors[i], vectors[j]);
+      const tagSim = tagSimilarity(post.tags, other.tags);
+      const recency = dateProximity(post.pubDate, other.pubDate);
+
+      const score = (
+        0.6 * contentSim +
+        0.3 * tagSim +
+        0.1 * recency
+      );
+
+      log(`  ↔ ${other.slug}: content=${contentSim.toFixed(2)} tags=${tagSim.toFixed(2)} date=${recency.toFixed(2)} → score=${score.toFixed(4)}`);
+      return { slug: other.slug, score };
+    });
+
+    const top = scores
+      .sort((a, b) => b.score - a.score)
+      .slice(0, 5)
+      .map(s => s.slug);
+
+    log(`  ✅ Top 5: ${top.join(', ')}`);
+    return { slug: post.slug, recommendations: top };
   });
 
-  return posts.filter((post) => post !== null);
+  fs.writeFileSync(OUTPUT_PATH, JSON.stringify(recommendations, null, 2));
+  console.log(`\n✅ Recommendations saved to ${OUTPUT_PATH}`);
 };
 
-// Function to calculate similarity between two posts
-const calculateSimilarity = (postA, postB) => {
-  console.log(`Finding similarity between ${postA.title} and ${postB.title}`);
-
-  // Calculate tag overlap
-  const tagsA = postA.tags.split(', ');
-  const tagsB = postB.tags.split(', ');
-  const commonTags = tagsA.filter((tag) => tagsB.includes(tag));
-  console.log(`Common tags: ${commonTags}`);
-
-  // Calculate description similarity
-  const descWordsA = tokenizeAndFilter(postA.description);
-  const descWordsB = tokenizeAndFilter(postB.description);
-  const commonDescWords = descWordsA.filter((word) => descWordsB.includes(word));
-  console.log(`Common description words: ${commonDescWords}`);
-
-  // Calculate content similarity
-  const contentWordsA = tokenizeAndFilter(postA.mainContent);
-  const contentWordsB = tokenizeAndFilter(postB.mainContent);
-  const commonContentWords = contentWordsA.filter((word) => contentWordsB.includes(word));
-  console.log(`Common content words: ${commonContentWords}`);
-
-  // Calculate recency similarity
-  const daysDiff = Math.abs((postA.pubDate - postB.pubDate) / (1000 * 60 * 60 * 24));
-  const recencyScore = 1 / (1 + daysDiff); // Closer dates get a higher score
-  console.log(`Recency score: ${recencyScore}`);
-
-  // Weighted score: tags are most important, followed by content, description, and recency
-  const score = commonTags.length * 5 + commonDescWords.length * 2.5 + commonContentWords.length * 2 + 0.5 * recencyScore;
-  console.log(`Weighted score: ${score}`);
-
-  console.log('\n\n');
-
-  return score;
-};
-
-// Function to generate recommendations for all posts
-const generateRecommendations = (posts) => {
-  return posts.map((post) => {
-    const scores = posts
-      .filter((otherPost) => otherPost.slug !== post.slug) // Exclude the current post
-      .map((otherPost) => ({
-        slug: otherPost.slug,
-        score: calculateSimilarity(post, otherPost),
-      }))
-      .sort((a, b) => b.score - a.score) // Sort by score in descending order
-      .slice(0, 5); // Select the top 5 recommendations
-
-    const recommendations = scores.map((rec) => rec.slug);
-    return { slug: post.slug, recommendations };
-  });
-};
-
-// Main process
-const posts = getAllPosts();
-const recommendations = generateRecommendations(posts);
-const outputPath = './src/recommendations.json';
-fs.writeFileSync(outputPath, JSON.stringify(recommendations, null, 2));
-
-console.log('Recommendations generated and saved to:', outputPath);
+// --- CLI support ---
+const isVerbose = process.argv.includes('--verbose');
+generateRecommendations({ verbose: isVerbose });
