@@ -30,6 +30,7 @@ export function calculateReadingTime(content: string) {
 export const socialLinks = {
   Email: "contact@nnisarg.in",
   Resume: "https://nnisarg.in/resume.pdf",
+  Matrix: "https://matrix.to/#/@hect1k:matrix.org",
   GitHub: "https://github.com/hect1k",
   LinkedIn: "https://www.linkedin.com/in/nnisarggada",
   YouTube: "https://www.youtube.com/@nnisarggada",
