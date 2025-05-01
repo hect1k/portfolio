@@ -33,7 +33,8 @@ export const socialLinks = {
   Matrix: "https://matrix.to/#/@hect1k:mumbaiglug.org",
   GitHub: "https://github.com/hect1k",
   LinkedIn: "https://www.linkedin.com/in/nnisarggada",
-  YouTube: "https://www.youtube.com/@nnisarggada",
+  YouTube: "https://www.youtube.com/@hect1k_dev",
+  X: "https://x.com/hect1k_dev",
 };
 
 export const projects = [

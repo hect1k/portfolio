@@ -4,6 +4,7 @@ import BaseLayout from "@/layouts/BaseLayout.astro";
 import Github from "@/components/svgs/GitHub.astro";
 import Linkedin from "@/components/svgs/LinkedIn.astro";
 import Youtube from "@/components/svgs/Youtube.astro";
+import X from "@/components/svgs/X.astro";
 import ProjectCard from "@/components/ProjectCard.astro";
 import BlogCard from "@/components/BlogCard.astro";
 
@@ -89,6 +90,13 @@ blogs = blogs.slice(0, 3);
             title="View Youtube Channel"
             class="transition-all duration-300 ease-in-out hover:-translate-y-1 hover:scale-105"
             ><Youtube /></a
+          >
+          <a
+            href={socialLinks["X"]}
+            target="_blank"
+            title="View X.com Profile"
+            class="transition-all duration-300 ease-in-out hover:-translate-y-1 hover:scale-105"
+            ><X /></a
           >
         </div>
       </div>
