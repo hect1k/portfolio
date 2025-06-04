@@ -2,7 +2,7 @@
 title: "Unlocking the Magic Behind Seamless Streaming: How HLS Transforms Video Delivery"
 description: "Discover how HLS enhances video streaming and my API for effortless video-to-HLS conversion."
 tags: api, hls, webdev, streaming
-pubDate: 2024-06-23T00:00:00+05:30
+pubDate: 2024-06-23T19:10:00+05:30
 image: "/images/blog/ezhls.jpg"
 draft: false
 ---

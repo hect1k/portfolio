@@ -2,7 +2,7 @@
 title: "Building MUNDRA: Revolutionizing MUN Delegate Management with Tech"
 description: "Discover how MUNDRA simplifies MUN delegate management with a FastAPI-powered backend."
 tags: python, fastapi, backend, open-source
-pubDate: 2024-11-22T00:00:00+05:30
+pubDate: 2024-11-22T17:45:00+05:30
 draft: false
 ---
 

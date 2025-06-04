@@ -2,7 +2,7 @@
 title: "Publishing My First AUR Package: CPIG"
 description: "From Code to AUR: How I Got My Code onto Arch’s Servers"
 tags: arch-linux, linux, open-source, c
-pubDate: 2024-12-31T00:00:00+05:30
+pubDate: 2024-12-31T20:20:00+05:30
 image: "/images/blog/cpig.jpg"
 draft: false
 ---

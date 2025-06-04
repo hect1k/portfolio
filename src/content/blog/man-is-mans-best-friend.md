@@ -2,7 +2,7 @@
 title: "MAN is Man’s Best Friend!"
 description: "A guide on how the 'man' command helps in learning commands and boosting terminal productivity."
 tags: linux, terminal, productivity, sysadmin, devops
-pubDate: 2025-03-02T00:00:00+05:30
+pubDate: 2025-03-02T18:55:00+05:30
 draft: false
 ---
 

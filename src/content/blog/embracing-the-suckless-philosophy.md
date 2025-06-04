@@ -2,7 +2,7 @@
 title: "Embracing the Suckless Philosophy: A Minimalist Approach to Computing and Life"
 description: "A reflection on the suckless philosophy, its connection to Unix principles, and how it inspires minimalist computing and intentional living."
 tags: guide, linux, unix, philosophy, minimalist
-pubDate: 2024-12-05T00:00:00+05:30
+pubDate: 2024-12-05T20:10:00+05:30
 image: "/images/blog/dwm.jpg"
 draft: false
 ---

@@ -19,7 +19,7 @@ export async function GET(context) {
 
   const rssFeed = rss({
     title: "Nnisarg’s Blog",
-    description: "Dive into musings on the software Nnisarg loves and his views on life and tech :P",
+    description: "Explore Nnisarg's insights on open-source software, minimalist coding, and tech-life intersections, blending practical projects with existential musings for a smarter, freer digital journey",
     site: context.site,
     items: validPosts.map((post) => ({
       title: post.data.title,
@@ -38,7 +38,7 @@ export async function GET(context) {
       content: parser.render(post.body),
       ...post.data,
     })),
-    stylesheet: "/rss/styles.xsl",
+    stylesheet: "/rss.xsl",
   });
 
   return rssFeed;

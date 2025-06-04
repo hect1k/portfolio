@@ -2,7 +2,7 @@
 title: "Dealing With Burnout"
 description: "Explore effective strategies to combat burnout and maintain well-being while juggling coursework, coding projects, and part-time jobs as a student developer."
 tags: burnout, developer, mental-health, productivity
-pubDate: 2024-07-30T00:00:00+05:30
+pubDate: 2024-07-30T18:50:00+05:30
 draft: false
 ---
 

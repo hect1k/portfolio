@@ -2,7 +2,7 @@
 title: "Organizing My First Hackathon: A Journey of Discovery and Growth"
 description: "How I organized my first hackathon, and what I learned along the way."
 tags: hackathon, community, event, teamwork
-pubDate: 2023-12-20T00:00:00+05:30
+pubDate: 2023-12-20T19:05:00+05:30
 image: "/images/blog/debate-a-thon.jpg"
 draft: false
 ---

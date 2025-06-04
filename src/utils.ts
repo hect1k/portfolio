@@ -28,6 +28,7 @@ export function calculateReadingTime(content: string) {
 }
 
 export const socialLinks = {
+  RSS: "/rss.xml",
   Email: "contact@nnisarg.in",
   Resume: "https://nnisarg.in/resume.pdf",
   Matrix: "https://matrix.to/#/@hect1k:mumbaiglug.org",

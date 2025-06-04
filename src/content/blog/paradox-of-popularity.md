@@ -2,7 +2,7 @@
 title: "The Paradox of Popularity: When the Underdog Becomes the Underwhelming"
 description: "A brain dump about how good things should be gatekept."
 tags: technology, thoughts, general, linux
-pubDate: 2024-05-03T00:00:00+05:30
+pubDate: 2024-05-03T18:35:00+05:30
 draft: false
 ---
 

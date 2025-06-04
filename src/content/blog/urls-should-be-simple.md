@@ -2,7 +2,7 @@
 title: "URLs Should Be Simple: Presenting ZenLink"
 description: "A simple open-source URL shortener that can be self-hosted."
 tags: python, tailwindcss, open-source, productivity
-pubDate: 2023-09-23T23:30:00+05:30
+pubDate: 2023-09-23T19:50:00+05:30
 image: "/images/blog/zenlink-ui.jpg"
 draft: false
 ---
