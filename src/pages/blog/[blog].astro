@@ -79,21 +79,23 @@ const { blog } = Astro.props;
       <Fragment set:html={parser.render(blog.body)} />
     </div>
   </div>
-  <div class="flex flex-col gap-4 p-6 md:gap-8 md:p-8 lg:p-12">
-    <div class="flex w-full flex-wrap items-end justify-between gap-2">
-      <h2 class="text-xl font-bold md:text-2xl lg:text-3xl">
-        You May Also Like
-      </h2>
-      <a href="/blog" title="View All Blog Posts" class="underline">
-        View All</a
-      >
-    </div>
-    <div class="flex flex-col gap-6">
-      {
-        recommendedBlogs.map(
-          (blog: any) => !blog.data.draft && <BlogCard blog={blog} />,
-        )
-      }
-    </div>
-  </div>
+  {
+    recommendedBlogs.length > 0 && (
+      <div class="flex flex-col gap-4 p-6 md:gap-8 md:p-8 lg:p-12">
+        <div class="flex w-full flex-wrap items-end justify-between gap-2">
+          <h2 class="text-xl font-bold md:text-2xl lg:text-3xl">
+            You May Also Like
+          </h2>
+          <a href="/blog" title="View All Blog Posts" class="underline">
+            View All
+          </a>
+        </div>
+        <div class="flex flex-col gap-6">
+          {recommendedBlogs.map(
+            (blog: any) => !blog.data.draft && <BlogCard blog={blog} />,
+          )}
+        </div>
+      </div>
+    )
+  }
 </ScreenLayout>
