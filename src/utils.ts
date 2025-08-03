@@ -117,7 +117,7 @@ export const projects = [
       "PWA for an NGO that helps India's underprivileged youth with career guidance",
     categories: ["webdev", "pwa", "astro", "tailwindcss", "client-work"],
     image: "maarg.jpg",
-    url: "https://maargindia.org",
+    url: "https://maarg.nnisarg.in",
   },
   {
     title: "ZenLink",
