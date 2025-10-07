@@ -69,6 +69,7 @@ For more details, refer to the **[GPG Command Line Guide](https://www.gnupg.org/
 - Use a password manager to store and generate strong passwords.  
 - **Recommended Password Manager**: **[GNU Pass](https://www.passwordstore.org/)** (A simple command-line password manager using GPG encryption).  
 - Alternative: **[KeePassXC](https://keepassxc.org/)** (A libre, cross-platform password manager).  
+- You can also visit **[PasswordManager.com](https://www.passwordmanager.com/)** to know more about popular (mostly commercial and non-libre) password managers. **NOTE:** PasswordManager.com earns a commission on any purchase via their website
 
 ### Secure Your Email and Communications  
 

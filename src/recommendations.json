@@ -3,10 +3,10 @@
     "slug": "become-a-css-god",
     "recommendations": [
       "how-do-i-learn-to-code",
+      "improve-your-programming-skills",
       "embracing-the-suckless-philosophy",
       "urls-should-be-simple",
-      "my-first-aur-package",
-      "introducing-swft"
+      "my-first-aur-package"
     ]
   },
   {
@@ -16,17 +16,17 @@
       "urls-should-be-simple",
       "my-first-aur-package",
       "i-created-pacman",
-      "what-i-use"
+      "the-invisible-you"
     ]
   },
   {
     "slug": "dealing-with-burnout",
     "recommendations": [
+      "improve-your-programming-skills",
       "how-do-i-learn-to-code",
       "man-is-mans-best-friend",
       "organising-my-first-hackathon",
-      "introducing-swft",
-      "become-a-css-god"
+      "introducing-swft"
     ]
   },
   {
@@ -36,17 +36,17 @@
       "i-created-pacman",
       "become-a-css-god",
       "how-do-i-learn-to-code",
-      "introducing-swft"
+      "improve-your-programming-skills"
     ]
   },
   {
     "slug": "how-do-i-learn-to-code",
     "recommendations": [
+      "improve-your-programming-skills",
       "become-a-css-god",
       "dealing-with-burnout",
       "organising-my-first-hackathon",
-      "embracing-the-suckless-philosophy",
-      "introducing-swft"
+      "embracing-the-suckless-philosophy"
     ]
   },
   {
@@ -56,6 +56,16 @@
       "my-first-aur-package",
       "using-the-internet-securely",
       "urls-should-be-simple",
+      "embracing-the-suckless-philosophy"
+    ]
+  },
+  {
+    "slug": "improve-your-programming-skills",
+    "recommendations": [
+      "how-do-i-learn-to-code",
+      "become-a-css-god",
+      "dealing-with-burnout",
+      "organising-my-first-hackathon",
       "embracing-the-suckless-philosophy"
     ]
   },
@@ -82,11 +92,11 @@
   {
     "slug": "man-is-mans-best-friend",
     "recommendations": [
+      "improve-your-programming-skills",
       "introducing-swft",
       "my-first-aur-package",
       "embracing-the-suckless-philosophy",
-      "dealing-with-burnout",
-      "i-created-pacman"
+      "dealing-with-burnout"
     ]
   },
   {
@@ -103,10 +113,10 @@
     "slug": "organising-my-first-hackathon",
     "recommendations": [
       "how-do-i-learn-to-code",
+      "improve-your-programming-skills",
       "what-i-use",
       "dealing-with-burnout",
-      "embracing-the-suckless-philosophy",
-      "become-a-css-god"
+      "embracing-the-suckless-philosophy"
     ]
   },
   {
@@ -120,13 +130,23 @@
     ]
   },
   {
+    "slug": "the-invisible-you",
+    "recommendations": [
+      "using-the-internet-securely",
+      "i-created-pacman",
+      "building-mundra",
+      "what-i-use",
+      "embracing-the-suckless-philosophy"
+    ]
+  },
+  {
     "slug": "urls-should-be-simple",
     "recommendations": [
       "introducing-swft",
       "building-mundra",
       "i-created-pacman",
       "my-first-aur-package",
-      "using-the-internet-securely"
+      "become-a-css-god"
     ]
   },
   {
@@ -135,8 +155,8 @@
       "introducing-swft",
       "i-created-pacman",
       "urls-should-be-simple",
-      "my-first-aur-package",
-      "magic-behind-video-streaming"
+      "the-invisible-you",
+      "my-first-aur-package"
     ]
   },
   {
@@ -145,8 +165,8 @@
       "introducing-swft",
       "embracing-the-suckless-philosophy",
       "organising-my-first-hackathon",
-      "i-created-pacman",
-      "magic-behind-video-streaming"
+      "the-invisible-you",
+      "i-created-pacman"
     ]
   }
 ]
