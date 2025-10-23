@@ -1,6 +1,7 @@
 ---
 import BaseLayout from "@/layouts/BaseLayout.astro";
 
+import Codeberg from "@/components/svgs/Codeberg.astro";
 import Github from "@/components/svgs/GitHub.astro";
 import Linkedin from "@/components/svgs/LinkedIn.astro";
 import Youtube from "@/components/svgs/Youtube.astro";
@@ -8,7 +9,7 @@ import X from "@/components/svgs/X.astro";
 import ProjectCard from "@/components/ProjectCard.astro";
 import BlogCard from "@/components/BlogCard.astro";
 
-import { projects, socialLinks } from "@/utils";
+import { projects } from "@/utils";
 const recentProjects = projects.slice(0, 3);
 
 import { getCollection } from "astro:content";
@@ -70,6 +71,13 @@ blogs = blogs.slice(0, 3);
         <div
           class="text-primary flex w-full flex-wrap items-center gap-6 p-2 pl-0 text-3xl"
         >
+          <a
+            href="/codeberg"
+            target="_blank"
+            title="View Codeberg Profile"
+            class="transition-all duration-300 ease-in-out hover:-translate-y-1 hover:scale-105"
+            ><Codeberg /></a
+          >
           <a
             href="/github"
             target="_blank"

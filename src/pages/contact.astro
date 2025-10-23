@@ -3,6 +3,7 @@ import BaseLayout from "@/layouts/BaseLayout.astro";
 import Location from "@/components/svgs/Location.astro";
 import Email from "@/components/svgs/Email.astro";
 import LinkedIn from "@/components/svgs/LinkedIn.astro";
+import Codeberg from "@/components/svgs/Codeberg.astro";
 import GitHub from "@/components/svgs/GitHub.astro";
 
 import { socialLinks } from "@/utils";
@@ -46,6 +47,19 @@ const description =
             href="/linkedin"
             title="LinkedIn"
             target="_blank">nnisarggada</a
+          >
+        </h2>
+      </div>
+      <div
+        class="group hover:text-accent flex w-fit items-center gap-4 transition-all duration-300 ease-in-out"
+      >
+        <Codeberg />
+        <h2 class="text-text-light dark:text-text-dark text-lg">
+          <a
+            class="group-hover:text-accent underline transition-all duration-300 ease-in-out"
+            href="/codeberg"
+            title="Codeberg"
+            target="_blank">hect1k</a
           >
         </h2>
       </div>
