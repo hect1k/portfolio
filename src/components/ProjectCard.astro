@@ -4,7 +4,7 @@ const project = Astro.props.project;
 ---
 
 <article
-  class="dark:bg-text/10 dark:hover:bg-text/20 flex h-fit flex-col items-stretch overflow-hidden rounded bg-white/25 shadow-lg transition-all duration-300 ease-in-out hover:-translate-y-1 hover:scale-105 hover:bg-white md:flex-row"
+  class="dark:bg-text/10 dark:hover:bg-text/20 flex h-fit flex-col items-stretch overflow-hidden rounded bg-white/25 shadow-lg transition-all duration-300 ease-in-out hover:bg-white md:flex-row"
 >
   {
     project.image && (
@@ -44,7 +44,7 @@ const project = Astro.props.project;
               href={project.url}
               title={`View demo for ${project.title}`}
               target="_blank"
-              class="bg-primary text-background dark:text-text rounded px-4 py-2 text-xs font-bold transition-all duration-300 ease-in-out hover:-translate-y-1 hover:scale-105 hover:drop-shadow-xl md:text-sm"
+              class="bg-primary text-background dark:text-text rounded px-4 py-2 text-xs font-bold transition-all duration-300 ease-in-out hover:-translate-y-1 hover:drop-shadow-xl md:text-sm"
             >
               Demo
             </a>
@@ -56,9 +56,9 @@ const project = Astro.props.project;
               href={project.repo}
               title={`View source code for ${project.title}`}
               target="_blank"
-              class="bg-primary/25 rounded px-4 py-2 text-xs font-bold transition-all duration-300 ease-in-out hover:-translate-y-1 hover:scale-105 hover:drop-shadow-xl md:text-sm"
+              class="text-accent my-auto w-fit text-xs font-bold underline transition-all duration-300 ease-in-out md:text-sm"
             >
-              Source Code
+              View Source Code
             </a>
           )
         }
@@ -68,7 +68,7 @@ const project = Astro.props.project;
           <a
             href={`/blog/${project.blog}`}
             title={`Read blog about ${project.title}`}
-            class="w-fit text-xs font-bold underline transition-all duration-300 ease-in-out hover:translate-x-2 md:text-sm"
+            class="w-fit text-xs font-bold underline transition-all duration-300 ease-in-out md:text-sm"
           >
             Read Blog
           </a>
