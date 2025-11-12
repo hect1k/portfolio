@@ -36,7 +36,7 @@ export const socialLinks = {
   GitHub: "https://github.com/hect1k",
   LinkedIn: "https://www.linkedin.com/in/nnisarggada",
   YouTube: "https://www.youtube.com/@hect1k_dev",
-  X: "https://x.com/hect1k_dev",
+  Mastodon: "https://mastodon.social/@hect1k",
 };
 
 export const projects = [
